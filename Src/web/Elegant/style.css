@@ -76,7 +76,7 @@
 	}
 
 	a:hover {
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 	a, a:hover, a:active, a:focus {
@@ -113,7 +113,7 @@
 	}
 
 	.lj-preloader {
-		background: #7dc771 url('../img/preloader.svg') no-repeat center center;
+		background: #1d77c3 url('../img/preloader.svg') no-repeat center center;
 		bottom: 0;
 		height: 100%;
 		left: 0;
@@ -143,7 +143,7 @@
 	}
 
 	.owl-dot.active {
-		background: #7dc771;
+		background: #1d77c3;
 		border: 1px solid transparent;
 	}
 
@@ -389,7 +389,7 @@
 	}
 
 	.yt-controls a:hover { 
-		color: #7dc771;
+		color: #1d77c3;
 	}
 	
 	.lj-title {
@@ -480,13 +480,13 @@
     }
 
     .lj-title-buttons a.lj-button-full {
-    	border: 1px solid #7dc771;
-    	background: #7dc771;
+    	border: 1px solid #1d77c3;
+    	background: #1d77c3;
     }
 
     .lj-title-buttons a.lj-button-open:hover {
-    	border: 1px solid #7dc771;
-    	background: #7dc771;
+    	border: 1px solid #1d77c3;
+    	background: #1d77c3;
     }
 
     .lj-title-buttons a.lj-button-full:hover {
@@ -541,7 +541,7 @@
 		display: inline-block;
 		font-size: 2em;
 		text-align: center;
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 	.lj-icon-box h3 {
@@ -567,7 +567,7 @@
 	}
 
 	.lj-icon-box > a:hover {
-		color: #7dc771;	
+		color: #1d77c3;	
 	}
 
 	.lj-icon-box h3,
@@ -638,7 +638,7 @@
 		display: inline-block;
 		font-size: 2em;
 		text-align: center;
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 	.lj-product-icon-box h3 {
@@ -664,7 +664,7 @@
 	}
 
 	.lj-product-icon-box > a:hover {
-		color: #7dc771;	
+		color: #1d77c3;	
 	}
 
 	.lj-product-icon-box h3,
@@ -723,13 +723,13 @@
     }
 
     .lj-product-button a.lj-button-full {
-    	border: 1px solid #7dc771;
-    	background: #7dc771;
+    	border: 1px solid #1d77c3;
+    	background: #1d77c3;
     }
 
     .lj-product-button a.lj-button-open:hover {
-    	border: 1px solid #7dc771;
-    	background: #7dc771;
+    	border: 1px solid #1d77c3;
+    	background: #1d77c3;
     }
 
     .lj-product-button a.lj-button-full:hover {
@@ -751,7 +751,7 @@
 	}
 
 	.lj-quote span {
-		color: #7dc771;
+		color: #1d77c3;
 		font-size: 2em;
 		display: block;
 	}
@@ -799,7 +799,7 @@
 
 	.purchase {
 		width: 100%;
-		background-color: #7dc771;
+		background-color: #1d77c3;
 	}
 
 	.purchase > .container {
@@ -989,7 +989,7 @@
 
 	.lj-milestone i {
 		display: block;
-		color: #7dc771;
+		color: #1d77c3;
 		font-size: 3.5em;
 	}
 
@@ -1038,10 +1038,9 @@
 
 	.lj-team img {
 		max-width: 100%;
-		display: inline-block !important;
+		display: block !important;
 		vertical-align: top;
-		margin-right: 20px;
-		margin-bottom: 20px;
+		margin:0 auto;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
@@ -1081,7 +1080,7 @@
 	}
 
 	.lj-team li a:hover {
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 
@@ -1149,8 +1148,8 @@
     	height: 60px;
     	display: block;
     	padding: 0 10px; 
-    	background-color: #7dc771;
-        border: 1px solid #7dc771;
+    	background-color: #1d77c3;
+        border: 1px solid #1d77c3;
         color: #fff;
 		-webkit-border-top-right-radius: 2px;
 		-webkit-border-bottom-right-radius: 2px;
@@ -1190,7 +1189,7 @@
     }
 
     .lj-subscribe-message .fa-check {
-    	color: #7dc771;
+    	color: #1d77c3;
     } 
 
 
@@ -1260,7 +1259,7 @@
 
 	.ready {
 		width: 100%;
-		background-color: #7dc771;		
+		background-color: #1d77c3;		
 	}
 
 	.ready > .container {
@@ -1342,7 +1341,7 @@
     .lj-ready-buttons a.lj-button-open:hover {
     	border: 1px solid #fff;
     	background: #fff;
-    	color: #7dc771;
+    	color: #1d77c3;
     }
 
     .lj-ready-buttons a.lj-button-full:hover {
@@ -1419,7 +1418,7 @@
 
 	.lj-twitter-feed a {
 		font-weight: 700;
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 	.lj-twitter-feed a:hover {
@@ -1439,7 +1438,7 @@
 
 	.lj-twitter-date a {
 		font-weight: 700;
-		color: #7dc771;
+		color: #1d77c3;
 	}
 
 	.lj-twitter-date a:hover {
@@ -1513,7 +1512,7 @@
 	}
 
 	address i {
-		color: #7dc771;
+		color: #1d77c3;
 		line-height: 1.5em !important;
 		font-size: 1.5em;
 		padding-right: 10px;
@@ -1552,7 +1551,7 @@
 	}
 
 	.lj-footer-socials li a:hover {
-		background-color: #7dc771;
+		background-color: #1d77c3;
 		color: #fff;		
 	}
 
@@ -1573,7 +1572,7 @@
     }
 
     .lj-contact-message .fa-check {
-    	color: #7dc771;
+    	color: #1d77c3;
     }  
 
     .lj-footer-right form input:focus,
@@ -1616,8 +1615,8 @@
     	height: 60px;
     	display: inline-block;
     	padding: 0 20px; 
-    	background-color: #7dc771;
-        border: 1px solid #7dc771;
+    	background-color: #1d77c3;
+        border: 1px solid #1d77c3;
         color: #fff;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
