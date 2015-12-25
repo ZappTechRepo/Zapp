@@ -1,0 +1,1866 @@
+/*
+	Author: Lumberjacks
+	Template: Elegant (Landing Page)
+	Version: 1.0
+	URL: http://themeforest.net/user/Lumberjacks/
+*/
+
+
+
+/* TABLE OF CONTENTS
+
+	1. Import section
+	2. Basic styles
+	3. Typography
+	4. Breakpoint for high-res devices
+	5. Menu
+	6. Header
+	7. Services
+	8. Product
+	9. About
+	10. Purchase
+	11. Projects
+	12. Milestones
+	13. Team
+	14. Subscribe
+	15. Testimonials
+	16. Ready
+	17. Clients
+	18. News
+	19. Contact
+	20. Breakpoints
+
+*/
+
+
+
+/* 1. IMPORT SECTION */
+
+	@import url("bootstrap.css");
+	/*@import url("http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic&subset=latin,latin-ext");*/
+    @import url("../css/Lato.css");
+	/*@import url("http://fonts.googleapis.com/css?family=Raleway:300,700&subset=latin,latin-ext");*/
+    @import url("../css/Raleway.css");
+	@import url("ionicons.css");
+	@import url("font-awesome.min.css");
+  	@import url("animate.min.css");
+  	@import url("owl.carousel.css");
+
+
+
+/* 2. BASIC STYLES */
+
+.hide {
+    display: none;
+}
+
+	html, body {
+		height: 100%;
+	}
+
+	body {
+		font: 16px/1.5 Lato, "Century Gothic", "Trebuchet MS", Helvetica, sans-serif;
+		background-color: #fff;
+		color: #262626;
+		font-weight: 300;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	a {
+		transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+	}
+
+	a:hover {
+		color: #7dc771;
+	}
+
+	a, a:hover, a:active, a:focus {
+		outline: 0;
+		border: 0;
+		text-decoration: none;
+	}
+
+	a, a:active, a:focus {
+		color: #fff;
+	}
+
+	.lj-float-left {
+		float: left;
+	}
+
+	.lj-float-right {
+		float: right;
+	}
+	
+	.lj-block-center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.lj-show {
+		display: block !important;
+	}
+	
+	.lj-hide {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.lj-preloader {
+		background: #7dc771 url('../img/preloader.svg') no-repeat center center;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		overflow: hidden;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 99999;
+	}
+
+	.owl-dots {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	.owl-dot {
+		height: 15px;
+		width: 15px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		border: 1px solid #ccc;
+		background: #fff;
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	.owl-dot.active {
+		background: #7dc771;
+		border: 1px solid transparent;
+	}
+
+
+/* 3. TYPOGRAPHY */
+
+	p {
+		line-height: 1.5;
+	}
+    
+	.lj-text-uppercase {
+		text-transform: uppercase;
+	}
+
+	.lj-text-center {
+		text-align: center;
+	}
+
+	.lj-text-left {
+		text-align: left;
+	}
+
+	.lj-text-right {
+		text-align: right;
+	}
+
+	.lj-text-justify {
+		text-align: justify;
+	}
+
+	.lj-text-underline {
+		text-decoration: underline;
+	}
+
+
+
+/* 4. BREAKPOINT FOR HIGH-RES DEVICES */
+
+	@media
+	  only screen and (-webkit-min-device-pixel-ratio: 2),
+	  only screen and (   min--moz-device-pixel-ratio: 2),
+	  only screen and (     -o-min-device-pixel-ratio: 2/1),
+	  only screen and (        min-device-pixel-ratio: 2),
+	  only screen and (                min-resolution: 192dpi),
+	  only screen and (                min-resolution: 2dppx) {
+
+	  	.lj-logo-1x {
+			display: none !important;
+		}
+		
+		.lj-logo-2x {
+			display: block !important;
+		}
+	}
+
+
+/* 5. MENU */
+
+	.menu {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+		background: rgba(255,255,255,0.2);
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.lj-logo {
+		text-align: left;
+	}
+
+	.lj-logo a,
+	.lj-logo img {
+		  width: 100px;
+		  height: 150px;
+		
+	}
+	
+	.lj-logo a {
+		display: block;
+	}
+	
+	.lj-logo img {
+	    vertical-align: bottom;
+	}
+	
+	.lj-logo-1x {
+		display: block;
+	}
+	
+	.lj-logo-2x {
+		display: none;
+	}
+
+	.lj-menu {
+		text-align: right;
+		color: #fff;
+		display: block;
+	}
+
+	.lj-menu-button {
+		display: none;
+		text-align: right;
+		color: #fff;
+		font-size: 1.8em;
+		line-height: 1em;
+	}
+
+	.lj-menu-button,
+	.lj-menu-button i {
+		outline: none;
+	}
+
+	.lj-menu-mobile {
+		height: 0;
+		transition: all 0.45s ease-out;
+		-moz-transition: all 0.45s ease-out;
+		-webkit-transition: all 0.45s ease-out;
+		-o-transition: all 0.45s ease-out;
+		-ms-transition: all 0.45s ease-out;
+	}
+
+	.lj-menu-mobile nav > div {
+		height: 30px;
+		line-height: 30px;
+	}
+
+	.lj-menu-mobile nav {
+		display: none;
+		padding-top: 15px;
+	}
+
+	.lj-menu-mobile.active {
+		height: 110px;
+		transition: all 0.45s ease-in;
+		-moz-transition: all 0.45s ease-in;
+		-webkit-transition: all 0.45s ease-in;
+		-o-transition: all 0.45s ease-in;
+		-ms-transition: all 0.45s ease-in;
+	}
+
+	.lj-menu ul {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	.lj-menu ul li {
+		display: inline-block;
+		margin-right: 25px;
+	}
+
+	.lj-menu ul li:last-child {
+		margin-right: 0;
+	}
+
+
+/* 6. HEADER */
+
+	header {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		background-color: #000 !important;
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+	
+	header > .container {
+		position: relative;
+	}
+
+	.lj-overlay {
+		width: 100%;
+		height: 100%;		
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	.lj-background-repeat {
+	    background-repeat: repeat;
+	}
+	
+	.lj-background-no-repeat {
+		background-repeat: no-repeat;
+	}
+	
+	.lj-overlay-none {
+		display: none;
+		visibility: hidden;
+	}
+	
+	.lj-overlay-image {
+		background-image: url('../img/lines.png');
+		background-repeat: repeat;
+	}
+	
+	.lj-overlay-color {
+	    background-color: rgba(0,0,0,0.7);
+	}
+	
+	.lj-overlay-gradient {
+		background: -moz-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%, rgba(196,255,0,0.8) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(0,204,255,0.8)), color-stop(100%,rgba(196,255,0,0.8))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* IE10+ */
+		background: linear-gradient(215deg,  rgba(0,204,255,0.8) 0%,rgba(196,255,0,0.8) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ccff', endColorstr='#c4ff00',GradientType=1 ) progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/1x1.png'); /* IE6-9 fallback on horizontal gradient */
+		pointer-events:none;
+	}
+
+	header.yt-background {
+		background-image: url('../img/video.jpg');
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	.mobile .mbYTP_wrapper,
+	.tablet .mbYTP_wrapper {
+		z-index: -1 !important;
+	}
+
+	.mobile .yt-controls,
+	.tablet .yt-controls {
+		display: none;
+	}
+
+	.yt-controls {
+		margin-top: 50px;
+		text-align: right;
+	}
+
+	.yt-controls a {
+		display: inline-block;
+		color: #fff;
+		width: 20px;
+	}
+
+	.yt-controls a:hover { 
+		color: #7dc771;
+	}
+	
+	.lj-title {
+        margin-top: 20px;
+    }
+    
+    .lj-title h1 {
+    	font-family: 'Raleway';
+    	font-size: 3em;
+    	font-weight: 300;
+        color: #fff;
+        margin: 0;
+        word-wrap: break-word;
+    }
+    
+    .lj-title span {
+        color: #fff;
+        font-weight: 700;
+    }
+
+	.lj-line {
+		margin-top: 20px;
+	}
+
+    .lj-line > div {
+    	width: 150px;
+    	height: 1px;
+    	background-color: #fff;
+    	margin: 0 auto;
+    }
+
+    .lj-title-paragraph {
+    	margin-top: 30px;
+    }
+
+    .lj-title-paragraph p {
+    	color: #fff;
+    	margin: 0;
+    }
+
+    .lj-title-buttons {
+    	text-align: center;
+    	margin-top: 30px;
+    }
+
+    .lj-title-buttons a {
+    	display: inline-block;
+    	width: 150px;
+    	height: 50px;
+    	line-height: 48px;
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		margin-right: 10px;
+		outline: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		font-weight: 700;
+    }
+
+    .lj-title-buttons a span {
+    	opacity: 0;
+    	display: inline-block;
+    	width: 0;
+    	position: relative;
+    	right: 0;
+    	transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+    }
+
+    .lj-title-buttons a:hover span {
+    	opacity: 1;
+    	width: 10px;
+    	right: -10px;
+    }
+
+    .lj-title-buttons a:last-child {
+    	margin-right: 0;
+    }
+
+    .lj-title-buttons a.lj-button-open {
+    	border: 1px solid #fff;
+    	background: transparent;
+    }
+
+    .lj-title-buttons a.lj-button-full {
+    	border: 1px solid #7dc771;
+    	background: #7dc771;
+    }
+
+    .lj-title-buttons a.lj-button-open:hover {
+    	border: 1px solid #7dc771;
+    	background: #7dc771;
+    }
+
+    .lj-title-buttons a.lj-button-full:hover {
+    	border: 1px solid #5fb551;
+    	background: #5fb551;
+    }
+
+	.lj-scroll-down {
+		position: absolute;
+		bottom: -150px;
+	}
+
+	.lj-scroll-down button,
+	.lj-scroll-down button:focus {
+		width: 40px;
+		height: 40px;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 36px;
+		color: #fff;
+		background-color: transparent;
+		border: 0;
+		outline: 0;
+	}
+
+    
+/* 7. SERVICES */
+
+	.icons {
+		background-color: #fff;
+	}
+
+	.icons > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.icons .row {
+		padding-bottom: 100px;
+	}
+
+	.icons .row:last-child {
+		padding-bottom: 0;
+	}
+
+	.lj-icon-box {
+		padding: 0 20px;
+	}
+
+	.lj-icon-box span {
+		display: inline-block;
+		font-size: 2em;
+		text-align: center;
+		color: #7dc771;
+	}
+
+	.lj-icon-box h3 {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: 1em;
+		word-wrap: break-word;
+		color: #262626;
+	}
+
+	.lj-icon-box p {
+		font-size: 0.9em;
+		color: #262626;
+		text-align: justify;
+	}
+
+	.lj-icon-box > a {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: 0.85em;
+		color: #262626;
+		display: inline-block;
+	}
+
+	.lj-icon-box > a:hover {
+		color: #7dc771;	
+	}
+
+	.lj-icon-box h3,
+	.lj-icon-box p,
+	.lj-icon-box > a {
+		margin: 20px 0 0;
+	}
+
+	.lj-icon-box p a {
+		font-weight: 700;
+	}
+
+
+/* 8. PRODUCT */
+
+	.product {
+		width: 100%;
+		background-color: #eee;
+		background-image: url('../img/bg-3.jpg');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		position: relative;
+	}
+
+	.product > .container {
+		padding-top: 50px;
+	}
+
+	.lj-product-image img {
+		position: absolute;
+		bottom: 0;
+		max-width: 90%;
+	}
+
+	.lj-product-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #fff;
+		margin: 0;
+	}
+
+	.lj-product-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-product-paragraph {
+		margin-top: 50px;
+	}
+
+	.lj-product-paragraph p {
+		margin-top: 0;
+		margin-bottom: 0;
+		text-align: justify;
+		color: #fff;
+	}
+
+	.lj-product-icon-box {
+		margin-top: 50px;
+	}
+
+	.lj-product-icon-box span {
+		display: inline-block;
+		font-size: 2em;
+		text-align: center;
+		color: #7dc771;
+	}
+
+	.lj-product-icon-box h3 {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: 1em;
+		word-wrap: break-word;
+		color: #fff;
+	}
+
+	.lj-product-icon-box p {
+		font-size: 0.9em;
+		color: #fff;
+		text-align: justify;
+	}
+
+	.lj-product-icon-box > a {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: 0.85em;
+		color: #fff;
+		display: inline-block;
+	}
+
+	.lj-product-icon-box > a:hover {
+		color: #7dc771;	
+	}
+
+	.lj-product-icon-box h3,
+	.lj-product-icon-box p,
+	.lj-product-icon-box > a {
+		margin: 20px 0 0;
+	}
+
+	.lj-product-icon-box p a {
+		font-weight: 700;
+	}
+
+	.lj-product-button {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	.lj-product-button a {
+		display: inline-block;
+    	width: 200px;
+    	height: 50px;
+    	line-height: 48px;
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		outline: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		font-weight: 700;
+		text-align: center;
+    }
+
+    .lj-product-button a span {
+    	opacity: 0;
+    	display: inline-block;
+    	width: 0;
+    	position: relative;
+    	right: 0;
+    	transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+    }
+
+    .lj-product-button a:hover span {
+    	opacity: 1;
+    	width: 10px;
+    	right: -10px;
+    }
+
+    .lj-product-button a.lj-button-open {
+    	border: 1px solid #fff;
+    	background: transparent;
+    }
+
+    .lj-product-button a.lj-button-full {
+    	border: 1px solid #7dc771;
+    	background: #7dc771;
+    }
+
+    .lj-product-button a.lj-button-open:hover {
+    	border: 1px solid #7dc771;
+    	background: #7dc771;
+    }
+
+    .lj-product-button a.lj-button-full:hover {
+    	border: 1px solid #5fb551;
+    	background: #5fb551;
+    }
+
+
+/* 9. ABOUT */
+
+	.about {
+		width: 100%;
+		background-color: #fff;
+	}
+
+	.about > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-quote span {
+		color: #7dc771;
+		font-size: 2em;
+		display: block;
+	}
+
+	.lj-quote blockquote {
+		width: 80%;
+		margin: 10px 0 0;
+		font-weight: 700;
+		font-style: italic;
+		font-size: 1.25em;
+	}
+
+	.lj-quote blockquote cite {
+		font-size: 0.8em;
+		font-weight: 300;
+		font-style: normal;
+		margin-top: 10px;
+		display: block;
+	}
+	
+	.lj-about h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+	}
+
+	.lj-about h2 span {
+		font-weight: 700;
+	}
+
+	.lj-about p {
+		margin-top: 20px;
+		margin-bottom: 0;
+		text-align: justify;
+	}
+
+	.lj-about-leading {
+		font-weight: 700;
+		font-size: 1.1em;
+	}
+
+/* 10. PURCHASE */
+
+	.purchase {
+		width: 100%;
+		background-color: #7dc771;
+	}
+
+	.purchase > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-purchase-text p {
+		color: #fff;
+		text-align: left;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-weight: 700;
+	}
+
+	.lj-purchase-button {
+		text-align: right;
+	}
+
+	.lj-purchase-button a {
+		display: inline-block;
+    	width: 150px;
+    	height: 50px;
+    	line-height: 48px;
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		outline: 0;
+		color: #262626;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		font-weight: 700;
+		text-align: center;
+    }
+
+    .lj-purchase-button a.lj-button-open {
+    	border: 1px solid #262626;
+    	background: transparent;
+    }
+
+    .lj-purchase-button a.lj-button-full {
+    	border: 1px solid transparent;
+    	background: #fff;
+    }
+
+    .lj-purchase-button a.lj-button-open:hover {
+    	border: 1px solid transparent;
+    	background: #fff;
+    }
+
+    .lj-purchase-button a.lj-button-full:hover {
+    	border: 1px solid #262626;
+    	background: transparent;
+    }
+
+
+/* 11. PROJECTS */
+	
+	.projects {
+		width: 100%;
+		background-color: #fff;		
+	}
+
+	.projects > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-projects-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+		text-align: center;
+	}
+
+	.lj-projects-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-projects-paragraph p {
+		margin-top: 20px;
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	.lj-projects-gallery {
+		margin-top: 80px;
+	}
+
+	.lj-project .image {
+		position: relative;
+	}
+
+	.lj-project img {
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+
+	.lj-project .mask {
+		display: block;
+		z-index: 2;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 0%;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		background: rgba(125, 199, 113, 0.9);
+		transition: all 0.25s ease-in-out 0s;
+		-moz-transition: all 0.25s ease-in-out 0s;
+		-webkit-transition: all 0.25s ease-in-out 0s;
+		-o-transition: all 0.25s ease-in-out 0s;
+		-ms-transition: all 0.25s ease-in-out 0s;
+	}
+
+	.lj-project .mask a {
+		opacity: 0;
+		transition: all 0.15s ease-in-out 0s;
+		-moz-transition: all 0.15s ease-in-out 0s;
+		-webkit-transition: all 0.15s ease-in-out 0s;
+		-o-transition: all 0.15s ease-in-out 0s;
+		-ms-transition: all 0.15s ease-in-out 0s;
+	}
+
+	.lj-project > .image:hover .mask {
+		height: 100%;
+	}
+
+	.lj-project > .image:hover .mask a {
+		opacity: 1;
+		transition: all 0.5s linear 0s;
+		-moz-transition: all 0.5s linear 0s;
+		-webkit-transition: all 0.5s linear 0s;
+		-o-transition: all 0.5s linear 0s;
+		-ms-transition: all 0.5s linear 0s;
+	}
+
+	.lj-project a {
+		color: #fff;
+		font-size: 3em;
+		display: block;
+		width: 40px;
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
+		top: 50%;
+		margin-top: -0.75em;
+	}
+
+	.lj-project-caption {
+		margin-top: 20px;
+	}
+
+	.lj-project-caption h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+/* 12. MILESTONES */
+	
+	.milestones {
+		width: 100%;
+		background-color: #eee;
+		background-image: url('../img/bg-2.jpg');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		position: relative;
+	}
+
+	.milestones > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-milestone {
+		text-align: center;
+	}
+
+	.lj-milestone i {
+		display: block;
+		color: #7dc771;
+		font-size: 3.5em;
+	}
+
+	.lj-milestone span {
+		display: block;
+		font-size: 3em;
+		font-weight: 700;
+	}
+
+	.lj-milestone p {
+		display: block;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+/* 13. TEAM */
+
+	.team {
+		width: 100%;
+		background-color: #fff;		
+	}
+
+	.team > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-team-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+		text-align: center;
+	}
+
+	.lj-team-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-team-paragraph p {
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 60px;
+	}
+
+	.lj-team img {
+		max-width: 100%;
+		display: inline-block !important;
+		vertical-align: top;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+
+	.lj-team img:last-child {
+		margin-right: 0;
+	}
+
+	.lj-team span {
+		display: block;
+		text-align: center;
+	}
+
+	.lj-team span.name {
+		font-weight: 700;
+	}
+
+	.lj-team ul {
+		list-style: none;
+		padding: 0;
+		text-align: center;
+	}
+
+	.lj-team li {
+		display: inline;
+		margin-right: 15px;
+	}
+
+	.lj-team li:last-child {
+		margin-right: 0;
+	}
+
+	.lj-team li a {
+		color: #bfbfbf;
+		font-size: 1.5em;
+	}
+
+	.lj-team li a:hover {
+		color: #7dc771;
+	}
+
+
+/* 14. SUBSCRIBE */
+
+	.subscribe {
+		width: 100%;
+		background-color: #eee;
+		background-image: url('../img/bg-2.jpg');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		position: relative;
+	}
+
+	.subscribe > .container {
+		padding-top: 100px;
+		padding-bottom: 66px;
+	}
+
+	.lj-subscribe-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+	}
+
+	.lj-subscribe-title h2 span {
+		font-weight: 700;
+	}
+
+    .lj-subscribe-form {
+    	margin-top: 6px;
+    }
+
+    .lj-subscribe-form input[type=text] {
+    	width: 65%;
+    	height: 60px;
+    	display: block;
+    	padding: 0 20px;    	
+    	background-color: #fff;
+        border: 1px solid #fff;
+		-webkit-border-top-left-radius: 2px;
+		-webkit-border-bottom-left-radius: 2px;
+		-moz-border-radius-topleft: 2px;
+		-moz-border-radius-bottomleft: 2px;
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+		line-height: 60px;
+		color: #262626;
+		float: left;
+    }
+
+    .lj-subscribe-form input:focus {
+    	outline: 0;
+    }
+    
+    .lj-subscribe-form input[type=submit] {
+    	width: 35%;
+    	height: 60px;
+    	display: block;
+    	padding: 0 10px; 
+    	background-color: #7dc771;
+        border: 1px solid #7dc771;
+        color: #fff;
+		-webkit-border-top-right-radius: 2px;
+		-webkit-border-bottom-right-radius: 2px;
+		-moz-border-radius-topright: 2px;
+		-moz-border-radius-bottomright: 2px;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;        
+		font-family: 'Raleway';
+		font-weight: 700;	
+		transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+		float: right;
+    }
+
+    .lj-subscribe-form input[type=submit]:hover {
+    	background-color: transparent;
+    	border: 1px solid #262626;
+    	color: #262626;
+    }
+
+    .lj-subscribe-message {
+    	height: 2.5em;
+    	padding: 10px 20px;
+    	color: #262626;
+    	font-size: 0.9em;
+    }
+
+    .lj-subscribe-message i {
+    	margin-right: 5px;
+    }
+
+	.lj-subscribe-message .fa-warning {
+    	color: #ff5c5c;
+    }
+
+    .lj-subscribe-message .fa-check {
+    	color: #7dc771;
+    } 
+
+
+/* 15. TESTIMONIALS */
+
+	.testimonials {
+		width: 100%;
+		background-color: #fff;		
+	}
+
+	.testimonials > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-testimonials-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+		text-align: center;
+	}
+
+	.lj-testimonials-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-testimonials-gallery {
+		margin-top: 80px;
+	}
+
+	.lj-testimonial p {
+		text-align: justify;
+		font-style: italic;
+		font-size: 1.1em;
+	}
+
+	.lj-testimonial img {
+		width: 50px !important;
+		height: 50px;
+		display: inline-block !important;
+		vertical-align: top;
+		margin-right: 20px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+
+	.lj-testimonial-meta {
+		display: inline-block;
+	}
+
+	.lj-testimonial-meta span {
+		display: block;
+	}
+
+	.lj-testimonial-meta span.name {
+		font-weight: 700;
+	}
+
+	.testimonials .owl-controls {
+		margin-top: 60px;
+	}
+
+/* 16. READY */
+
+	.ready {
+		width: 100%;
+		background-color: #7dc771;		
+	}
+
+	.ready > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-ready-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #fff;
+		margin: 0;
+		text-align: center;
+	}
+
+	.lj-ready-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-ready-paragraph p {
+		margin-top: 20px;
+		margin-bottom: 0;
+		text-align: center;
+		color: #fff;
+	}
+
+	.lj-ready-buttons {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+    .lj-ready-buttons a {
+    	display: inline-block;
+    	width: 150px;
+    	height: 50px;
+    	line-height: 48px;
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		margin-right: 10px;
+		outline: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		font-weight: 700;
+    }
+
+    .lj-ready-buttons a span {
+    	opacity: 0;
+    	display: inline-block;
+    	width: 0;
+    	position: relative;
+    	right: 0;
+    	font-size: 1.2em;
+    	transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+    }
+
+    .lj-ready-buttons a:hover span {
+    	opacity: 1;
+    	width: 20px;
+    	right: -5px;
+    }
+
+    .lj-ready-buttons a.lj-button-open {
+    	border: 1px solid #fff;
+    	background: transparent;
+    }
+
+    .lj-ready-buttons a.lj-button-full {
+    	border: 1px solid #fff;
+    	background: #fff;
+    }
+
+    .lj-ready-buttons a.lj-button-open:hover {
+    	border: 1px solid #fff;
+    	background: #fff;
+    	color: #7dc771;
+    }
+
+    .lj-ready-buttons a.lj-button-full:hover {
+    	border: 1px solid #fff;
+    	background: transparent;
+    }
+
+/* 17. CLIENTS */
+
+	.clients {
+		width: 100%;
+		background-color: #fff;		
+	}
+
+	.clients > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.lj-clients-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+		text-align: center;
+	}
+
+	.lj-clients-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-clients-gallery {
+		margin-top: 60px;
+	}
+
+	.clients .owl-controls {
+		margin-top: 60px;
+	}
+
+/* 18. NEWS */
+
+	.twitter {
+		width: 100%;
+		background-color: #f7f7f7;		
+	}
+
+	.twitter > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	
+	.lj-twitter-title h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		color: #262626;
+		margin: 0;
+	}
+
+	.lj-twitter-title h2 span {
+		font-weight: 700;
+	}
+
+	.lj-twitter-feed {
+		min-height: 5.5em;
+		font-size: 1.1em;
+		text-align: center;
+	}
+
+	.lj-twitter-feed > span {
+		line-height: 4.5em;
+	}
+
+	.lj-twitter-feed a {
+		font-weight: 700;
+		color: #7dc771;
+	}
+
+	.lj-twitter-feed a:hover {
+		color: #262626;
+	}
+
+	.lj-twitter-feed ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.lj-twitter-date {
+		font-size: 0.9em;
+		margin-top: 10px;
+	}
+
+	.lj-twitter-date a {
+		font-weight: 700;
+		color: #7dc771;
+	}
+
+	.lj-twitter-date a:hover {
+		color: #262626;
+	}
+
+	.lj-twitter-date span {
+		font-weight: 700;
+		padding-left: 10px;
+	}
+
+
+/* 19. CONTACT */
+
+	footer {
+		width: 100%;
+		background-color: #18191a;
+	}
+
+	footer > .container {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		color: #b2b2b2;
+	}
+
+	.lj-footer-left h2 {
+		font-family: 'Raleway';
+		font-weight: 300;
+		font-size: 3em;
+		margin: 0;
+		color: #fff;
+	}
+
+	.lj-footer-left h2 span {
+		font-weight: 700;
+	}
+
+	.lj-footer-left p {
+		color: #b2b2b2;
+		margin-top: 20px;
+		margin-bottom: 0;
+		font-size: 0.9em;
+	}
+
+	.lj-footer-left p.lj-footer-leading {
+		font-weight: 700;
+		font-size: 1em;
+	}
+
+	address {
+		margin-top: 50px;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	address ul {		
+		padding-left: 0;
+		margin-left: 40px;
+		margin-top: 0;
+		margin-bottom: 0;
+		list-style-type: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	address ul > li {
+		position: relative;
+		text-align: left;
+		color: #b2b2b2;
+		font-size: 0.9em;
+	}
+
+	address i {
+		color: #7dc771;
+		line-height: 1.5em !important;
+		font-size: 1.5em;
+		padding-right: 10px;
+		position: absolute;
+		left: -25px;
+	}
+
+	.lj-footer-socials {
+		margin-top: 50px;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style-type: none;
+	}
+
+	.lj-footer-socials li {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.lj-footer-socials li:last-child {
+		margin-right: 0;
+	}
+
+	.lj-footer-socials li a {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		background-color: #2e2e2e;
+		color: #b2b2b2;
+		font-size: 1.25em;
+	}
+
+	.lj-footer-socials li a:hover {
+		background-color: #7dc771;
+		color: #fff;		
+	}
+
+	.lj-contact-message {
+		height: 4.5em;
+		line-height: 4.5em;
+		padding: 0 20px;
+		color: #fff;
+		font-size: 0.9em;
+	}
+
+	.lj-contact-message i {
+		margin-right: 5px;
+	}
+
+	.lj-contact-message .fa-warning {
+    	color: #ff5c5c;
+    }
+
+    .lj-contact-message .fa-check {
+    	color: #7dc771;
+    }  
+
+    .lj-footer-right form input:focus,
+    .lj-footer-right textarea:focus {
+    	outline: 0;
+    }
+
+	.lj-footer-right input[type=text] {
+    	width: 100%;
+    	height: 60px;
+    	display: inline-block;
+    	padding: 0 20px;    	
+    	background-color: #fff;
+    	border: 0;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		line-height: 44px;
+		color: #262626;
+		margin-top: 20px;
+	}
+
+	.lj-footer-right textarea {
+		width: 100%;
+    	height: 180px;
+    	display: inline-block;
+    	padding: 20px;
+    	background-color: #fff;
+    	border: 0;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		color: #262626;
+		margin-top: 20px;
+		resize: vertical;
+	}
+
+    .lj-footer-right input[type=submit] {
+    	width: auto;
+    	height: 60px;
+    	display: inline-block;
+    	padding: 0 20px; 
+    	background-color: #7dc771;
+        border: 1px solid #7dc771;
+        color: #fff;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;       
+		font-family: 'Raleway';
+		font-weight: 700;	
+		transition: all 0.125s ease-in-out 0s;
+		-moz-transition: all 0.125s ease-in-out 0s;
+		-webkit-transition: all 0.125s ease-in-out 0s;
+		-o-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+		margin-top: 20px;
+    }
+
+    .lj-footer-right input[type=submit]:hover {
+    	background-color: transparent;
+    	border: 1px solid #fff;
+    	color: #fff;
+    }
+
+
+/* 20. BREAKPOINTS */
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+
+		/* 18. NEWS */
+
+		.lj-twitter-feed {
+			margin-top: 15px;
+		}
+
+	}
+
+	@media (max-width: 991px) {
+
+		/* 5. MENU */
+
+		.lj-menu {
+			display: none;
+		}
+
+		.lj-menu-button {
+			display: block;
+		}
+
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+		/* 14. SUBSCRIBE */
+
+	    .lj-subscribe-form {
+	    	margin-top: 20px;
+	    }
+
+		/* 18. NEWS */
+
+		.lj-twitter-feed {
+			margin-top: 10px;
+		}
+
+	}
+
+	@media (max-width: 767px) {
+
+		/* 6. HEADER */
+
+		header,
+		header > .container {
+			height: auto;
+		}
+
+		.lj-scroll-down {
+			display: none;
+		}
+
+		/* 7. SERVICES */
+
+		.icons .row {
+			padding-bottom: 50px;
+		}
+
+		.lj-icon-box {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		.lj-icon-box p {
+			text-align: center;
+		}
+
+		.lj-icon-box:last-child {
+			margin-bottom: 0;
+		}
+
+		.lj-icon-box span {
+			font-size: 3em;
+		}
+
+		.lj-icon-box h3 {
+			font-size: 1.3em;
+		}
+
+		.lj-icon-box p {
+			font-size: 1em;
+			padding: 0 20%;
+		}
+
+		.lj-icon-box > a {
+			font-size: 1em;
+		}
+
+		/* 8. PRODUCT */
+
+		.product {
+			text-align: center;
+		}
+
+		.lj-product-image img {
+			position: relative;
+		}
+
+		.lj-product-paragraph p {
+			text-align: center;
+		}
+
+		.lj-product-icon-box p {
+			text-align: center;
+		}
+
+		/* 9. ABOUT */
+
+		.lj-quote {
+			margin-top: 0;
+			text-align: center;
+		}
+
+		.lj-quote blockquote {
+			width: 100%;
+			font-size: 1.5em;
+			padding: 0 10%; 
+		}
+
+		.lj-about {
+			text-align: center;
+		}
+
+		.lj-about h2 {
+			margin-top: 40px;
+		}
+
+		.lj-about p {
+			padding: 0 10%; 
+		}
+
+		/* 10. PURCHASE */
+
+		.lj-purchase-text p {
+			text-align: center;
+		}
+
+		.lj-purchase-button {
+			text-align: center;
+		}
+
+		.lj-purchase-button a {
+			margin-top: 50px;
+		}
+
+		/* 12. MILESTONES */
+
+	    .lj-milestone span {
+	    	font-size: 2.5em;
+	    }
+
+		/* 14. SUBSCRIBE */
+
+		.lj-subscribe-title {
+			text-align: center;
+		}
+
+	    .lj-subscribe-form {
+	    	margin-top: 20px;
+	    }
+
+		/* 18. NEWS */
+
+		.lj-twitter-title h2 {
+			text-align: center;
+		}
+
+		.lj-twitter-feed {
+			margin-top: 20px;
+		}
+
+		/* 19. CONTACT */
+
+		.lj-footer-left,
+		.lj-footer-right {
+			text-align: center;
+		}
+
+		.lj-footer-left p {
+			padding: 0 10%; 
+		}
+
+		.lj-footer-left p,
+		address ul > li {
+			font-size: 1em;
+			text-align: center;
+		}
+	    
+		address ul {
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+
+		address i {
+			position: relative;
+			display: block;
+			left: 0;
+			padding-right: 0;
+		}
+
+		address ul:last-child {
+			margin-left: 50px;
+		}
+
+		.lj-footer-socials li a {
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			font-size: 1.5em;
+		}
+
+		.lj-contact-message {
+			margin-top: 40px;
+			height: 1.5em;
+			line-height: 1.5em;
+			padding: 0;
+			text-align: center;
+			font-size: 1em;
+		}
+
+	}
+
