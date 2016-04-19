@@ -1,0 +1,18 @@
+﻿<ion-view view-title="Deliveries" hide-back-button="true">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list class="list" ng-repeat="delivery in Deliveries">
+             <a class="item delivery-item" href="#" ng-click="GotoDelivery()">
+                  <i class="icon ion-ios-location-outline"></i>
+                 <span class="date">{{delivery.user.phone}}</span>
+                  <h2>{{delivery.user.name.first}} {{delivery.user.name.last}}</h2>
+                  <p> {{delivery.user.location.street}}<br />
+                      {{delivery.user.location.state}}
+                  </p>
+             </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

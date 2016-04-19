@@ -1,0 +1,1856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BetaHomemationModelStoreContainer" CdmEntityContainer="EntitiesConnectionA">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="taxNumber" ColumnName="taxNumber" />
+          <ScalarProperty Name="websiteUrl" ColumnName="websiteUrl" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+          <ScalarProperty Name="TotalPurchases" ColumnName="TotalPurchases" />
+          <ScalarProperty Name="CurrentMonthPurchases" ColumnName="CurrentMonthPurchases" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="Can_Shop" ColumnName="Can_Shop" />
+          <ScalarProperty Name="DisplayXMLFeedLink" ColumnName="DisplayXMLFeedLink" />
+          <ScalarProperty Name="PastelAccNumber" ColumnName="PastelAccNumber" />
+          <ScalarProperty Name="PastelDiscount" ColumnName="PastelDiscount" />
+          <ScalarProperty Name="PastelPaymentType" ColumnName="PastelPaymentType" />
+          <ScalarProperty Name="VatInclusive" ColumnName="VatInclusive" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="PastelAddressCode" ColumnName="PastelAddressCode" />
+          <ScalarProperty Name="PastelStoreName" ColumnName="PastelStoreName" />
+          <ScalarProperty Name="PastelDelivCode" ColumnName="PastelDelivCode" />
+          <ScalarProperty Name="PastelDelivCodeName" ColumnName="PastelDelivCodeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountAttributes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountAttribute">
+        <MappingFragment StoreEntitySet="AccountAttribute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="floatValue" ColumnName="floatValue" />
+          <ScalarProperty Name="stringValue" ColumnName="stringValue" />
+          <ScalarProperty Name="dateValue" ColumnName="dateValue" />
+          <ScalarProperty Name="booleanValue" ColumnName="booleanValue" />
+          <ScalarProperty Name="optionValue" ColumnName="optionValue" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountBrands">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountBrand">
+        <MappingFragment StoreEntitySet="AccountBrands">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="ManufacuterId" ColumnName="ManufacuterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountCategories">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountCategory">
+        <MappingFragment StoreEntitySet="AccountCategory">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountCategory2">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountCategory2">
+        <MappingFragment StoreEntitySet="AccountCategory2">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountComments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountComment">
+        <MappingFragment StoreEntitySet="AccountComment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountDocuments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountDocument">
+        <MappingFragment StoreEntitySet="AccountDocuments">
+          <ScalarProperty Name="EmailDocumentGuid" ColumnName="EmailDocumentGuid" />
+          <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountFields">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountField">
+        <MappingFragment StoreEntitySet="AccountField">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTemplates">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.AccountTemplate">
+        <MappingFragment StoreEntitySet="AccountTemplate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="overview" ColumnName="overview" />
+          <ScalarProperty Name="article1" ColumnName="article" />
+          <ScalarProperty Name="archived" ColumnName="archived" />
+          <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ProductReviewCode" ColumnName="ProductReviewCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Log">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Audit_Log">
+        <MappingFragment StoreEntitySet="Audit_Log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="referenceNumber" ColumnName="referenceNumber" />
+          <ScalarProperty Name="createdUser" ColumnName="createdUser" />
+          <ScalarProperty Name="originator" ColumnName="originator" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="actionType" ColumnName="actionType" />
+          <ScalarProperty Name="Descritpion" ColumnName="Descritpion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Serial">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Audit_Serial">
+        <MappingFragment StoreEntitySet="Audit_Serial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RawBarcode" ColumnName="RawBarcode" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item Code" />
+          <ScalarProperty Name="Serial_Number" ColumnName="Serial Number" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Behaviour" ColumnName="Behaviour" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ScannedBy" ColumnName="ScannedBy" />
+          <ScalarProperty Name="DateScanned" ColumnName="DateScanned" />
+          <ScalarProperty Name="FileInfoID" ColumnName="FileInfoID" />
+          <ScalarProperty Name="DateAudited" ColumnName="DateAudited" />
+          <ScalarProperty Name="ImportStatus" ColumnName="ImportStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankingDetails">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.BankingDetail">
+        <MappingFragment StoreEntitySet="BankingDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="SwiftCode" ColumnName="SwiftCode" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="nestedLevel" ColumnName="nestedLevel" />
+          <ScalarProperty Name="relativePosition" ColumnName="relativePosition" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="behaviour" ColumnName="behaviour" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="PastelCode" ColumnName="PastelCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanySettings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CompanySetting">
+        <MappingFragment StoreEntitySet="CompanySettings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhysicalAddress1" ColumnName="PhysicalAddress1" />
+          <ScalarProperty Name="PhysicalAddress2" ColumnName="PhysicalAddress2" />
+          <ScalarProperty Name="PhysicalAddress3" ColumnName="PhysicalAddress3" />
+          <ScalarProperty Name="PhysicalAddress4" ColumnName="PhysicalAddress4" />
+          <ScalarProperty Name="PhysicalAddressCode" ColumnName="PhysicalAddressCode" />
+          <ScalarProperty Name="PhysicalAddressCountry" ColumnName="PhysicalAddressCountry" />
+          <ScalarProperty Name="PostalAddress1" ColumnName="PostalAddress1" />
+          <ScalarProperty Name="PostalAddress2" ColumnName="PostalAddress2" />
+          <ScalarProperty Name="PostalAddress3" ColumnName="PostalAddress3" />
+          <ScalarProperty Name="PostalAddress4" ColumnName="PostalAddress4" />
+          <ScalarProperty Name="PostalAddressCode" ColumnName="PostalAddressCode" />
+          <ScalarProperty Name="PostalAddressCountry" ColumnName="PostalAddressCountry" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="NextAccountNumber" ColumnName="NextAccountNumber" />
+          <ScalarProperty Name="NextInvoiceNumber" ColumnName="NextInvoiceNumber" />
+          <ScalarProperty Name="AccountNumberPrefix" ColumnName="AccountNumberPrefix" />
+          <ScalarProperty Name="OrderNumberPrefix" ColumnName="OrderNumberPrefix" />
+          <ScalarProperty Name="SendAccountConfirmation" ColumnName="SendAccountConfirmation" />
+          <ScalarProperty Name="SalesTaxPercentage" ColumnName="SalesTaxPercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactDetails">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ContactDetail">
+        <MappingFragment StoreEntitySet="ContactDetail">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ShippingAddress1" ColumnName="ShippingAddress1" />
+          <ScalarProperty Name="ShippingAddress2" ColumnName="ShippingAddress2" />
+          <ScalarProperty Name="ShippingAddress3" ColumnName="ShippingAddress3" />
+          <ScalarProperty Name="ShippingAddress4" ColumnName="ShippingAddress4" />
+          <ScalarProperty Name="ShippingAddressCode" ColumnName="ShippingAddressCode" />
+          <ScalarProperty Name="ShippingAddressCountry" ColumnName="ShippingAddressCountry" />
+          <ScalarProperty Name="BillingAddress1" ColumnName="BillingAddress1" />
+          <ScalarProperty Name="BillingAddress2" ColumnName="BillingAddress2" />
+          <ScalarProperty Name="BillingAddress3" ColumnName="BillingAddress3" />
+          <ScalarProperty Name="BillingAddress4" ColumnName="BillingAddress4" />
+          <ScalarProperty Name="BillingAddressCode" ColumnName="BillingAddressCode" />
+          <ScalarProperty Name="BillingAddressCountry" ColumnName="BillingAddressCountry" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="SwitchboardNumber" ColumnName="SwitchboardNumber" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+          <ScalarProperty Name="PasswordExpiryDate" ColumnName="PasswordExpiryDate" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="YearsInBusiness" ColumnName="YearsInBusiness" />
+          <ScalarProperty Name="DateEstablished" ColumnName="DateEstablished" />
+          <ScalarProperty Name="ShipMainPhoneNumber" ColumnName="ShipMainPhoneNumber" />
+          <ScalarProperty Name="NumberOfEmployees" ColumnName="NumberOfEmployees" />
+          <ScalarProperty Name="ShipWebsite" ColumnName="ShipWebsite" />
+          <ScalarProperty Name="ShipEmail" ColumnName="ShipEmail" />
+          <ScalarProperty Name="ShipTypeOfBusiness" ColumnName="ShipTypeOfBusiness" />
+          <ScalarProperty Name="CustDelivCode" ColumnName="CustDelivCode" />
+          <ScalarProperty Name="AdminRights" ColumnName="AdminRights" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="APIToken" ColumnName="APIToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerAddresses">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerAddress">
+        <MappingFragment StoreEntitySet="CustomerAddresses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+          <ScalarProperty Name="AddressLine4" ColumnName="AddressLine4" />
+          <ScalarProperty Name="AddressCode" ColumnName="AddressCode" />
+          <ScalarProperty Name="AddressCity" ColumnName="AddressCity" />
+          <ScalarProperty Name="AddressState_or_Province" ColumnName="AddressState_or_Province" />
+          <ScalarProperty Name="AddressMapCoordinates" ColumnName="AddressMapCoordinates" />
+          <ScalarProperty Name="ExtraField1" ColumnName="ExtraField1" />
+          <ScalarProperty Name="ExtraField2" ColumnName="ExtraField2" />
+          <ScalarProperty Name="ExtraField3" ColumnName="ExtraField3" />
+          <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerAttributes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerAttribute">
+        <MappingFragment StoreEntitySet="CustomerAttribute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="floatValue" ColumnName="floatValue" />
+          <ScalarProperty Name="stringValue" ColumnName="stringValue" />
+          <ScalarProperty Name="dateValue" ColumnName="dateValue" />
+          <ScalarProperty Name="booleanValue" ColumnName="booleanValue" />
+          <ScalarProperty Name="optionValue" ColumnName="optionValue" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBusinessInfoes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerBusinessInfo">
+        <MappingFragment StoreEntitySet="CustomerBusinessInfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="InfoEmployees" ColumnName="InfoEmployees" />
+          <ScalarProperty Name="InfoJobsAvgPerYear" ColumnName="InfoJobsAvgPerYear" />
+          <ScalarProperty Name="InfoSalesPeople" ColumnName="InfoSalesPeople" />
+          <ScalarProperty Name="InfoPercJobsNewConstruction" ColumnName="InfoPercJobsNewConstruction" />
+          <ScalarProperty Name="InfoInstallers" ColumnName="InfoInstallers" />
+          <ScalarProperty Name="InfoPercJobsRetroFit" ColumnName="InfoPercJobsRetroFit" />
+          <ScalarProperty Name="InfoBuilderRelationship" ColumnName="InfoBuilderRelationship" />
+          <ScalarProperty Name="InfoPercJobsCommercial" ColumnName="InfoPercJobsCommercial" />
+          <ScalarProperty Name="InfoEquipmentBilling" ColumnName="InfoEquipmentBilling" />
+          <ScalarProperty Name="InfoAvgLabourBillingPerJob" ColumnName="InfoAvgLabourBillingPerJob" />
+          <ScalarProperty Name="CompanyRevenueLastYear" ColumnName="CompanyRevenueLastYear" />
+          <ScalarProperty Name="InfoProjectionRevenueThisYear" ColumnName="InfoProjectionRevenueThisYear" />
+          <ScalarProperty Name="SystemProgramming" ColumnName="SystemProgramming" />
+          <ScalarProperty Name="InfoNetworkingBackground" ColumnName="InfoNetworkingBackground" />
+          <ScalarProperty Name="InfoSystemProgrammingBackground" ColumnName="InfoSystemProgrammingBackground" />
+          <ScalarProperty Name="InfoInstallersReceiveSpecialTrainingCert" ColumnName="InfoInstallersReceiveSpecialTrainingCert" />
+          <ScalarProperty Name="InfoProdStaffTraining" ColumnName="InfoProdStaffTraining" />
+          <ScalarProperty Name="InfoHmProdLineFit" ColumnName="InfoHmProdLineFit" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerCommunications">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerCommunication">
+        <MappingFragment StoreEntitySet="CustomerCommunication">
+          <ScalarProperty Name="salesrepcommunicationguid" ColumnName="salesrepcommunicationguid" />
+          <ScalarProperty Name="customer" ColumnName="customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerDocuments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerDocument">
+        <MappingFragment StoreEntitySet="CustomerDocuments">
+          <ScalarProperty Name="EmailDocumentGuid" ColumnName="EmailDocumentGuid" />
+          <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerFields">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerField">
+        <MappingFragment StoreEntitySet="CustomerField">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerManufacturers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerManufacturer">
+        <MappingFragment StoreEntitySet="CustomerManufacturer">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerProductLineBrands">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerProductLineBrand">
+        <MappingFragment StoreEntitySet="CustomerProductLineBrands">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="HomeTheaterComponents" ColumnName="HomeTheaterComponents" />
+          <ScalarProperty Name="DistributedAudio" ColumnName="DistributedAudio" />
+          <ScalarProperty Name="Lightning" ColumnName="Lightning" />
+          <ScalarProperty Name="HVAC" ColumnName="HVAC" />
+          <ScalarProperty Name="Secutiry" ColumnName="Secutiry" />
+          <ScalarProperty Name="Speakers" ColumnName="Speakers" />
+          <ScalarProperty Name="Control" ColumnName="Control" />
+          <ScalarProperty Name="TvDisplays" ColumnName="TvDisplays" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerRequests">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerRequest">
+        <MappingFragment StoreEntitySet="CustomerRequest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+          <ScalarProperty Name="ItemSerialNumber" ColumnName="ItemSerialNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTemplates">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerTemplate">
+        <MappingFragment StoreEntitySet="CustomerTemplate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTradeReferences">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.CustomerTradeReference">
+        <MappingFragment StoreEntitySet="CustomerTradeReferences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryOrders">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DeliveryOrder">
+        <MappingFragment StoreEntitySet="DeliveryOrder">
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="DeliveryGuid" ColumnName="DeliveryGuid" />
+          <ScalarProperty Name="DeliveryName" ColumnName="DeliveryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryUsers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DeliveryUser">
+        <MappingFragment StoreEntitySet="DeliveryUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="shippingOption" ColumnName="shippingOption" />
+          <ScalarProperty Name="paymentOption" ColumnName="paymentOption" />
+          <ScalarProperty Name="taxNumber" ColumnName="taxNumber" />
+          <ScalarProperty Name="referenceNumber" ColumnName="referenceNumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="shippingAddress_1" ColumnName="shippingAddress_1" />
+          <ScalarProperty Name="shippingAddress_2" ColumnName="shippingAddress_2" />
+          <ScalarProperty Name="shippingAddress_3" ColumnName="shippingAddress_3" />
+          <ScalarProperty Name="shippingAddress_4" ColumnName="shippingAddress_4" />
+          <ScalarProperty Name="shippingAddressCode" ColumnName="shippingAddressCode" />
+          <ScalarProperty Name="shippingAddressCountry" ColumnName="shippingAddressCountry" />
+          <ScalarProperty Name="billingAddress_1" ColumnName="billingAddress_1" />
+          <ScalarProperty Name="billingAddress_2" ColumnName="billingAddress_2" />
+          <ScalarProperty Name="billingAddress_3" ColumnName="billingAddress_3" />
+          <ScalarProperty Name="billingAddress_4" ColumnName="billingAddress_4" />
+          <ScalarProperty Name="billingAddressCode" ColumnName="billingAddressCode" />
+          <ScalarProperty Name="billingAddressCountry" ColumnName="billingAddressCountry" />
+          <ScalarProperty Name="subExcl" ColumnName="subExcl" />
+          <ScalarProperty Name="subIncl" ColumnName="subIncl" />
+          <ScalarProperty Name="discountExcl" ColumnName="discountExcl" />
+          <ScalarProperty Name="discountIncl" ColumnName="discountIncl" />
+          <ScalarProperty Name="shippingAmount" ColumnName="shippingAmount" />
+          <ScalarProperty Name="totalExcl" ColumnName="totalExcl" />
+          <ScalarProperty Name="totalIncl" ColumnName="totalIncl" />
+          <ScalarProperty Name="totalTax" ColumnName="totalTax" />
+          <ScalarProperty Name="specialInstructions" ColumnName="specialInstructions" />
+          <ScalarProperty Name="brandingTotal" ColumnName="brandingTotal" />
+          <ScalarProperty Name="creditCardType" ColumnName="creditCardType" />
+          <ScalarProperty Name="creditCardNumber" ColumnName="creditCardNumber" />
+          <ScalarProperty Name="creditCardExpiryDate" ColumnName="creditCardExpiryDate" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="DocumentStatusGuid" ColumnName="DocumentStatusGuid" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SalesRepName" ColumnName="SalesRepName" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+          <ScalarProperty Name="DocumentTypeGuid" ColumnName="DocumentTypeGuid" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="Archived" ColumnName="Archived" />
+          <ScalarProperty Name="OrderDelivered" ColumnName="OrderDelivered" />
+          <ScalarProperty Name="DateDelivered" ColumnName="DateDelivered" />
+          <ScalarProperty Name="Originated" ColumnName="Originated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="VatPercentage" ColumnName="VatPercentage" />
+          <ScalarProperty Name="DateOrderCreated" ColumnName="DateOrderCreated" />
+          <ScalarProperty Name="QuoteDate" ColumnName="QuoteDate" />
+          <ScalarProperty Name="TANumber" ColumnName="TANumber" />
+          <ScalarProperty Name="DeclineReason" ColumnName="DeclineReason" />
+          <ScalarProperty Name="BackOrderRef" ColumnName="BackOrderRef" />
+          <ScalarProperty Name="CashOnDelivery" ColumnName="CashOnDelivery" />
+          <ScalarProperty Name="ProcessType" ColumnName="ProcessType" />
+          <ScalarProperty Name="RCT" ColumnName="RCT" />
+          <ScalarProperty Name="POD" ColumnName="POD" />
+          <ScalarProperty Name="INV" ColumnName="INV" />
+          <ScalarProperty Name="PastelQuoteNumber" ColumnName="PastelQuoteNumber" />
+          <ScalarProperty Name="PastelPaymentDate" ColumnName="PastelPaymentDate" />
+          <ScalarProperty Name="PastelPaymentAmount" ColumnName="PastelPaymentAmount" />
+          <ScalarProperty Name="PastelSONumber" ColumnName="PastelSONumber" />
+          <ScalarProperty Name="OrderReferenceNumber" ColumnName="OrderReferenceNumber" />
+          <ScalarProperty Name="PastelInvoiceNumber" ColumnName="PastelInvoiceNumber" />
+          <ScalarProperty Name="CreatePastelQuote" ColumnName="CreatePastelQuote" />
+          <ScalarProperty Name="CreatePastelSalesOrder" ColumnName="CreatePastelSalesOrder" />
+          <ScalarProperty Name="CreatePastelInvoice" ColumnName="CreatePastelInvoice" />
+          <ScalarProperty Name="DatePastelQuoteCreated" ColumnName="DatePastelQuoteCreated" />
+          <ScalarProperty Name="DatePastelSalesOrderCreated" ColumnName="DatePastelSalesOrderCreated" />
+          <ScalarProperty Name="DatePastelInvoiceCreated" ColumnName="DatePastelInvoiceCreated" />
+          <ScalarProperty Name="PastelCreateError" ColumnName="PastelCreateError" />
+          <ScalarProperty Name="PastelExchangeRate" ColumnName="PastelExchangeRate" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="KickBackRef" ColumnName="KickBackRef" />
+          <ScalarProperty Name="CancelReason" ColumnName="CancelReason" />
+          <ScalarProperty Name="CreditPayCheckRef" ColumnName="CreditPayCheckRef" />
+          <ScalarProperty Name="PartialInvoiceRef" ColumnName="PartialInvoiceRef" />
+          <ScalarProperty Name="DeliveryRepGuid" ColumnName="DeliveryRepGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentComments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DocumentComment">
+        <MappingFragment StoreEntitySet="DocumentComment">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+          <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SystemGen" ColumnName="SystemGen" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentConfigurations">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DocumentConfiguration">
+        <MappingFragment StoreEntitySet="DocumentConfiguration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentEndUserDeliveries">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DocumentEndUserDelivery">
+        <MappingFragment StoreEntitySet="DocumentEndUserDelivery">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="EndUserName" ColumnName="EndUserName" />
+          <ScalarProperty Name="EndUserCompanyName" ColumnName="EndUserCompanyName" />
+          <ScalarProperty Name="EndUserPhone" ColumnName="EndUserPhone" />
+          <ScalarProperty Name="EndUserEmail" ColumnName="EndUserEmail" />
+          <ScalarProperty Name="EndUserCompanyAddress1" ColumnName="EndUserCompanyAddress1" />
+          <ScalarProperty Name="EndUserCompanyAddress2" ColumnName="EndUserCompanyAddress2" />
+          <ScalarProperty Name="EndUserCompanyAddressCity" ColumnName="EndUserCompanyAddressCity" />
+          <ScalarProperty Name="EndUserCompanyAddressProvince" ColumnName="EndUserCompanyAddressProvince" />
+          <ScalarProperty Name="EndUserCompanyAddressCode" ColumnName="EndUserCompanyAddressCode" />
+          <ScalarProperty Name="EndUserCompanyAddressCountry" ColumnName="EndUserCompanyAddressCountry" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentStatus">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DocumentStatu">
+        <MappingFragment StoreEntitySet="DocumentStatus">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DownloadCategories">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.DownloadCategory">
+        <MappingFragment StoreEntitySet="DownloadCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailDocuments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.EmailDocument">
+        <MappingFragment StoreEntitySet="EmailDocuments">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSettings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.EmailSetting">
+        <MappingFragment StoreEntitySet="EmailSettings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Authenticate" ColumnName="Authenticate" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ReplyAddress" ColumnName="ReplyAddress" />
+          <ScalarProperty Name="UseMessageQueueing" ColumnName="UseMessageQueueing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileInfoes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.FileInfo">
+        <MappingFragment StoreEntitySet="FileInfo">
+          <ScalarProperty Name="FInfoID" ColumnName="FInfoID" />
+          <ScalarProperty Name="FileTypeID" ColumnName="FileTypeID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Footer" ColumnName="Footer" />
+          <ScalarProperty Name="LineCount" ColumnName="LineCount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+          <ScalarProperty Name="Back" ColumnName="Back" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+          <ScalarProperty Name="Exist" ColumnName="Exist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupPrices">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.GroupPrice">
+        <MappingFragment StoreEntitySet="GroupPrice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupPrice3">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.GroupPrice3">
+        <MappingFragment StoreEntitySet="GroupPrice3">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageTypes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ImageType">
+        <MappingFragment StoreEntitySet="ImageType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceNumbers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.InvoiceNumber">
+        <MappingFragment StoreEntitySet="InvoiceNumber">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="Notified" ColumnName="Notified" />
+          <ScalarProperty Name="Released" ColumnName="Released" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceQties">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.InvoiceQty">
+        <MappingFragment StoreEntitySet="InvoiceQty">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="InvoiceGuid" ColumnName="InvoiceGuid" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="LineGuid" ColumnName="LineGuid" />
+          <ScalarProperty Name="QTYINV" ColumnName="QTYINV" />
+          <ScalarProperty Name="QtyReleased" ColumnName="QtyReleased" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lines">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Line">
+        <MappingFragment StoreEntitySet="Line">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unitPriceExcl" ColumnName="unitPriceExcl" />
+          <ScalarProperty Name="unitPriceIncl" ColumnName="unitPriceIncl" />
+          <ScalarProperty Name="unitTaxAmount" ColumnName="unitTaxAmount" />
+          <ScalarProperty Name="totalPriceExcl" ColumnName="totalPriceExcl" />
+          <ScalarProperty Name="totalPriceIncl" ColumnName="totalPriceIncl" />
+          <ScalarProperty Name="totalTax" ColumnName="totalTax" />
+          <ScalarProperty Name="additionalInformation" ColumnName="additionalInformation" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="LineTypeGuid" ColumnName="LineTypeGuid" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="Markup" ColumnName="Markup" />
+          <ScalarProperty Name="BrandType" ColumnName="BrandType" />
+          <ScalarProperty Name="BrandColour" ColumnName="BrandColour" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="ExpandedCode" ColumnName="ExpandedCode" />
+          <ScalarProperty Name="LineAccepted" ColumnName="LineAccepted" />
+          <ScalarProperty Name="QtyAllocate" ColumnName="QtyAllocate" />
+          <ScalarProperty Name="QtyBackOrder" ColumnName="QtyBackOrder" />
+          <ScalarProperty Name="SerializedStatus" ColumnName="SerializedStatus" />
+          <ScalarProperty Name="GPPO" ColumnName="GPPO" />
+          <ScalarProperty Name="RCT" ColumnName="RCT" />
+          <ScalarProperty Name="POD" ColumnName="POD" />
+          <ScalarProperty Name="INV" ColumnName="INV" />
+          <ScalarProperty Name="QTYAVL" ColumnName="QTYAVL" />
+          <ScalarProperty Name="StockStoreCode" ColumnName="StockStoreCode" />
+          <ScalarProperty Name="DealerPrice" ColumnName="DealerPrice" />
+          <ScalarProperty Name="PastelBackorder" ColumnName="PastelBackorder" />
+          <ScalarProperty Name="InitialPrice" ColumnName="InitialPrice" />
+          <ScalarProperty Name="AsDiscount" ColumnName="AsDiscount" />
+          <ScalarProperty Name="DiscountPerc" ColumnName="DiscountPerc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineOptions">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.LineOption">
+        <MappingFragment StoreEntitySet="LineOption">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="LineGuid" ColumnName="LineGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineTypeEnums">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.LineTypeEnum">
+        <MappingFragment StoreEntitySet="LineTypeEnum">
+          <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="display" ColumnName="display" />
+          <ScalarProperty Name="BrandDescription" ColumnName="BrandDescription" />
+          <ScalarProperty Name="Youtube" ColumnName="Youtube" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuCategoryOrders">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.MenuCategoryOrder">
+        <MappingFragment StoreEntitySet="MenuCategoryOrder">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageQueues">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.MessageQueue">
+        <MappingFragment StoreEntitySet="MessageQueue">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Retries" ColumnName="Retries" />
+          <ScalarProperty Name="Mailer" ColumnName="Mailer" />
+          <ScalarProperty Name="IsText" ColumnName="IsText" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OE_DocumentConfiguration">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.OE_DocumentConfiguration">
+        <MappingFragment StoreEntitySet="OE_DocumentConfiguration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="ProcessType" ColumnName="ProcessType" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DateRequired" ColumnName="DateRequired" />
+          <ScalarProperty Name="SalesRepExec" ColumnName="SalesRepExec" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CustomerPONumber" ColumnName="CustomerPONumber" />
+          <ScalarProperty Name="GPOrderRef" ColumnName="GPOrderRef" />
+          <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+          <ScalarProperty Name="MonthlyTerms" ColumnName="MonthlyTerms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partners">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Partner">
+        <MappingFragment StoreEntitySet="Partner">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastel_Invoices">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Pastel_Invoices">
+        <MappingFragment StoreEntitySet="Pastel_Invoices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PPeriod" ColumnName="PPeriod" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+          <ScalarProperty Name="customercode" ColumnName="customercode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastel_OpenItem">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Pastel_OpenItem">
+        <MappingFragment StoreEntitySet="Pastel_OpenItem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DC" ColumnName="DC" />
+          <ScalarProperty Name="Original" ColumnName="Original" />
+          <ScalarProperty Name="cscode" ColumnName="cscode" />
+          <ScalarProperty Name="matchref" ColumnName="matchref" />
+          <ScalarProperty Name="ddate" ColumnName="ddate" />
+          <ScalarProperty Name="entrytype" ColumnName="entrytype" />
+          <ScalarProperty Name="ref" ColumnName="ref" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="PPeriod" ColumnName="PPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastel_PaymentCheck">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Pastel_PaymentCheck">
+        <MappingFragment StoreEntitySet="Pastel_PaymentCheck">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="lastCRDate" ColumnName="lastCRDate" />
+          <ScalarProperty Name="LastCRAmount" ColumnName="LastCRAmount" />
+          <ScalarProperty Name="DateImported" ColumnName="DateImported" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastel_PaymentsForInvoices">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Pastel_PaymentsForInvoices">
+        <MappingFragment StoreEntitySet="Pastel_PaymentsForInvoices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="GDC" ColumnName="GDC" />
+          <ScalarProperty Name="AccNumber" ColumnName="AccNumber" />
+          <ScalarProperty Name="PPeriod" ColumnName="PPeriod" />
+          <ScalarProperty Name="DDate" ColumnName="DDate" />
+          <ScalarProperty Name="EType" ColumnName="EType" />
+          <ScalarProperty Name="Refrence" ColumnName="Refrence" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Autonumber" ColumnName="Autonumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PastelAccountBalances">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PastelAccountBalance">
+        <MappingFragment StoreEntitySet="PastelAccountBalances">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="BalanceThis01" ColumnName="BalanceThis01" />
+          <ScalarProperty Name="BalanceThis02" ColumnName="BalanceThis02" />
+          <ScalarProperty Name="BalanceThis03" ColumnName="BalanceThis03" />
+          <ScalarProperty Name="BalanceThis04" ColumnName="BalanceThis04" />
+          <ScalarProperty Name="BalanceThis05" ColumnName="BalanceThis05" />
+          <ScalarProperty Name="BalanceThis06" ColumnName="BalanceThis06" />
+          <ScalarProperty Name="BalanceThis07" ColumnName="BalanceThis07" />
+          <ScalarProperty Name="BalanceThis08" ColumnName="BalanceThis08" />
+          <ScalarProperty Name="BalanceThis09" ColumnName="BalanceThis09" />
+          <ScalarProperty Name="BalanceThis10" ColumnName="BalanceThis10" />
+          <ScalarProperty Name="BalanceThis11" ColumnName="BalanceThis11" />
+          <ScalarProperty Name="BalanceThis12" ColumnName="BalanceThis12" />
+          <ScalarProperty Name="BalanceThis13" ColumnName="BalanceThis13" />
+          <ScalarProperty Name="BalanceLast01" ColumnName="BalanceLast01" />
+          <ScalarProperty Name="BalanceLast02" ColumnName="BalanceLast02" />
+          <ScalarProperty Name="BalanceLast03" ColumnName="BalanceLast03" />
+          <ScalarProperty Name="BalanceLast04" ColumnName="BalanceLast04" />
+          <ScalarProperty Name="BalanceLast05" ColumnName="BalanceLast05" />
+          <ScalarProperty Name="BalanceLast06" ColumnName="BalanceLast06" />
+          <ScalarProperty Name="BalanceLast07" ColumnName="BalanceLast07" />
+          <ScalarProperty Name="BalanceLast08" ColumnName="BalanceLast08" />
+          <ScalarProperty Name="BalanceLast09" ColumnName="BalanceLast09" />
+          <ScalarProperty Name="BalanceLast10" ColumnName="BalanceLast10" />
+          <ScalarProperty Name="BalanceLast11" ColumnName="BalanceLast11" />
+          <ScalarProperty Name="BalanceLast12" ColumnName="BalanceLast12" />
+          <ScalarProperty Name="BalanceLast13" ColumnName="BalanceLast13" />
+          <ScalarProperty Name="SalesThis01" ColumnName="SalesThis01" />
+          <ScalarProperty Name="SalesThis02" ColumnName="SalesThis02" />
+          <ScalarProperty Name="SalesThis03" ColumnName="SalesThis03" />
+          <ScalarProperty Name="SalesThis04" ColumnName="SalesThis04" />
+          <ScalarProperty Name="SalesThis05" ColumnName="SalesThis05" />
+          <ScalarProperty Name="SalesThis06" ColumnName="SalesThis06" />
+          <ScalarProperty Name="SalesThis07" ColumnName="SalesThis07" />
+          <ScalarProperty Name="SalesThis08" ColumnName="SalesThis08" />
+          <ScalarProperty Name="SalesThis09" ColumnName="SalesThis09" />
+          <ScalarProperty Name="SalesThis10" ColumnName="SalesThis10" />
+          <ScalarProperty Name="SalesThis11" ColumnName="SalesThis11" />
+          <ScalarProperty Name="SalesThis12" ColumnName="SalesThis12" />
+          <ScalarProperty Name="SalesThis13" ColumnName="SalesThis13" />
+          <ScalarProperty Name="SalesLast01" ColumnName="SalesLast01" />
+          <ScalarProperty Name="SalesLast02" ColumnName="SalesLast02" />
+          <ScalarProperty Name="SalesLast03" ColumnName="SalesLast03" />
+          <ScalarProperty Name="SalesLast04" ColumnName="SalesLast04" />
+          <ScalarProperty Name="SalesLast05" ColumnName="SalesLast05" />
+          <ScalarProperty Name="SalesLast06" ColumnName="SalesLast06" />
+          <ScalarProperty Name="SalesLast07" ColumnName="SalesLast07" />
+          <ScalarProperty Name="SalesLast08" ColumnName="SalesLast08" />
+          <ScalarProperty Name="SalesLast09" ColumnName="SalesLast09" />
+          <ScalarProperty Name="SalesLast10" ColumnName="SalesLast10" />
+          <ScalarProperty Name="SalesLast11" ColumnName="SalesLast11" />
+          <ScalarProperty Name="SalesLast12" ColumnName="SalesLast12" />
+          <ScalarProperty Name="SalesLast13" ColumnName="SalesLast13" />
+          <ScalarProperty Name="Ageing01" ColumnName="Ageing01" />
+          <ScalarProperty Name="Ageing02" ColumnName="Ageing02" />
+          <ScalarProperty Name="Ageing03" ColumnName="Ageing03" />
+          <ScalarProperty Name="Ageing04" ColumnName="Ageing04" />
+          <ScalarProperty Name="Ageing05" ColumnName="Ageing05" />
+          <ScalarProperty Name="PerStartThis01" ColumnName="PerStartThis01" />
+          <ScalarProperty Name="PerStartThis02" ColumnName="PerStartThis02" />
+          <ScalarProperty Name="PerStartThis03" ColumnName="PerStartThis03" />
+          <ScalarProperty Name="PerStartThis04" ColumnName="PerStartThis04" />
+          <ScalarProperty Name="PerStartThis05" ColumnName="PerStartThis05" />
+          <ScalarProperty Name="PerStartThis06" ColumnName="PerStartThis06" />
+          <ScalarProperty Name="PerStartThis07" ColumnName="PerStartThis07" />
+          <ScalarProperty Name="PerStartThis08" ColumnName="PerStartThis08" />
+          <ScalarProperty Name="PerStartThis09" ColumnName="PerStartThis09" />
+          <ScalarProperty Name="PerStartThis10" ColumnName="PerStartThis10" />
+          <ScalarProperty Name="PerStartThis11" ColumnName="PerStartThis11" />
+          <ScalarProperty Name="PerStartThis12" ColumnName="PerStartThis12" />
+          <ScalarProperty Name="PerStartThis13" ColumnName="PerStartThis13" />
+          <ScalarProperty Name="PerEndThis01" ColumnName="PerEndThis01" />
+          <ScalarProperty Name="PerEndThis02" ColumnName="PerEndThis02" />
+          <ScalarProperty Name="PerEndThis03" ColumnName="PerEndThis03" />
+          <ScalarProperty Name="PerEndThis04" ColumnName="PerEndThis04" />
+          <ScalarProperty Name="PerEndThis05" ColumnName="PerEndThis05" />
+          <ScalarProperty Name="PerEndThis06" ColumnName="PerEndThis06" />
+          <ScalarProperty Name="PerEndThis07" ColumnName="PerEndThis07" />
+          <ScalarProperty Name="PerEndThis08" ColumnName="PerEndThis08" />
+          <ScalarProperty Name="PerEndThis09" ColumnName="PerEndThis09" />
+          <ScalarProperty Name="PerEndThis10" ColumnName="PerEndThis10" />
+          <ScalarProperty Name="PerEndThis11" ColumnName="PerEndThis11" />
+          <ScalarProperty Name="PerEndThis12" ColumnName="PerEndThis12" />
+          <ScalarProperty Name="PerEndThis13" ColumnName="PerEndThis13" />
+          <ScalarProperty Name="PerStartLast01" ColumnName="PerStartLast01" />
+          <ScalarProperty Name="PerStartLast02" ColumnName="PerStartLast02" />
+          <ScalarProperty Name="PerStartLast03" ColumnName="PerStartLast03" />
+          <ScalarProperty Name="PerStartLast04" ColumnName="PerStartLast04" />
+          <ScalarProperty Name="PerStartLast05" ColumnName="PerStartLast05" />
+          <ScalarProperty Name="PerStartLast06" ColumnName="PerStartLast06" />
+          <ScalarProperty Name="PerStartLast07" ColumnName="PerStartLast07" />
+          <ScalarProperty Name="PerStartLast08" ColumnName="PerStartLast08" />
+          <ScalarProperty Name="PerStartLast09" ColumnName="PerStartLast09" />
+          <ScalarProperty Name="PerStartLast10" ColumnName="PerStartLast10" />
+          <ScalarProperty Name="PerStartLast11" ColumnName="PerStartLast11" />
+          <ScalarProperty Name="PerStartLast12" ColumnName="PerStartLast12" />
+          <ScalarProperty Name="PerStartLast13" ColumnName="PerStartLast13" />
+          <ScalarProperty Name="PerEndLast01" ColumnName="PerEndLast01" />
+          <ScalarProperty Name="PerEndLast02" ColumnName="PerEndLast02" />
+          <ScalarProperty Name="PerEndLast03" ColumnName="PerEndLast03" />
+          <ScalarProperty Name="PerEndLast04" ColumnName="PerEndLast04" />
+          <ScalarProperty Name="PerEndLast05" ColumnName="PerEndLast05" />
+          <ScalarProperty Name="PerEndLast06" ColumnName="PerEndLast06" />
+          <ScalarProperty Name="PerEndLast07" ColumnName="PerEndLast07" />
+          <ScalarProperty Name="PerEndLast08" ColumnName="PerEndLast08" />
+          <ScalarProperty Name="PerEndLast09" ColumnName="PerEndLast09" />
+          <ScalarProperty Name="PerEndLast10" ColumnName="PerEndLast10" />
+          <ScalarProperty Name="PerEndLast11" ColumnName="PerEndLast11" />
+          <ScalarProperty Name="PerEndLast12" ColumnName="PerEndLast12" />
+          <ScalarProperty Name="PerEndLast13" ColumnName="PerEndLast13" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PastelInventories">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PastelInventory">
+        <MappingFragment StoreEntitySet="PastelInventory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PastelPOes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PastelPO">
+        <MappingFragment StoreEntitySet="PastelPO">
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="StockETA" ColumnName="StockETA" />
+          <ScalarProperty Name="QtyComming" ColumnName="QtyComming" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentOptions">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PaymentOption">
+        <MappingFragment StoreEntitySet="PaymentOption">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceLists">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PriceList">
+        <MappingFragment StoreEntitySet="PriceList">
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceListManufactures">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.PriceListManufacture">
+        <MappingFragment StoreEntitySet="PriceListManufacture">
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="PriceListGuid" ColumnName="PriceListGuid" />
+          <ScalarProperty Name="ManufactureId" ColumnName="ManufactureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="availability" ColumnName="availability" />
+          <ScalarProperty Name="availabilityETA" ColumnName="availabilityETA" />
+          <ScalarProperty Name="availableQuantity" ColumnName="availableQuantity" />
+          <ScalarProperty Name="behavior" ColumnName="behavior" />
+          <ScalarProperty Name="promotion" ColumnName="promotion" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="segmentation" ColumnName="segmentation" />
+          <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="Markup" ColumnName="Markup" />
+          <ScalarProperty Name="NonVat" ColumnName="NonVat" />
+          <ScalarProperty Name="autoupdate" ColumnName="autoupdate" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="autoUpdated" ColumnName="autoUpdated" />
+          <ScalarProperty Name="DefaultCommissionPerc" ColumnName="DefaultCommissionPerc" />
+          <ScalarProperty Name="ProductCommonFactor" ColumnName="ProductCommonFactor" />
+          <ScalarProperty Name="PackType" ColumnName="PackType" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="HaveSerial" ColumnName="HaveSerial" />
+          <ScalarProperty Name="Pasteluserdeftext01" ColumnName="Pasteluserdeftext01" />
+          <ScalarProperty Name="PastelStockETA" ColumnName="PastelStockETA" />
+          <ScalarProperty Name="PastelQtyOnHand" ColumnName="PastelQtyOnHand" />
+          <ScalarProperty Name="PastelBINLocation" ColumnName="PastelBINLocation" />
+          <ScalarProperty Name="PastelUOM" ColumnName="PastelUOM" />
+          <ScalarProperty Name="PastelDiscountType" ColumnName="PastelDiscountType" />
+          <ScalarProperty Name="PastelBlocked" ColumnName="PastelBlocked" />
+          <ScalarProperty Name="RelatedProducts" ColumnName="RelatedProducts" />
+          <ScalarProperty Name="ModifiedByUser" ColumnName="ModifiedByUser" />
+          <ScalarProperty Name="SerialQty" ColumnName="SerialQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductAttributes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductAttribute">
+        <MappingFragment StoreEntitySet="ProductAttribute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="floatValue" ColumnName="floatValue" />
+          <ScalarProperty Name="stringValue" ColumnName="stringValue" />
+          <ScalarProperty Name="dateValue" ColumnName="dateValue" />
+          <ScalarProperty Name="booleanValue" ColumnName="booleanValue" />
+          <ScalarProperty Name="optionValue" ColumnName="optionValue" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductBanners">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductBanner">
+        <MappingFragment StoreEntitySet="ProductBanner">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="BannerLink" ColumnName="BannerLink" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Archived" ColumnName="Archived" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductBrandings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductBranding">
+        <MappingFragment StoreEntitySet="ProductBranding">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="BrandType" ColumnName="BrandType" />
+          <ScalarProperty Name="BrandSubType" ColumnName="BrandSubType" />
+          <ScalarProperty Name="Colours" ColumnName="Colours" />
+          <ScalarProperty Name="ProductColour" ColumnName="ProductColour" />
+          <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
+          <ScalarProperty Name="ExpandedProductCode" ColumnName="ExpandedProductCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductBundles">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductBundle">
+        <MappingFragment StoreEntitySet="ProductBundle">
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="BundleName" ColumnName="BundleName" />
+          <ScalarProperty Name="BundlePrice" ColumnName="BundlePrice" />
+          <ScalarProperty Name="BundleMainProductGuid" ColumnName="BundleMainProductGuid" />
+          <ScalarProperty Name="BundleDescription" ColumnName="BundleDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductBundleParts">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductBundlePart">
+        <MappingFragment StoreEntitySet="ProductBundlePart">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+          <ScalarProperty Name="PartGuid" ColumnName="PartGuid" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCatalogs">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductCatalog">
+        <MappingFragment StoreEntitySet="ProductCatalog">
+          <ScalarProperty Name="pk" ColumnName="pk" />
+          <ScalarProperty Name="fk" ColumnName="fk" />
+          <ScalarProperty Name="RelativePosition" ColumnName="RelativePosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFields">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductField">
+        <MappingFragment StoreEntitySet="ProductField">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="MultiSelect" ColumnName="MultiSelect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFiles">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductFile">
+        <MappingFragment StoreEntitySet="ProductFile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImageExes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductImageEx">
+        <MappingFragment StoreEntitySet="ProductImageEx">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductParts">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductPart">
+        <MappingFragment StoreEntitySet="ProductPart">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+          <ScalarProperty Name="PartGuid" ColumnName="PartGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSegmentations">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductSegmentation">
+        <MappingFragment StoreEntitySet="ProductSegmentation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSegmentationGroupPrices">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductSegmentationGroupPrice">
+        <MappingFragment StoreEntitySet="ProductSegmentationGroupPrice">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ProductSegmentationGuid" ColumnName="ProductSegmentationGuid" />
+          <ScalarProperty Name="GroupGuid" ColumnName="GroupGuid" />
+          <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTemplates">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ProductTemplate">
+        <MappingFragment StoreEntitySet="ProductTemplate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafeShops">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SafeShop">
+        <MappingFragment StoreEntitySet="SafeShop">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="SafePayRefNr" ColumnName="SafePayRefNr" />
+          <ScalarProperty Name="BankRefNr" ColumnName="BankRefNr" />
+          <ScalarProperty Name="Ref" ColumnName="Ref" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesReps">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SalesRep">
+        <MappingFragment StoreEntitySet="SalesRep">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="SalesRepParentGuid" ColumnName="SalesRepParentGuid" />
+          <ScalarProperty Name="SalesRepCode" ColumnName="SalesRepCode" />
+          <ScalarProperty Name="SalesRepExternalId" ColumnName="SalesRepExternalId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="SalesRepTypeGuid" ColumnName="SalesRepTypeGuid" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="Landline" ColumnName="Landline" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="GeneralFax" ColumnName="GeneralFax" />
+          <ScalarProperty Name="DirectFax" ColumnName="DirectFax" />
+          <ScalarProperty Name="HideDashboard" ColumnName="HideDashboard" />
+          <ScalarProperty Name="Blocked" ColumnName="Blocked" />
+          <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+          <ScalarProperty Name="FromPastel" ColumnName="FromPastel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepAssociations">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SalesRepAssociation">
+        <MappingFragment StoreEntitySet="SalesRepAssociation">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="PrimarySalesRepGuid" ColumnName="PrimarySalesRepGuid" />
+          <ScalarProperty Name="SecondarySalesRepGuid" ColumnName="SecondarySalesRepGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepCommunications">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SalesRepCommunication">
+        <MappingFragment StoreEntitySet="SalesRepCommunication">
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="salesRepGuid" ColumnName="salesRepGuid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="documentGuid" ColumnName="documentGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepDocuments">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SalesRepDocument">
+        <MappingFragment StoreEntitySet="SalesRepDocuments">
+          <ScalarProperty Name="EmailDocumentGuid" ColumnName="EmailDocumentGuid" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesRepTypeEnums">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SalesRepTypeEnum">
+        <MappingFragment StoreEntitySet="SalesRepTypeEnum">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEOs">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SEO">
+        <MappingFragment StoreEntitySet="SEO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEORoutings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SEORouting">
+        <MappingFragment StoreEntitySet="SEORouting">
+          <ScalarProperty Name="routid" ColumnName="routid" />
+          <ScalarProperty Name="RouteParam1" ColumnName="RouteParam1" />
+          <ScalarProperty Name="RouteParam2" ColumnName="RouteParam2" />
+          <ScalarProperty Name="RouteType" ColumnName="RouteType" />
+          <ScalarProperty Name="RouteDataGuid" ColumnName="RouteDataGuid" />
+          <ScalarProperty Name="RouteDataString" ColumnName="RouteDataString" />
+          <ScalarProperty Name="RouteDataOption" ColumnName="RouteDataOption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SerialInvoices">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SerialInvoice">
+        <MappingFragment StoreEntitySet="SerialInvoice">
+          <ScalarProperty Name="Rowguid" ColumnName="Rowguid" />
+          <ScalarProperty Name="InvoiceGuid" ColumnName="InvoiceGuid" />
+          <ScalarProperty Name="DocumentGuid" ColumnName="DocumentGuid" />
+          <ScalarProperty Name="LineGuid" ColumnName="LineGuid" />
+          <ScalarProperty Name="SerialId" ColumnName="SerialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SerialsCatalogs">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SerialsCatalog">
+        <MappingFragment StoreEntitySet="SerialsCatalog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RawBarCode" ColumnName="RawBarCode" />
+          <ScalarProperty Name="SerializationStatus" ColumnName="SerializationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Setting">
+        <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="stringValue" ColumnName="stringValue" />
+          <ScalarProperty Name="dateValue" ColumnName="dateValue" />
+          <ScalarProperty Name="integralValue" ColumnName="integralValue" />
+          <ScalarProperty Name="floatValue" ColumnName="floatValue" />
+          <ScalarProperty Name="optionValue" ColumnName="optionValue" />
+          <ScalarProperty Name="availableOptions" ColumnName="availableOptions" />
+          <ScalarProperty Name="boolValue" ColumnName="boolValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShippingOptions">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.ShippingOption">
+        <MappingFragment StoreEntitySet="ShippingOption">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="partnerDomain" ColumnName="partnerDomain" />
+          <ScalarProperty Name="iisWebsiteName" ColumnName="iisWebsiteName" />
+          <ScalarProperty Name="termsText" ColumnName="termsText" />
+          <ScalarProperty Name="aboutText" ColumnName="aboutText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CompanyRegistration" ColumnName="CompanyRegistration" />
+          <ScalarProperty Name="VATRegistration" ColumnName="VATRegistration" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="PhysicalCode" ColumnName="PhysicalCode" />
+          <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PCFirstname" ColumnName="PCFirstname" />
+          <ScalarProperty Name="PCLastname" ColumnName="PCLastname" />
+          <ScalarProperty Name="PositionInCompany" ColumnName="PositionInCompany" />
+          <ScalarProperty Name="PCPhone" ColumnName="PCPhone" />
+          <ScalarProperty Name="PCSkype" ColumnName="PCSkype" />
+          <ScalarProperty Name="PCEmail" ColumnName="PCEmail" />
+          <ScalarProperty Name="PCCell" ColumnName="PCCell" />
+          <ScalarProperty Name="BillingJobTitle" ColumnName="BillingJobTitle" />
+          <ScalarProperty Name="BillingFirstname" ColumnName="BillingFirstname" />
+          <ScalarProperty Name="BillingLastname" ColumnName="BillingLastname" />
+          <ScalarProperty Name="BillingPhone" ColumnName="BillingPhone" />
+          <ScalarProperty Name="BillingFax" ColumnName="BillingFax" />
+          <ScalarProperty Name="BillingEmail" ColumnName="BillingEmail" />
+          <ScalarProperty Name="BillingCell" ColumnName="BillingCell" />
+          <ScalarProperty Name="OrderFirstname" ColumnName="OrderFirstname" />
+          <ScalarProperty Name="OrderLastname" ColumnName="OrderLastname" />
+          <ScalarProperty Name="OrderPhone" ColumnName="OrderPhone" />
+          <ScalarProperty Name="OrderFax" ColumnName="OrderFax" />
+          <ScalarProperty Name="OrderEmail" ColumnName="OrderEmail" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierBrandings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SupplierBranding">
+        <MappingFragment StoreEntitySet="SupplierBranding">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="PrintType" ColumnName="PrintType" />
+          <ScalarProperty Name="PrintSubType" ColumnName="PrintSubType" />
+          <ScalarProperty Name="Colours" ColumnName="Colours" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierBrandPricings">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.SupplierBrandPricing">
+        <MappingFragment StoreEntitySet="SupplierBrandPricing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Checksum" ColumnName="Checksum" />
+          <ScalarProperty Name="MinQty" ColumnName="MinQty" />
+          <ScalarProperty Name="MaxQty" ColumnName="MaxQty" />
+          <ScalarProperty Name="ItemCost" ColumnName="ItemCost" />
+          <ScalarProperty Name="SetupCost" ColumnName="SetupCost" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="SupplierBrandingId" ColumnName="SupplierBrandingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_ImportData_Serial">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Temp_ImportData_Serial">
+        <MappingFragment StoreEntitySet="Temp_ImportData_Serial">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="RawBarcode" ColumnName="RawBarcode" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item Code" />
+          <ScalarProperty Name="Serial_Number" ColumnName="Serial Number" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Behaviour" ColumnName="Behaviour" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ScannedBy" ColumnName="ScannedBy" />
+          <ScalarProperty Name="DateScanned" ColumnName="DateScanned" />
+          <ScalarProperty Name="ToInsert" ColumnName="ToInsert" />
+          <ScalarProperty Name="ToBack" ColumnName="ToBack" />
+          <ScalarProperty Name="ToDelete" ColumnName="ToDelete" />
+          <ScalarProperty Name="ToHide" ColumnName="ToHide" />
+          <ScalarProperty Name="Exist" ColumnName="Exist" />
+          <ScalarProperty Name="FileInfoID" ColumnName="FileInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Todoes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Todo">
+        <MappingFragment StoreEntitySet="Todo">
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="SalesRepGuid" ColumnName="SalesRepGuid" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="actionDate" ColumnName="actionDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Token">
+        <MappingFragment StoreEntitySet="Token">
+          <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+          <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TokenSaleReps">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.TokenSaleRep">
+        <MappingFragment StoreEntitySet="TokenSaleRep">
+          <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+          <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAttributes">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.UserAttribute">
+        <MappingFragment StoreEntitySet="UserAttribute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="floatValue" ColumnName="floatValue" />
+          <ScalarProperty Name="stringValue" ColumnName="stringValue" />
+          <ScalarProperty Name="dateValue" ColumnName="dateValue" />
+          <ScalarProperty Name="booleanValue" ColumnName="booleanValue" />
+          <ScalarProperty Name="optionValue" ColumnName="optionValue" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserFields">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.UserField">
+        <MappingFragment StoreEntitySet="UserField">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTemplates">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.UserTemplate">
+        <MappingFragment StoreEntitySet="UserTemplate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="guid" ColumnName="guid" />
+          <ScalarProperty Name="checksum" ColumnName="checksum" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Versions">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Version">
+        <MappingFragment StoreEntitySet="Version">
+          <ScalarProperty Name="Version1" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wishlists">
+      <EntityTypeMapping TypeName="Beta.HomemationModel.Wishlist">
+        <MappingFragment StoreEntitySet="Wishlist">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+          <ScalarProperty Name="AccountGuid" ColumnName="AccountGuid" />
+          <ScalarProperty Name="CustomerGuid" ColumnName="CustomerGuid" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AccountPaymentOptions" TypeName="Beta.HomemationModel.AccountPaymentOptions" StoreEntitySet="AccountPaymentOptions">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="id" ColumnName="pk" />
+      </EndProperty>
+      <EndProperty Name="PaymentOption">
+        <ScalarProperty Name="id" ColumnName="fk" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AccountShippingOptions" TypeName="Beta.HomemationModel.AccountShippingOptions" StoreEntitySet="AccountShippingOptions">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="id" ColumnName="pk" />
+      </EndProperty>
+      <EndProperty Name="ShippingOption">
+        <ScalarProperty Name="id" ColumnName="fk" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

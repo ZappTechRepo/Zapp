@@ -1,0 +1,49 @@
+{
+  "ProjectName": "Delivery_App",
+  "ProjectGuid": "7d121dcc-1199-47b0-ad2e-c191e29a451c",
+  "projectVersion": 1,
+  "AppIdentifier": "com.zapptech.DeliveryApp",
+  "DisplayName": "Delivery_App",
+  "Author": "Zapp Tech",
+  "Description": "Delivery_App",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{5e386f47-8b8e-4bcf-ab3d-c6cd888e4237}",
+  "WP8ProductID": "{d1be84f2-8f2f-43ee-b275-36db0c89880a}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.DeliveryApp",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "cordova-plugin-whitelist"
+  ],
+  "iOSDeploymentTarget": "6.0"
+}

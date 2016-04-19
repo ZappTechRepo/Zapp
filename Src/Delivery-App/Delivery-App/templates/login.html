@@ -1,0 +1,24 @@
+<ion-view hide-nav-bar="true">
+    <ion-content class="login-screen padding" >
+       <div class="login-logo">
+           <img width="40" src="img/logo.png" />
+       </div>
+        <h1>
+           LOGIN
+        </h1>
+        <div class="clearfix"></div>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Username</span>
+                <input type="text" placeholder="Username" ng-model="loginData.userName">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Password" ng-model="loginData.password">
+            </label>
+        </div>
+        <div>
+            <button ng-click="Login()" class="button button-full button-assertive ink">Login</button>
+        </div>
+    </ion-content>
+</ion-view>

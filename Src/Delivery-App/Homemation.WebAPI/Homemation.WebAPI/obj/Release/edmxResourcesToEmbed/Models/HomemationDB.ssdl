@@ -1,0 +1,2260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Beta.HomemationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BetaHomemationModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Beta.HomemationModel.Store.Account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountAttribute" EntityType="Beta.HomemationModel.Store.AccountAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountBrands" EntityType="Beta.HomemationModel.Store.AccountBrands" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountCategory" EntityType="Beta.HomemationModel.Store.AccountCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountCategory2" EntityType="Beta.HomemationModel.Store.AccountCategory2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountComment" EntityType="Beta.HomemationModel.Store.AccountComment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountDocuments" EntityType="Beta.HomemationModel.Store.AccountDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountField" EntityType="Beta.HomemationModel.Store.AccountField" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountPaymentOptions" EntityType="Beta.HomemationModel.Store.AccountPaymentOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountShippingOptions" EntityType="Beta.HomemationModel.Store.AccountShippingOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountTemplate" EntityType="Beta.HomemationModel.Store.AccountTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article" EntityType="Beta.HomemationModel.Store.Article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Audit_Log" EntityType="Beta.HomemationModel.Store.Audit_Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Audit_Serial" EntityType="Beta.HomemationModel.Store.Audit_Serial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BankingDetails" EntityType="Beta.HomemationModel.Store.BankingDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="Beta.HomemationModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanySettings" EntityType="Beta.HomemationModel.Store.CompanySettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Config" EntityType="Beta.HomemationModel.Store.Config" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactDetail" EntityType="Beta.HomemationModel.Store.ContactDetail" store:Type="Tables" store:Schema="dbo" store:Name="ContactDetail">
+      <DefiningQuery>SELECT 
+      [ContactDetail].[Rowguid] AS [Rowguid], 
+      [ContactDetail].[Created] AS [Created], 
+      [ContactDetail].[Modified] AS [Modified], 
+      [ContactDetail].[Checksum] AS [Checksum], 
+      [ContactDetail].[Phone] AS [Phone], 
+      [ContactDetail].[Fax] AS [Fax], 
+      [ContactDetail].[Mobile] AS [Mobile], 
+      [ContactDetail].[Email] AS [Email], 
+      [ContactDetail].[ShippingAddress1] AS [ShippingAddress1], 
+      [ContactDetail].[ShippingAddress2] AS [ShippingAddress2], 
+      [ContactDetail].[ShippingAddress3] AS [ShippingAddress3], 
+      [ContactDetail].[ShippingAddress4] AS [ShippingAddress4], 
+      [ContactDetail].[ShippingAddressCode] AS [ShippingAddressCode], 
+      [ContactDetail].[ShippingAddressCountry] AS [ShippingAddressCountry], 
+      [ContactDetail].[BillingAddress1] AS [BillingAddress1], 
+      [ContactDetail].[BillingAddress2] AS [BillingAddress2], 
+      [ContactDetail].[BillingAddress3] AS [BillingAddress3], 
+      [ContactDetail].[BillingAddress4] AS [BillingAddress4], 
+      [ContactDetail].[BillingAddressCode] AS [BillingAddressCode], 
+      [ContactDetail].[BillingAddressCountry] AS [BillingAddressCountry], 
+      [ContactDetail].[AccountId] AS [AccountId], 
+      [ContactDetail].[CustomerId] AS [CustomerId], 
+      [ContactDetail].[SwitchboardNumber] AS [SwitchboardNumber], 
+      [ContactDetail].[SalesRepGuid] AS [SalesRepGuid]
+      FROM [dbo].[ContactDetail] AS [ContactDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Customer" EntityType="Beta.HomemationModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerAddresses" EntityType="Beta.HomemationModel.Store.CustomerAddresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerAttribute" EntityType="Beta.HomemationModel.Store.CustomerAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerBusinessInfo" EntityType="Beta.HomemationModel.Store.CustomerBusinessInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerCommunication" EntityType="Beta.HomemationModel.Store.CustomerCommunication" store:Type="Tables" store:Schema="dbo" store:Name="CustomerCommunication">
+      <DefiningQuery>SELECT 
+      [CustomerCommunication].[salesrepcommunicationguid] AS [salesrepcommunicationguid], 
+      [CustomerCommunication].[customer] AS [customer]
+      FROM [dbo].[CustomerCommunication] AS [CustomerCommunication]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CustomerDocuments" EntityType="Beta.HomemationModel.Store.CustomerDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerField" EntityType="Beta.HomemationModel.Store.CustomerField" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerManufacturer" EntityType="Beta.HomemationModel.Store.CustomerManufacturer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerProductLineBrands" EntityType="Beta.HomemationModel.Store.CustomerProductLineBrands" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerRequest" EntityType="Beta.HomemationModel.Store.CustomerRequest" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerTemplate" EntityType="Beta.HomemationModel.Store.CustomerTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerTradeReferences" EntityType="Beta.HomemationModel.Store.CustomerTradeReferences" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeliveryOrder" EntityType="Beta.HomemationModel.Store.DeliveryOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeliveryUser" EntityType="Beta.HomemationModel.Store.DeliveryUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Department" EntityType="Beta.HomemationModel.Store.Department" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Document" EntityType="Beta.HomemationModel.Store.Document" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentComment" EntityType="Beta.HomemationModel.Store.DocumentComment" store:Type="Tables" store:Schema="dbo" store:Name="DocumentComment">
+      <DefiningQuery>SELECT 
+      [DocumentComment].[Rowguid] AS [Rowguid], 
+      [DocumentComment].[Created] AS [Created], 
+      [DocumentComment].[Modified] AS [Modified], 
+      [DocumentComment].[Checksum] AS [Checksum], 
+      [DocumentComment].[Comment] AS [Comment], 
+      [DocumentComment].[DocumentId] AS [DocumentId], 
+      [DocumentComment].[SalesRepGuid] AS [SalesRepGuid], 
+      [DocumentComment].[CustomerGuid] AS [CustomerGuid], 
+      [DocumentComment].[AddedBy] AS [AddedBy], 
+      [DocumentComment].[Status] AS [Status], 
+      [DocumentComment].[SystemGen] AS [SystemGen], 
+      [DocumentComment].[Name] AS [Name]
+      FROM [dbo].[DocumentComment] AS [DocumentComment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DocumentConfiguration" EntityType="Beta.HomemationModel.Store.DocumentConfiguration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentEndUserDelivery" EntityType="Beta.HomemationModel.Store.DocumentEndUserDelivery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentStatus" EntityType="Beta.HomemationModel.Store.DocumentStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentType" EntityType="Beta.HomemationModel.Store.DocumentType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DownloadCategory" EntityType="Beta.HomemationModel.Store.DownloadCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailDocuments" EntityType="Beta.HomemationModel.Store.EmailDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailSettings" EntityType="Beta.HomemationModel.Store.EmailSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileInfo" EntityType="Beta.HomemationModel.Store.FileInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group" EntityType="Beta.HomemationModel.Store.Group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupPrice" EntityType="Beta.HomemationModel.Store.GroupPrice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupPrice3" EntityType="Beta.HomemationModel.Store.GroupPrice3" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImageType" EntityType="Beta.HomemationModel.Store.ImageType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceNumber" EntityType="Beta.HomemationModel.Store.InvoiceNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceQty" EntityType="Beta.HomemationModel.Store.InvoiceQty" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Line" EntityType="Beta.HomemationModel.Store.Line" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineOption" EntityType="Beta.HomemationModel.Store.LineOption" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineTypeEnum" EntityType="Beta.HomemationModel.Store.LineTypeEnum" store:Type="Tables" store:Schema="dbo" store:Name="LineTypeEnum">
+      <DefiningQuery>SELECT 
+      [LineTypeEnum].[RowGuid] AS [RowGuid], 
+      [LineTypeEnum].[Name] AS [Name]
+      FROM [dbo].[LineTypeEnum] AS [LineTypeEnum]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Manufacturer" EntityType="Beta.HomemationModel.Store.Manufacturer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuCategoryOrder" EntityType="Beta.HomemationModel.Store.MenuCategoryOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageQueue" EntityType="Beta.HomemationModel.Store.MessageQueue" store:Type="Tables" store:Schema="dbo" store:Name="MessageQueue">
+      <DefiningQuery>SELECT 
+      [MessageQueue].[Rowguid] AS [Rowguid], 
+      [MessageQueue].[Created] AS [Created], 
+      [MessageQueue].[Retries] AS [Retries], 
+      [MessageQueue].[Mailer] AS [Mailer], 
+      [MessageQueue].[IsText] AS [IsText], 
+      [MessageQueue].[Message] AS [Message]
+      FROM [dbo].[MessageQueue] AS [MessageQueue]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OE_DocumentConfiguration" EntityType="Beta.HomemationModel.Store.OE_DocumentConfiguration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Partner" EntityType="Beta.HomemationModel.Store.Partner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pastel_Invoices" EntityType="Beta.HomemationModel.Store.Pastel_Invoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pastel_OpenItem" EntityType="Beta.HomemationModel.Store.Pastel_OpenItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pastel_PaymentCheck" EntityType="Beta.HomemationModel.Store.Pastel_PaymentCheck" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pastel_PaymentsForInvoices" EntityType="Beta.HomemationModel.Store.Pastel_PaymentsForInvoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PastelAccountBalances" EntityType="Beta.HomemationModel.Store.PastelAccountBalances" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PastelInventory" EntityType="Beta.HomemationModel.Store.PastelInventory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PastelPO" EntityType="Beta.HomemationModel.Store.PastelPO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentOption" EntityType="Beta.HomemationModel.Store.PaymentOption" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PriceList" EntityType="Beta.HomemationModel.Store.PriceList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PriceListManufacture" EntityType="Beta.HomemationModel.Store.PriceListManufacture" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="Beta.HomemationModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductAttribute" EntityType="Beta.HomemationModel.Store.ProductAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBanner" EntityType="Beta.HomemationModel.Store.ProductBanner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBranding" EntityType="Beta.HomemationModel.Store.ProductBranding" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBundle" EntityType="Beta.HomemationModel.Store.ProductBundle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBundlePart" EntityType="Beta.HomemationModel.Store.ProductBundlePart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCatalog" EntityType="Beta.HomemationModel.Store.ProductCatalog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductField" EntityType="Beta.HomemationModel.Store.ProductField" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductFile" EntityType="Beta.HomemationModel.Store.ProductFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductImageEx" EntityType="Beta.HomemationModel.Store.ProductImageEx" store:Type="Tables" store:Schema="dbo" store:Name="ProductImageEx">
+      <DefiningQuery>SELECT 
+      [ProductImageEx].[Code] AS [Code], 
+      [ProductImageEx].[Width] AS [Width], 
+      [ProductImageEx].[Height] AS [Height], 
+      [ProductImageEx].[Name] AS [Name], 
+      [ProductImageEx].[Url] AS [Url], 
+      [ProductImageEx].[RowGuid] AS [RowGuid]
+      FROM [dbo].[ProductImageEx] AS [ProductImageEx]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductPart" EntityType="Beta.HomemationModel.Store.ProductPart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSegmentation" EntityType="Beta.HomemationModel.Store.ProductSegmentation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSegmentationGroupPrice" EntityType="Beta.HomemationModel.Store.ProductSegmentationGroupPrice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductTemplate" EntityType="Beta.HomemationModel.Store.ProductTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SafeShop" EntityType="Beta.HomemationModel.Store.SafeShop" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesRep" EntityType="Beta.HomemationModel.Store.SalesRep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesRepAssociation" EntityType="Beta.HomemationModel.Store.SalesRepAssociation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesRepCommunication" EntityType="Beta.HomemationModel.Store.SalesRepCommunication" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesRepDocuments" EntityType="Beta.HomemationModel.Store.SalesRepDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesRepTypeEnum" EntityType="Beta.HomemationModel.Store.SalesRepTypeEnum" store:Type="Tables" store:Schema="dbo" store:Name="SalesRepTypeEnum">
+      <DefiningQuery>SELECT 
+      [SalesRepTypeEnum].[rowguid] AS [rowguid], 
+      [SalesRepTypeEnum].[TypeName] AS [TypeName]
+      FROM [dbo].[SalesRepTypeEnum] AS [SalesRepTypeEnum]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SEO" EntityType="Beta.HomemationModel.Store.SEO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEORouting" EntityType="Beta.HomemationModel.Store.SEORouting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SerialInvoice" EntityType="Beta.HomemationModel.Store.SerialInvoice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SerialsCatalog" EntityType="Beta.HomemationModel.Store.SerialsCatalog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Setting" EntityType="Beta.HomemationModel.Store.Setting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShippingOption" EntityType="Beta.HomemationModel.Store.ShippingOption" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Store" EntityType="Beta.HomemationModel.Store.Store" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Supplier" EntityType="Beta.HomemationModel.Store.Supplier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SupplierBranding" EntityType="Beta.HomemationModel.Store.SupplierBranding" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SupplierBrandPricing" EntityType="Beta.HomemationModel.Store.SupplierBrandPricing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="Beta.HomemationModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Temp_ImportData_Serial" EntityType="Beta.HomemationModel.Store.Temp_ImportData_Serial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Todo" EntityType="Beta.HomemationModel.Store.Todo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Token" EntityType="Beta.HomemationModel.Store.Token" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TokenSaleRep" EntityType="Beta.HomemationModel.Store.TokenSaleRep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="Beta.HomemationModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserAttribute" EntityType="Beta.HomemationModel.Store.UserAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserField" EntityType="Beta.HomemationModel.Store.UserField" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserTemplate" EntityType="Beta.HomemationModel.Store.UserTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Version" EntityType="Beta.HomemationModel.Store.Version" store:Type="Tables" store:Schema="dbo" store:Name="Version">
+      <DefiningQuery>SELECT 
+      [Version].[Version] AS [Version]
+      FROM [dbo].[Version] AS [Version]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Wishlist" EntityType="Beta.HomemationModel.Store.Wishlist" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AccountPaymentOptions_AccountPaymentMethods" Association="Beta.HomemationModel.Store.FK_AccountPaymentOptions_AccountPaymentMethods">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountPaymentOptions" EntitySet="AccountPaymentOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPaymentOptions_PaymentAccount" Association="Beta.HomemationModel.Store.FK_AccountPaymentOptions_PaymentAccount">
+      <End Role="PaymentOption" EntitySet="PaymentOption" />
+      <End Role="AccountPaymentOptions" EntitySet="AccountPaymentOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountShippingOptions_AccountShippingMethods" Association="Beta.HomemationModel.Store.FK_AccountShippingOptions_AccountShippingMethods">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountShippingOptions" EntitySet="AccountShippingOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountShippingOptions_ShippingAccount" Association="Beta.HomemationModel.Store.FK_AccountShippingOptions_ShippingAccount">
+      <End Role="ShippingOption" EntitySet="ShippingOption" />
+      <End Role="AccountShippingOptions" EntitySet="AccountShippingOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerCommunication_SalesRepCommunication" Association="Beta.HomemationModel.Store.FK_CustomerCommunication_SalesRepCommunication">
+      <End Role="SalesRepCommunication" EntitySet="SalesRepCommunication" />
+      <End Role="CustomerCommunication" EntitySet="CustomerCommunication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCatalog_CategoryProducts" Association="Beta.HomemationModel.Store.FK_ProductCatalog_CategoryProducts">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductCatalog" EntitySet="ProductCatalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCatalog_ProductCategory" Association="Beta.HomemationModel.Store.FK_ProductCatalog_ProductCategory">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductCatalog" EntitySet="ProductCatalog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSegmentation_Product_prod" Association="Beta.HomemationModel.Store.FK_ProductSegmentation_Product_prod">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductSegmentation" EntitySet="ProductSegmentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesRepCommunication_SalesRep" Association="Beta.HomemationModel.Store.FK_SalesRepCommunication_SalesRep">
+      <End Role="SalesRep" EntitySet="SalesRep" />
+      <End Role="SalesRepCommunication" EntitySet="SalesRepCommunication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Todo_Customer" Association="Beta.HomemationModel.Store.FK_Todo_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Todo" EntitySet="Todo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Todo_SalesRep" Association="Beta.HomemationModel.Store.FK_Todo_SalesRep">
+      <End Role="SalesRep" EntitySet="SalesRep" />
+      <End Role="Todo" EntitySet="Todo" />
+    </AssociationSet>
+    <AssociationSet Name="Product_ProductBranding" Association="Beta.HomemationModel.Store.Product_ProductBranding">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductBranding" EntitySet="ProductBranding" />
+    </AssociationSet>
+    <AssociationSet Name="Supplier_SupplierBranding" Association="Beta.HomemationModel.Store.Supplier_SupplierBranding">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="SupplierBranding" EntitySet="SupplierBranding" />
+    </AssociationSet>
+    <AssociationSet Name="Supplier_SupplierBrandPricing" Association="Beta.HomemationModel.Store.Supplier_SupplierBrandPricing">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="SupplierBrandPricing" EntitySet="SupplierBrandPricing" />
+    </AssociationSet>
+    <AssociationSet Name="SupplierBranding_BrandPricing" Association="Beta.HomemationModel.Store.SupplierBranding_BrandPricing">
+      <End Role="SupplierBranding" EntitySet="SupplierBranding" />
+      <End Role="SupplierBrandPricing" EntitySet="SupplierBrandPricing" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="accountNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="taxNumber" Type="varchar" MaxLength="255" />
+    <Property Name="websiteUrl" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="bigint" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" />
+    <Property Name="TotalPurchases" Type="float" Nullable="false" />
+    <Property Name="CurrentMonthPurchases" Type="float" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovalStatus" Type="int" Nullable="false" />
+    <Property Name="Can_Shop" Type="bit" Nullable="false" />
+    <Property Name="DisplayXMLFeedLink" Type="bit" Nullable="false" />
+    <Property Name="PastelAccNumber" Type="varchar" MaxLength="255" />
+    <Property Name="PastelDiscount" Type="varchar" MaxLength="50" />
+    <Property Name="PastelPaymentType" Type="varchar" MaxLength="255" />
+    <Property Name="VatInclusive" Type="bit" />
+    <Property Name="ContactName" Type="varchar" MaxLength="255" />
+    <Property Name="PastelAddressCode" Type="varchar" MaxLength="255" />
+    <Property Name="PastelStoreName" Type="varchar" MaxLength="255" />
+    <Property Name="PastelDelivCode" Type="varchar" MaxLength="3" />
+    <Property Name="PastelDelivCodeName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="AccountAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="floatValue" Type="float" />
+    <Property Name="stringValue" Type="varchar" MaxLength="255" />
+    <Property Name="dateValue" Type="datetime" />
+    <Property Name="booleanValue" Type="bit" />
+    <Property Name="optionValue" Type="varchar" MaxLength="255" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="FieldId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountBrands">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="ManufacuterId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountCategory">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountCategory2">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Comment" Type="varchar" Nullable="false" MaxLength="4000" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountDocuments">
+    <Key>
+      <PropertyRef Name="EmailDocumentGuid" />
+      <PropertyRef Name="AccountGuid" />
+    </Key>
+    <Property Name="EmailDocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountField">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="group" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="options" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="TemplateId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountPaymentOptions">
+    <Key>
+      <PropertyRef Name="pk" />
+      <PropertyRef Name="fk" />
+    </Key>
+    <Property Name="pk" Type="bigint" Nullable="false" />
+    <Property Name="fk" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountShippingOptions">
+    <Key>
+      <PropertyRef Name="pk" />
+      <PropertyRef Name="fk" />
+    </Key>
+    <Property Name="pk" Type="bigint" Nullable="false" />
+    <Property Name="fk" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="overview" Type="text" />
+    <Property Name="article" Type="text" Nullable="false" />
+    <Property Name="archived" Type="bit" />
+    <Property Name="ShowOnHomePage" Type="bit" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="ProductReviewCode" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Audit_Log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="referenceNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="createdUser" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="originator" Type="int" Nullable="false" />
+    <Property Name="action" Type="int" Nullable="false" />
+    <Property Name="actionType" Type="int" Nullable="false" />
+    <Property Name="Descritpion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Audit_Serial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RawBarcode" Type="varchar" MaxLength="255" />
+    <Property Name="Item Code" Type="varchar" MaxLength="255" />
+    <Property Name="Serial Number" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="Behaviour" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="150" />
+    <Property Name="Reason" Type="varchar" MaxLength="500" />
+    <Property Name="ScannedBy" Type="varchar" MaxLength="150" />
+    <Property Name="DateScanned" Type="varchar" MaxLength="150" />
+    <Property Name="FileInfoID" Type="bigint" />
+    <Property Name="DateAudited" Type="datetime" />
+    <Property Name="ImportStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="BankingDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bank" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BranchCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AccountType" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AccountNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AccountName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="SwiftCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BranchName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="nestedLevel" Type="int" Nullable="false" />
+    <Property Name="relativePosition" Type="int" Nullable="false" />
+    <Property Name="tags" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="behaviour" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="PastelCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CompanySettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddress1" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddress2" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddress3" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddress4" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddressCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhysicalAddressCountry" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddress1" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddress2" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddress3" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddress4" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddressCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="PostalAddressCountry" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="TaxNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="RegistrationNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Fax" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="NextAccountNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="NextInvoiceNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AccountNumberPrefix" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OrderNumberPrefix" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SendAccountConfirmation" Type="bit" Nullable="false" />
+    <Property Name="SalesTaxPercentage" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.ContactDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ContactDetail">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+      <PropertyRef Name="Created" />
+      <PropertyRef Name="Modified" />
+      <PropertyRef Name="Checksum" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="Fax" />
+      <PropertyRef Name="Mobile" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="ShippingAddress1" />
+      <PropertyRef Name="ShippingAddress2" />
+      <PropertyRef Name="ShippingAddress3" />
+      <PropertyRef Name="ShippingAddress4" />
+      <PropertyRef Name="ShippingAddressCode" />
+      <PropertyRef Name="ShippingAddressCountry" />
+      <PropertyRef Name="BillingAddress1" />
+      <PropertyRef Name="BillingAddress2" />
+      <PropertyRef Name="BillingAddress3" />
+      <PropertyRef Name="BillingAddress4" />
+      <PropertyRef Name="BillingAddressCode" />
+      <PropertyRef Name="BillingAddressCountry" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Fax" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Mobile" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddress1" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddress2" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddress3" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddress4" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddressCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ShippingAddressCountry" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddress1" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddress2" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddress3" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddress4" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddressCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BillingAddressCountry" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AccountId" Type="bigint" />
+    <Property Name="CustomerId" Type="bigint" />
+    <Property Name="SwitchboardNumber" Type="varchar" MaxLength="255" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="firstname" Type="varchar" MaxLength="255" />
+    <Property Name="lastname" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" />
+    <Property Name="PasswordExpiryDate" Type="date" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Address2" Type="varchar(max)" />
+    <Property Name="YearsInBusiness" Type="bigint" />
+    <Property Name="DateEstablished" Type="varchar" MaxLength="50" />
+    <Property Name="ShipMainPhoneNumber" Type="varchar(max)" />
+    <Property Name="NumberOfEmployees" Type="bigint" />
+    <Property Name="ShipWebsite" Type="varchar(max)" />
+    <Property Name="ShipEmail" Type="varchar(max)" />
+    <Property Name="ShipTypeOfBusiness" Type="varchar(max)" />
+    <Property Name="CustDelivCode" Type="varchar" MaxLength="3" />
+    <Property Name="AdminRights" Type="bit" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Archive" Type="bit" />
+    <Property Name="APIToken" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CustomerAddresses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressLine1" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressLine2" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressLine3" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressLine4" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddressCity" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressState_or_Province" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="AddressMapCoordinates" Type="varchar" MaxLength="255" />
+    <Property Name="ExtraField1" Type="varchar(max)" />
+    <Property Name="ExtraField2" Type="varchar(max)" />
+    <Property Name="ExtraField3" Type="varchar(max)" />
+    <Property Name="CustomerGuid" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CustomerAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="floatValue" Type="float" />
+    <Property Name="stringValue" Type="varchar" MaxLength="255" />
+    <Property Name="dateValue" Type="datetime" />
+    <Property Name="booleanValue" Type="bit" />
+    <Property Name="optionValue" Type="varchar" MaxLength="255" />
+    <Property Name="CustomerId" Type="bigint" Nullable="false" />
+    <Property Name="FieldId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerBusinessInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="InfoEmployees" Type="varchar(max)" />
+    <Property Name="InfoJobsAvgPerYear" Type="varchar(max)" />
+    <Property Name="InfoSalesPeople" Type="varchar(max)" />
+    <Property Name="InfoPercJobsNewConstruction" Type="varchar(max)" />
+    <Property Name="InfoInstallers" Type="varchar(max)" />
+    <Property Name="InfoPercJobsRetroFit" Type="varchar(max)" />
+    <Property Name="InfoBuilderRelationship" Type="varchar(max)" />
+    <Property Name="InfoPercJobsCommercial" Type="varchar(max)" />
+    <Property Name="InfoEquipmentBilling" Type="varchar(max)" />
+    <Property Name="InfoAvgLabourBillingPerJob" Type="varchar(max)" />
+    <Property Name="CompanyRevenueLastYear" Type="varchar(max)" />
+    <Property Name="InfoProjectionRevenueThisYear" Type="varchar(max)" />
+    <Property Name="SystemProgramming" Type="varchar(max)" />
+    <Property Name="InfoNetworkingBackground" Type="varchar(max)" />
+    <Property Name="InfoSystemProgrammingBackground" Type="varchar(max)" />
+    <Property Name="InfoInstallersReceiveSpecialTrainingCert" Type="varchar(max)" />
+    <Property Name="InfoProdStaffTraining" Type="varchar(max)" />
+    <Property Name="InfoHmProdLineFit" Type="varchar(max)" />
+    <Property Name="CustomerID" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.CustomerCommunication' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="CustomerCommunication">
+    <Key>
+      <PropertyRef Name="salesrepcommunicationguid" />
+      <PropertyRef Name="customer" />
+    </Key>
+    <Property Name="salesrepcommunicationguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="customer" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerDocuments">
+    <Key>
+      <PropertyRef Name="EmailDocumentGuid" />
+      <PropertyRef Name="CustomerGuid" />
+    </Key>
+    <Property Name="EmailDocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerField">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="group" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="options" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="TemplateId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerManufacturer">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ManufacturerId" Type="bigint" Nullable="false" />
+    <Property Name="CustomerId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerProductLineBrands">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="HomeTheaterComponents" Type="varchar(max)" />
+    <Property Name="DistributedAudio" Type="varchar(max)" />
+    <Property Name="Lightning" Type="varchar(max)" />
+    <Property Name="HVAC" Type="varchar(max)" />
+    <Property Name="Secutiry" Type="varchar(max)" />
+    <Property Name="Speakers" Type="varchar(max)" />
+    <Property Name="Control" Type="varchar(max)" />
+    <Property Name="TvDisplays" Type="varchar(max)" />
+    <Property Name="CustomerID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CustomerRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="255" />
+    <Property Name="ReferenceNumber" Type="varchar" MaxLength="255" />
+    <Property Name="RequestStatus" Type="varchar" MaxLength="255" />
+    <Property Name="ItemSerialNumber" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CustomerTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Default" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerTradeReferences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="AccountNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+    <Property Name="FaxNumber" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="DeliveryOrder">
+    <Key>
+      <PropertyRef Name="DocumentGuid" />
+      <PropertyRef Name="DeliveryGuid" />
+    </Key>
+    <Property Name="DocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeliveryGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeliveryName" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DeliveryUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="number" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="shippingOption" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="paymentOption" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="taxNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referenceNumber" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="phone" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="fax" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="mobile" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="shippingAddress_1" Type="varchar" MaxLength="255" />
+    <Property Name="shippingAddress_2" Type="varchar" MaxLength="255" />
+    <Property Name="shippingAddress_3" Type="varchar" MaxLength="255" />
+    <Property Name="shippingAddress_4" Type="varchar" MaxLength="255" />
+    <Property Name="shippingAddressCode" Type="varchar" MaxLength="255" />
+    <Property Name="shippingAddressCountry" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddress_1" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddress_2" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddress_3" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddress_4" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddressCode" Type="varchar" MaxLength="255" />
+    <Property Name="billingAddressCountry" Type="varchar" MaxLength="255" />
+    <Property Name="subExcl" Type="float" Nullable="false" />
+    <Property Name="subIncl" Type="float" Nullable="false" />
+    <Property Name="discountExcl" Type="float" Nullable="false" />
+    <Property Name="discountIncl" Type="float" Nullable="false" />
+    <Property Name="shippingAmount" Type="float" Nullable="false" />
+    <Property Name="totalExcl" Type="float" Nullable="false" />
+    <Property Name="totalIncl" Type="float" Nullable="false" />
+    <Property Name="totalTax" Type="float" Nullable="false" />
+    <Property Name="specialInstructions" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="brandingTotal" Type="float" Nullable="false" />
+    <Property Name="creditCardType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="creditCardNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="creditCardExpiryDate" Type="datetime" Nullable="false" />
+    <Property Name="AccountId" Type="bigint" Nullable="false" />
+    <Property Name="DocumentStatusGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="128" />
+    <Property Name="SalesRepName" Type="varchar" MaxLength="128" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" />
+    <Property Name="DocumentTypeGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeliveryDate" Type="datetime" />
+    <Property Name="CustomerGuid" Type="uniqueidentifier" />
+    <Property Name="DocumentGuid" Type="uniqueidentifier" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="OrderDelivered" Type="bit" Nullable="false" />
+    <Property Name="DateDelivered" Type="datetime" />
+    <Property Name="Originated" Type="int" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="VatPercentage" Type="float" Nullable="false" />
+    <Property Name="DateOrderCreated" Type="datetime" />
+    <Property Name="QuoteDate" Type="date" />
+    <Property Name="TANumber" Type="varchar" MaxLength="255" />
+    <Property Name="DeclineReason" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BackOrderRef" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="CashOnDelivery" Type="bit" Nullable="false" />
+    <Property Name="ProcessType" Type="int" Nullable="false" />
+    <Property Name="RCT" Type="float" Nullable="false" />
+    <Property Name="POD" Type="float" Nullable="false" />
+    <Property Name="INV" Type="float" Nullable="false" />
+    <Property Name="PastelQuoteNumber" Type="varchar" MaxLength="255" />
+    <Property Name="PastelPaymentDate" Type="varchar" MaxLength="50" />
+    <Property Name="PastelPaymentAmount" Type="varchar" MaxLength="50" />
+    <Property Name="PastelSONumber" Type="varchar" MaxLength="50" />
+    <Property Name="OrderReferenceNumber" Type="varchar" MaxLength="255" />
+    <Property Name="PastelInvoiceNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CreatePastelQuote" Type="char" MaxLength="10" />
+    <Property Name="CreatePastelSalesOrder" Type="char" MaxLength="10" />
+    <Property Name="CreatePastelInvoice" Type="char" MaxLength="10" />
+    <Property Name="DatePastelQuoteCreated" Type="datetime" />
+    <Property Name="DatePastelSalesOrderCreated" Type="datetime" />
+    <Property Name="DatePastelInvoiceCreated" Type="datetime" />
+    <Property Name="PastelCreateError" Type="varchar(max)" />
+    <Property Name="PastelExchangeRate" Type="varchar" MaxLength="50" />
+    <Property Name="Currency" Type="varchar" MaxLength="50" />
+    <Property Name="KickBackRef" Type="varchar" MaxLength="255" />
+    <Property Name="CancelReason" Type="varchar" MaxLength="255" />
+    <Property Name="CreditPayCheckRef" Type="varchar" MaxLength="255" />
+    <Property Name="PartialInvoiceRef" Type="varchar" MaxLength="255" />
+    <Property Name="DeliveryRepGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.DocumentComment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="DocumentComment">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+      <PropertyRef Name="Created" />
+      <PropertyRef Name="Modified" />
+      <PropertyRef Name="Checksum" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="DocumentId" />
+      <PropertyRef Name="AddedBy" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Comment" Type="varchar" Nullable="false" MaxLength="4096" />
+    <Property Name="DocumentId" Type="bigint" Nullable="false" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" />
+    <Property Name="CustomerGuid" Type="uniqueidentifier" />
+    <Property Name="AddedBy" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="SystemGen" Type="bit" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DocumentConfiguration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentId" Type="bigint" Nullable="false" />
+    <Property Name="ContractNumber" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DocumentEndUserDelivery">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EndUserName" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyName" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserPhone" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserEmail" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddress1" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddress2" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddressCity" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddressProvince" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddressCode" Type="varchar" MaxLength="255" />
+    <Property Name="EndUserCompanyAddressCountry" Type="varchar" MaxLength="255" />
+    <Property Name="DocumentGuid" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DocumentStatus">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="DownloadCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="enabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailDocuments">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="EmailSettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Server" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Port" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Authenticate" Type="bit" Nullable="false" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ReplyAddress" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="UseMessageQueueing" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileInfo">
+    <Key>
+      <PropertyRef Name="FInfoID" />
+    </Key>
+    <Property Name="FInfoID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileTypeID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="DateLogged" Type="datetime" />
+    <Property Name="Header" Type="varchar" MaxLength="50" />
+    <Property Name="Footer" Type="varchar" MaxLength="50" />
+    <Property Name="LineCount" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Inserted" Type="int" />
+    <Property Name="Back" Type="int" />
+    <Property Name="Deleted" Type="int" />
+    <Property Name="Hidden" Type="int" />
+    <Property Name="Exist" Type="int" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="GroupPrice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="GroupId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="DiscountPercentage" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupPrice3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="GroupId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="DiscountPercentage" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageType">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InvoiceNumber">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="DocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="number" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Notified" Type="bit" />
+    <Property Name="Released" Type="bit" />
+  </EntityType>
+  <EntityType Name="InvoiceQty">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InvoiceGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LineGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QTYINV" Type="float" Nullable="false" />
+    <Property Name="QtyReleased" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6035: The relationship 'FK_Line_LineOption' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+  <EntityType Name="Line">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="varchar" MaxLength="4000" />
+    <Property Name="quantity" Type="float" Nullable="false" />
+    <Property Name="unitPriceExcl" Type="float" Nullable="false" />
+    <Property Name="unitPriceIncl" Type="float" Nullable="false" />
+    <Property Name="unitTaxAmount" Type="float" Nullable="false" />
+    <Property Name="totalPriceExcl" Type="float" Nullable="false" />
+    <Property Name="totalPriceIncl" Type="float" Nullable="false" />
+    <Property Name="totalTax" Type="float" Nullable="false" />
+    <Property Name="additionalInformation" Type="varchar" MaxLength="255" />
+    <Property Name="DocumentId" Type="bigint" Nullable="false" />
+    <Property Name="LineTypeGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Commission" Type="float" />
+    <Property Name="Markup" Type="float" />
+    <Property Name="BrandType" Type="varchar" MaxLength="64" />
+    <Property Name="BrandColour" Type="varchar" MaxLength="32" />
+    <Property Name="Size" Type="varchar" MaxLength="10" />
+    <Property Name="Colour" Type="varchar" MaxLength="32" />
+    <Property Name="ExpandedCode" Type="varchar" MaxLength="250" />
+    <Property Name="LineAccepted" Type="bit" Nullable="false" />
+    <Property Name="QtyAllocate" Type="float" Nullable="false" />
+    <Property Name="QtyBackOrder" Type="float" Nullable="false" />
+    <Property Name="SerializedStatus" Type="int" Nullable="false" />
+    <Property Name="GPPO" Type="float" Nullable="false" />
+    <Property Name="RCT" Type="float" Nullable="false" />
+    <Property Name="POD" Type="float" Nullable="false" />
+    <Property Name="INV" Type="float" Nullable="false" />
+    <Property Name="QTYAVL" Type="float" Nullable="false" />
+    <Property Name="StockStoreCode" Type="varchar" MaxLength="100" />
+    <Property Name="DealerPrice" Type="float" Nullable="false" />
+    <Property Name="PastelBackorder" Type="varchar" MaxLength="50" />
+    <Property Name="InitialPrice" Type="float" />
+    <Property Name="AsDiscount" Type="bit" />
+    <Property Name="DiscountPerc" Type="float" />
+  </EntityType>
+  <EntityType Name="LineOption">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Value" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="LineGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.LineTypeEnum' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LineTypeEnum">
+    <Key>
+      <PropertyRef Name="RowGuid" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="RowGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="website" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="255" />
+    <Property Name="fax" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="display" Type="bit" Nullable="false" />
+    <Property Name="BrandDescription" Type="text" />
+    <Property Name="Youtube" Type="varchar" MaxLength="255" />
+    <Property Name="SeoTitle" Type="varchar" MaxLength="255" />
+    <Property Name="SeoDescription" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MenuCategoryOrder">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.MessageQueue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MessageQueue">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+      <PropertyRef Name="Created" />
+      <PropertyRef Name="Retries" />
+      <PropertyRef Name="IsText" />
+      <PropertyRef Name="Message" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Retries" Type="int" Nullable="false" />
+    <Property Name="Mailer" Type="varbinary" MaxLength="50" />
+    <Property Name="IsText" Type="bit" Nullable="false" />
+    <Property Name="Message" Type="xml" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OE_DocumentConfiguration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentId" Type="bigint" Nullable="false" />
+    <Property Name="OrderType" Type="int" Nullable="false" />
+    <Property Name="ProcessType" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="DateRequired" Type="datetime" />
+    <Property Name="SalesRepExec" Type="uniqueidentifier" />
+    <Property Name="DepartmentId" Type="bigint" />
+    <Property Name="CustomerPONumber" Type="char" MaxLength="11" />
+    <Property Name="GPOrderRef" Type="char" MaxLength="21" />
+    <Property Name="SalesRepCode" Type="varchar" MaxLength="128" />
+    <Property Name="MonthlyTerms" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="255" />
+    <Property Name="url" Type="varchar" MaxLength="255" />
+    <Property Name="AccountId" Type="bigint" />
+    <Property Name="Fax" Type="varchar" MaxLength="255" />
+    <Property Name="Province" Type="varchar" MaxLength="255" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Pastel_Invoices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DocumentDate" Type="datetime" />
+    <Property Name="PPeriod" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="float" />
+    <Property Name="TotalTax" Type="float" />
+    <Property Name="customercode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pastel_OpenItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DC" Type="varchar" MaxLength="50" />
+    <Property Name="Original" Type="varchar" MaxLength="50" />
+    <Property Name="cscode" Type="varchar" MaxLength="50" />
+    <Property Name="matchref" Type="varchar" MaxLength="50" />
+    <Property Name="ddate" Type="datetime" />
+    <Property Name="entrytype" Type="varchar" MaxLength="50" />
+    <Property Name="ref" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="float" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="PPeriod" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pastel_PaymentCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="50" />
+    <Property Name="lastCRDate" Type="varchar" MaxLength="50" />
+    <Property Name="LastCRAmount" Type="varchar" MaxLength="50" />
+    <Property Name="DateImported" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pastel_PaymentsForInvoices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GDC" Type="varchar" MaxLength="50" />
+    <Property Name="AccNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PPeriod" Type="varchar" MaxLength="50" />
+    <Property Name="DDate" Type="datetime" />
+    <Property Name="EType" Type="varchar" MaxLength="50" />
+    <Property Name="Refrence" Type="varchar" MaxLength="50" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Autonumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PastelAccountBalances">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis01" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis02" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis03" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis04" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis05" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis06" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis07" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis08" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis09" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis10" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis11" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis12" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceThis13" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast01" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast02" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast03" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast04" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast05" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast06" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast07" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast08" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast09" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast10" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast11" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast12" Type="varchar" MaxLength="50" />
+    <Property Name="BalanceLast13" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis01" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis02" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis03" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis04" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis05" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis06" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis07" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis08" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis09" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis10" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis11" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis12" Type="varchar" MaxLength="50" />
+    <Property Name="SalesThis13" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast01" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast02" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast03" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast04" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast05" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast06" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast07" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast08" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast09" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast10" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast11" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast12" Type="varchar" MaxLength="50" />
+    <Property Name="SalesLast13" Type="varchar" MaxLength="50" />
+    <Property Name="Ageing01" Type="varchar" MaxLength="50" />
+    <Property Name="Ageing02" Type="varchar" MaxLength="50" />
+    <Property Name="Ageing03" Type="varchar" MaxLength="50" />
+    <Property Name="Ageing04" Type="varchar" MaxLength="50" />
+    <Property Name="Ageing05" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis01" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis02" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis03" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis04" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis05" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis06" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis07" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis08" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis09" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis10" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis11" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis12" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartThis13" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis01" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis02" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis03" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis04" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis05" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis06" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis07" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis08" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis09" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis10" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis11" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis12" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndThis13" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast01" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast02" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast03" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast04" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast05" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast06" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast07" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast08" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast09" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast10" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast11" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast12" Type="varchar" MaxLength="50" />
+    <Property Name="PerStartLast13" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast01" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast02" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast03" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast04" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast05" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast06" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast07" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast08" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast09" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast10" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast11" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast12" Type="varchar" MaxLength="50" />
+    <Property Name="PerEndLast13" Type="varchar" MaxLength="50" />
+    <Property Name="CreditLimit" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PastelInventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="varchar(max)" />
+    <Property Name="StoreCode" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PastelPO">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="255" />
+    <Property Name="PO" Type="varchar" MaxLength="255" />
+    <Property Name="ItemCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="StockETA" Type="varchar" MaxLength="255" />
+    <Property Name="QtyComming" Type="int" />
+    <Property Name="Updated" Type="bit" />
+  </EntityType>
+  <EntityType Name="PaymentOption">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PriceListManufacture">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PriceListGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ManufactureId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="4000" />
+    <Property Name="weight" Type="float" />
+    <Property Name="volume" Type="float" />
+    <Property Name="availability" Type="int" Nullable="false" />
+    <Property Name="availabilityETA" Type="datetime" Nullable="false" />
+    <Property Name="availableQuantity" Type="float" Nullable="false" />
+    <Property Name="behavior" Type="int" Nullable="false" />
+    <Property Name="promotion" Type="int" Nullable="false" />
+    <Property Name="tags" Type="varchar" Nullable="false" MaxLength="4000" />
+    <Property Name="description" Type="text" />
+    <Property Name="segmentation" Type="varchar" MaxLength="1000" />
+    <Property Name="ManufacturerId" Type="bigint" />
+    <Property Name="TemplateId" Type="bigint" />
+    <Property Name="Markup" Type="float" />
+    <Property Name="NonVat" Type="bit" Nullable="false" />
+    <Property Name="autoupdate" Type="bit" Nullable="false" />
+    <Property Name="FileID" Type="bigint" />
+    <Property Name="autoUpdated" Type="bit" Nullable="false" />
+    <Property Name="DefaultCommissionPerc" Type="float" />
+    <Property Name="ProductCommonFactor" Type="varchar" MaxLength="255" />
+    <Property Name="PackType" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="RetailPrice" Type="float" Nullable="false" />
+    <Property Name="HaveSerial" Type="bit" Nullable="false" />
+    <Property Name="Pasteluserdeftext01" Type="varchar" MaxLength="50" />
+    <Property Name="PastelStockETA" Type="varchar" MaxLength="50" />
+    <Property Name="PastelQtyOnHand" Type="varchar" MaxLength="50" />
+    <Property Name="PastelBINLocation" Type="varchar" MaxLength="50" />
+    <Property Name="PastelUOM" Type="varchar" MaxLength="50" />
+    <Property Name="PastelDiscountType" Type="varchar" MaxLength="50" />
+    <Property Name="PastelBlocked" Type="int" />
+    <Property Name="RelatedProducts" Type="varchar(max)" />
+    <Property Name="ModifiedByUser" Type="bit" />
+    <Property Name="SerialQty" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="floatValue" Type="float" />
+    <Property Name="stringValue" Type="varchar" MaxLength="1024" />
+    <Property Name="dateValue" Type="datetime" />
+    <Property Name="booleanValue" Type="bit" />
+    <Property Name="optionValue" Type="varchar" MaxLength="1024" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="FieldId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductBanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BannerLink" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Position" Type="float" Nullable="false" />
+    <Property Name="Archived" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductBranding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="BrandType" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="BrandSubType" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="Colours" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="ProductColour" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="ProductSize" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ExpandedProductCode" Type="varchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ProductBundle">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BundleName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BundlePrice" Type="float" Nullable="false" />
+    <Property Name="BundleMainProductGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BundleDescription" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ProductBundlePart">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PartGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCatalog">
+    <Key>
+      <PropertyRef Name="pk" />
+      <PropertyRef Name="fk" />
+    </Key>
+    <Property Name="pk" Type="bigint" Nullable="false" />
+    <Property Name="fk" Type="bigint" Nullable="false" />
+    <Property Name="RelativePosition" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductField">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="group" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="options" Type="varchar(max)" />
+    <Property Name="TemplateId" Type="bigint" Nullable="false" />
+    <Property Name="MultiSelect" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.ProductImageEx' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ProductImageEx">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="Width" />
+      <PropertyRef Name="Height" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Url" />
+      <PropertyRef Name="RowGuid" />
+    </Key>
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Url" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="RowGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductPart">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PartGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSegmentation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="SKU" Type="varchar" Nullable="false" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="ProductSegmentationGroupPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="real" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="ProductSegmentationGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GroupGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Default" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SafeShop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="DocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SafePayRefNr" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="BankRefNr" Type="nvarchar" MaxLength="128" />
+    <Property Name="Ref" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="PaymentStatus" Type="int" Nullable="false" />
+    <Property Name="XmlResponse" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SalesRep">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="SalesRepParentGuid" Type="uniqueidentifier" />
+    <Property Name="SalesRepCode" Type="varchar" MaxLength="128" />
+    <Property Name="SalesRepExternalId" Type="varchar" MaxLength="128" />
+    <Property Name="name" Type="varchar" MaxLength="128" />
+    <Property Name="SalesRepTypeGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="surname" Type="varchar" MaxLength="128" />
+    <Property Name="mobile" Type="varchar" MaxLength="128" />
+    <Property Name="Landline" Type="varchar" MaxLength="128" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Target" Type="float" Nullable="false" />
+    <Property Name="Template" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="GeneralFax" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="DirectFax" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="HideDashboard" Type="bit" Nullable="false" />
+    <Property Name="Blocked" Type="bit" />
+    <Property Name="StoreCode" Type="varchar" MaxLength="50" />
+    <Property Name="FromPastel" Type="bit" />
+  </EntityType>
+  <EntityType Name="SalesRepAssociation">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="PrimarySalesRepGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SecondarySalesRepGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesRepCommunication">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="salesRepGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="message" Type="varchar" Nullable="false" MaxLength="4096" />
+    <Property Name="documentGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SalesRepDocuments">
+    <Key>
+      <PropertyRef Name="EmailDocumentGuid" />
+      <PropertyRef Name="SalesRepGuid" />
+    </Key>
+    <Property Name="EmailDocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.SalesRepTypeEnum' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="SalesRepTypeEnum">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PageTitle" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Keywords" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Url" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="ProductId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="SEORouting">
+    <Key>
+      <PropertyRef Name="routid" />
+    </Key>
+    <Property Name="routid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RouteParam1" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="RouteParam2" Type="varchar" MaxLength="200" />
+    <Property Name="RouteType" Type="int" Nullable="false" />
+    <Property Name="RouteDataGuid" Type="uniqueidentifier" />
+    <Property Name="RouteDataString" Type="varchar" MaxLength="255" />
+    <Property Name="RouteDataOption" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SerialInvoice">
+    <Key>
+      <PropertyRef Name="Rowguid" />
+    </Key>
+    <Property Name="Rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InvoiceGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LineGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SerialId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SerialsCatalog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="ItemCode" Type="varchar(max)" />
+    <Property Name="SerialNumber" Type="varchar(max)" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="RawBarCode" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="SerializationStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="group" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="stringValue" Type="varchar" MaxLength="255" />
+    <Property Name="dateValue" Type="datetime" />
+    <Property Name="integralValue" Type="bigint" />
+    <Property Name="floatValue" Type="float" />
+    <Property Name="optionValue" Type="varchar" MaxLength="255" />
+    <Property Name="availableOptions" Type="varchar" MaxLength="255" />
+    <Property Name="boolValue" Type="bit" />
+  </EntityType>
+  <EntityType Name="ShippingOption">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="url" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="key" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="partnerDomain" Type="varchar" MaxLength="255" />
+    <Property Name="iisWebsiteName" Type="varchar" MaxLength="255" />
+    <Property Name="termsText" Type="text" />
+    <Property Name="aboutText" Type="text" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Username" Type="varchar" MaxLength="255" />
+    <Property Name="Password" Type="varchar" MaxLength="255" />
+    <Property Name="Url" Type="varchar" MaxLength="255" />
+    <Property Name="LogoUrl" Type="varchar" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" MaxLength="255" />
+    <Property Name="Fax" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CompanyRegistration" Type="varchar" MaxLength="255" />
+    <Property Name="VATRegistration" Type="varchar" MaxLength="255" />
+    <Property Name="PhysicalAddress" Type="varchar" MaxLength="255" />
+    <Property Name="PhysicalCode" Type="varchar" MaxLength="255" />
+    <Property Name="PostalAddress" Type="varchar" MaxLength="255" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="255" />
+    <Property Name="PCFirstname" Type="varchar" MaxLength="255" />
+    <Property Name="PCLastname" Type="varchar" MaxLength="255" />
+    <Property Name="PositionInCompany" Type="int" Nullable="false" />
+    <Property Name="PCPhone" Type="varchar" MaxLength="255" />
+    <Property Name="PCSkype" Type="varchar" MaxLength="255" />
+    <Property Name="PCEmail" Type="varchar" MaxLength="255" />
+    <Property Name="PCCell" Type="varchar" MaxLength="255" />
+    <Property Name="BillingJobTitle" Type="varchar" MaxLength="255" />
+    <Property Name="BillingFirstname" Type="varchar" MaxLength="255" />
+    <Property Name="BillingLastname" Type="varchar" MaxLength="255" />
+    <Property Name="BillingPhone" Type="varchar" MaxLength="255" />
+    <Property Name="BillingFax" Type="varchar" MaxLength="255" />
+    <Property Name="BillingEmail" Type="varchar" MaxLength="255" />
+    <Property Name="BillingCell" Type="varchar" MaxLength="255" />
+    <Property Name="OrderFirstname" Type="varchar" MaxLength="255" />
+    <Property Name="OrderLastname" Type="varchar" MaxLength="255" />
+    <Property Name="OrderPhone" Type="varchar" MaxLength="255" />
+    <Property Name="OrderFax" Type="varchar" MaxLength="255" />
+    <Property Name="OrderEmail" Type="varchar" MaxLength="255" />
+    <Property Name="Terms" Type="text" />
+    <Property Name="BankName" Type="varchar" MaxLength="255" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="255" />
+    <Property Name="AccountType" Type="varchar" MaxLength="255" />
+    <Property Name="AccountNumber" Type="varchar" MaxLength="255" />
+    <Property Name="AccountName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SupplierBranding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PrintType" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="PrintSubType" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="Colours" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="SupplierId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupplierBrandPricing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="MinQty" Type="int" Nullable="false" />
+    <Property Name="MaxQty" Type="int" Nullable="false" />
+    <Property Name="ItemCost" Type="float" Nullable="false" />
+    <Property Name="SetupCost" Type="float" Nullable="false" />
+    <Property Name="SupplierId" Type="bigint" Nullable="false" />
+    <Property Name="SupplierBrandingId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Temp_ImportData_Serial">
+    <Key>
+      <PropertyRef Name="TempID" />
+    </Key>
+    <Property Name="TempID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RawBarcode" Type="varchar" MaxLength="255" />
+    <Property Name="Item Code" Type="varchar" MaxLength="255" />
+    <Property Name="Serial Number" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="Behaviour" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="150" />
+    <Property Name="Reason" Type="varchar" MaxLength="500" />
+    <Property Name="ScannedBy" Type="varchar" MaxLength="150" />
+    <Property Name="DateScanned" Type="varchar" MaxLength="150" />
+    <Property Name="ToInsert" Type="bit" />
+    <Property Name="ToBack" Type="bit" />
+    <Property Name="ToDelete" Type="bit" />
+    <Property Name="ToHide" Type="bit" />
+    <Property Name="Exist" Type="bit" />
+    <Property Name="FileInfoID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Todo">
+    <Key>
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="SalesRepGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="bigint" />
+    <Property Name="priority" Type="int" Nullable="false" />
+    <Property Name="action" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="actionDate" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="AuthToken" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="IssuedOn" Type="datetime" Nullable="false" />
+    <Property Name="ExpiresOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TokenSaleRep">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AuthToken" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="IssuedOn" Type="datetime" Nullable="false" />
+    <Property Name="ExpiresOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="firstname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="lastname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="contactNumber" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="TemplateId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserAttribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="floatValue" Type="float" />
+    <Property Name="stringValue" Type="varchar" MaxLength="255" />
+    <Property Name="dateValue" Type="datetime" />
+    <Property Name="booleanValue" Type="bit" />
+    <Property Name="optionValue" Type="varchar" MaxLength="255" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="FieldId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserField">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="sequence" Type="int" Nullable="false" />
+    <Property Name="group" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="options" Type="varchar" Nullable="false" MaxLength="1024" />
+    <Property Name="TemplateId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="modified" Type="datetime" Nullable="false" />
+    <Property Name="guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="checksum" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Beta.Homemation.dbo.Version' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Version">
+    <Key>
+      <PropertyRef Name="Version" />
+    </Key>
+    <Property Name="Version" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Wishlist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AccountPaymentOptions_AccountPaymentMethods">
+    <End Role="Account" Type="Beta.HomemationModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountPaymentOptions" Type="Beta.HomemationModel.Store.AccountPaymentOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AccountPaymentOptions">
+        <PropertyRef Name="pk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPaymentOptions_PaymentAccount">
+    <End Role="PaymentOption" Type="Beta.HomemationModel.Store.PaymentOption" Multiplicity="1" />
+    <End Role="AccountPaymentOptions" Type="Beta.HomemationModel.Store.AccountPaymentOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentOption">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AccountPaymentOptions">
+        <PropertyRef Name="fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountShippingOptions_AccountShippingMethods">
+    <End Role="Account" Type="Beta.HomemationModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountShippingOptions" Type="Beta.HomemationModel.Store.AccountShippingOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AccountShippingOptions">
+        <PropertyRef Name="pk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountShippingOptions_ShippingAccount">
+    <End Role="ShippingOption" Type="Beta.HomemationModel.Store.ShippingOption" Multiplicity="1" />
+    <End Role="AccountShippingOptions" Type="Beta.HomemationModel.Store.AccountShippingOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShippingOption">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AccountShippingOptions">
+        <PropertyRef Name="fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerCommunication_SalesRepCommunication">
+    <End Role="SalesRepCommunication" Type="Beta.HomemationModel.Store.SalesRepCommunication" Multiplicity="1" />
+    <End Role="CustomerCommunication" Type="Beta.HomemationModel.Store.CustomerCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesRepCommunication">
+        <PropertyRef Name="guid" />
+      </Principal>
+      <Dependent Role="CustomerCommunication">
+        <PropertyRef Name="salesrepcommunicationguid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCatalog_CategoryProducts">
+    <End Role="Category" Type="Beta.HomemationModel.Store.Category" Multiplicity="1" />
+    <End Role="ProductCatalog" Type="Beta.HomemationModel.Store.ProductCatalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductCatalog">
+        <PropertyRef Name="pk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCatalog_ProductCategory">
+    <End Role="Product" Type="Beta.HomemationModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductCatalog" Type="Beta.HomemationModel.Store.ProductCatalog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductCatalog">
+        <PropertyRef Name="fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSegmentation_Product_prod">
+    <End Role="Product" Type="Beta.HomemationModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductSegmentation" Type="Beta.HomemationModel.Store.ProductSegmentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductSegmentation">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesRepCommunication_SalesRep">
+    <End Role="SalesRep" Type="Beta.HomemationModel.Store.SalesRep" Multiplicity="1" />
+    <End Role="SalesRepCommunication" Type="Beta.HomemationModel.Store.SalesRepCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesRep">
+        <PropertyRef Name="rowguid" />
+      </Principal>
+      <Dependent Role="SalesRepCommunication">
+        <PropertyRef Name="salesRepGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Todo_Customer">
+    <End Role="Customer" Type="Beta.HomemationModel.Store.Customer" Multiplicity="0..1" />
+    <End Role="Todo" Type="Beta.HomemationModel.Store.Todo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Todo">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Todo_SalesRep">
+    <End Role="SalesRep" Type="Beta.HomemationModel.Store.SalesRep" Multiplicity="1" />
+    <End Role="Todo" Type="Beta.HomemationModel.Store.Todo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesRep">
+        <PropertyRef Name="rowguid" />
+      </Principal>
+      <Dependent Role="Todo">
+        <PropertyRef Name="SalesRepGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_ProductBranding">
+    <End Role="Product" Type="Beta.HomemationModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductBranding" Type="Beta.HomemationModel.Store.ProductBranding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductBranding">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Supplier_SupplierBranding">
+    <End Role="Supplier" Type="Beta.HomemationModel.Store.Supplier" Multiplicity="1" />
+    <End Role="SupplierBranding" Type="Beta.HomemationModel.Store.SupplierBranding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplierBranding">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Supplier_SupplierBrandPricing">
+    <End Role="Supplier" Type="Beta.HomemationModel.Store.Supplier" Multiplicity="1" />
+    <End Role="SupplierBrandPricing" Type="Beta.HomemationModel.Store.SupplierBrandPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplierBrandPricing">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SupplierBranding_BrandPricing">
+    <End Role="SupplierBranding" Type="Beta.HomemationModel.Store.SupplierBranding" Multiplicity="1" />
+    <End Role="SupplierBrandPricing" Type="Beta.HomemationModel.Store.SupplierBrandPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplierBranding">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplierBrandPricing">
+        <PropertyRef Name="SupplierBrandingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'Beta.Homemation.dbo.PastelWarehouseStock' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="PastelWarehouseStock">
+        <Property Name="storecode" Type="varchar" MaxLength="50" />
+        <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+        <Property Name="QtyOnhand" Type="varchar" MaxLength="50" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Beta.Homemation.dbo.tempHaveserial' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="tempHaveserial">
+        <Property Name="code" Type="varchar" MaxLength="50" />
+        <Property Name="haveserial" Type="bit" />
+      </EntityType>-->
+</Schema>

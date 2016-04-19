@@ -1,0 +1,28 @@
+
+<ion-view view-title="Profile" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/newmaterial.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="content profile-avatar">
+                <div class="avatar" style="background-image: url('img/Kwena-avatar.jpg');"></div>
+                <h3><a class="light">{{profile.FirstName}} {{profile.LastName}}</a></h3>
+                <h4>@TheRealKwena</h4>
+            </div>
+        </div>
+
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="profile-stat-count">87</i> Delivered
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="profile-stat-count">457</i> Pending
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="profile-stat-count">10</i> In Transit
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
