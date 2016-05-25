@@ -35,5 +35,6 @@ namespace Homemation.WebAPI.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineItem> LineItems { get; set; }
+        public object DocumentStatusGuid { get; internal set; }
     }
 }

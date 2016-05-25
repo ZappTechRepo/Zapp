@@ -24,3 +24,33 @@ C:\Users\jasonk\Desktop\Homemation.WebAPI(1)\Homemation.WebAPI\TriboschAdmin\bin
 C:\Users\jasonk\Desktop\Homemation.WebAPI(1)\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
 C:\Users\jasonk\Desktop\Homemation.WebAPI(1)\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.dll
 C:\Users\jasonk\Desktop\Homemation.WebAPI(1)\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\sb-admin-2.Web.dll.config
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\sb-admin-2.Web.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\sb-admin-2.Web.pdb
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Antlr3.Runtime.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Microsoft.Web.Infrastructure.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Newtonsoft.Json.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Helpers.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Mvc.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Optimization.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Razor.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.Deployment.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.Razor.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\WebGrease.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Helpers.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Mvc.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Optimization.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.Razor.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.Deployment.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.Razor.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Antlr3.Runtime.pdb
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Newtonsoft.Json.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\EntityFramework.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\EntityFramework.SqlServer.dll
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\EntityFramework.xml
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\EntityFramework.SqlServer.xml

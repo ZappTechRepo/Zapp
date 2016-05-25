@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TriboschModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" Nullable="false" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress3" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress4" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerEmail" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerPhone" Type="varchar" MaxLength="50" />
+    <Property Name="TotalExcl" Type="float" />
+    <Property Name="VAT" Type="float" />
+    <Property Name="TotalIncl" Type="float" />
+  </EntityType>
+  <EntityType Name="LineItem">
+    <Key>
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="LineDescription" Type="varchar" MaxLength="50" />
+    <Property Name="LineQty" Type="varchar" MaxLength="50" />
+    <Property Name="LinePriceExcl" Type="float" />
+    <Property Name="LinePriceIncl" Type="float" />
+    <Property Name="LineVat" Type="float" />
+    <Property Name="LineSize" Type="varchar" MaxLength="50" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="created" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DocumentId">
+    <End Role="Document" Type="Self.Document" Multiplicity="1" />
+    <End Role="LineItem" Type="Self.LineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="DocumentID" />
+      </Principal>
+      <Dependent Role="LineItem">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleId">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TriboschModelStoreContainer">
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LineItem" EntityType="Self.LineItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DocumentId" Association="Self.FK_DocumentId">
+      <End Role="Document" EntitySet="Document" />
+      <End Role="LineItem" EntitySet="LineItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleId" Association="Self.FK_RoleId">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
