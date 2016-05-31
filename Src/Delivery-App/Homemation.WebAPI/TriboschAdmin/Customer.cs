@@ -18,6 +18,7 @@ namespace TriboschAdmin
         public Customer()
         {
             this.Addresses = new HashSet<Address>();
+            this.Documents = new HashSet<Document>();
         }
     
         public int CustomerID { get; set; }
@@ -28,5 +29,7 @@ namespace TriboschAdmin
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Address> Addresses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Document> Documents { get; set; }
     }
 }

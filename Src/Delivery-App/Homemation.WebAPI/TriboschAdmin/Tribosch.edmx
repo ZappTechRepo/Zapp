@@ -24,10 +24,36 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="100" />
           <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="MainContactName" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="TotalExcl" Type="float" />
+          <Property Name="TotalIncl" Type="float" />
+          <Property Name="Discount" Type="float" />
+          <Property Name="DeliveryDate" Type="date" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
+          <Property Name="SIgnature" Type="image" />
+        </EntityType>
+        <EntityType Name="Lines">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="TotalExcl" Type="float" />
+          <Property Name="TotalIncl" Type="float" />
+          <Property Name="docID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -53,13 +79,47 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Document_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lines_Products">
+          <End Role="Document" Type="Self.Document" Multiplicity="1" />
+          <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Lines">
+              <PropertyRef Name="docID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TriboschAppModelStoreContainer">
           <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lines" EntityType="Self.Lines" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Address_Customer" Association="Self.FK_Address_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_Customer" Association="Self.FK_Document_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lines_Products" Association="Self.FK_Lines_Products">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="Lines" EntitySet="Lines" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -73,6 +133,16 @@
           <AssociationSet Name="FK_Address_Customer" Association="TriboschAppModel.FK_Address_Customer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Documents" EntityType="TriboschAppModel.Document" />
+          <EntitySet Name="Lines" EntityType="TriboschAppModel.Line" />
+          <AssociationSet Name="FK_Document_Customer" Association="TriboschAppModel.FK_Document_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lines_Products" Association="TriboschAppModel.FK_Lines_Products">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Line" EntitySet="Lines" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Product">
@@ -107,11 +177,12 @@
             <PropertyRef Name="CustomerID" />
           </Key>
           <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MainContactName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Addresses" Relationship="TriboschAppModel.FK_Address_Customer" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="Documents" Relationship="TriboschAppModel.FK_Document_Customer" FromRole="Customer" ToRole="Document" />
         </EntityType>
         <Association Name="FK_Address_Customer">
           <End Type="TriboschAppModel.Customer" Role="Customer" Multiplicity="0..1" />
@@ -122,6 +193,59 @@
             </Principal>
             <Dependent Role="Address">
               <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="TotalExcl" Type="Double" />
+          <Property Name="TotalIncl" Type="Double" />
+          <Property Name="Discount" Type="Double" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIgnature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Customer" Relationship="TriboschAppModel.FK_Document_Customer" FromRole="Document" ToRole="Customer" />
+          <NavigationProperty Name="Lines" Relationship="TriboschAppModel.FK_Lines_Products" FromRole="Document" ToRole="Line" />
+        </EntityType>
+        <EntityType Name="Line">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="TotalExcl" Type="Double" />
+          <Property Name="TotalIncl" Type="Double" />
+          <Property Name="docID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Document" Relationship="TriboschAppModel.FK_Lines_Products" FromRole="Line" ToRole="Document" />
+        </EntityType>
+        <Association Name="FK_Document_Customer">
+          <End Type="TriboschAppModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lines_Products">
+          <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="1" />
+          <End Type="TriboschAppModel.Line" Role="Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Line">
+              <PropertyRef Name="docID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -167,6 +291,34 @@
                 <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="TriboschAppModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="SIgnature" ColumnName="SIgnature" />
+                <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+                <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lines">
+            <EntityTypeMapping TypeName="TriboschAppModel.Line">
+              <MappingFragment StoreEntitySet="Lines">
+                <ScalarProperty Name="docID" ColumnName="docID" />
+                <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+                <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

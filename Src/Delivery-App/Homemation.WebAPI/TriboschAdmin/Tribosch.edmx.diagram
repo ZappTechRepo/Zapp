@@ -5,15 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e5324718bc5040a9902eef51dddf1808" Name="Diagram1">
-        <EntityTypeShape EntityType="TriboschAppModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="TriboschAppModel.Address" Width="1.5" PointX="5.625" PointY="1" />
-        <EntityTypeShape EntityType="TriboschAppModel.Customer" Width="1.5" PointX="3.375" PointY="1.375" />
+        <EntityTypeShape EntityType="TriboschAppModel.Product" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="TriboschAppModel.Address" Width="1.5" PointX="5.875" PointY="0.75" />
+        <EntityTypeShape EntityType="TriboschAppModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" />
         <AssociationConnector Association="TriboschAppModel.FK_Address_Customer" />
         <EntityTypeShape EntityType="TriboschAppModel.Document" Width="1.5" PointX="5.625" PointY="5" />
         <EntityTypeShape EntityType="TriboschAppModel.Line" Width="1.5" PointX="3" PointY="5" />
         <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products1" />
+        <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
+        <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
