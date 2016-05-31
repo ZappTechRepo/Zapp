@@ -9,6 +9,11 @@
         <EntityTypeShape EntityType="TriboschAppModel.Address" Width="1.5" PointX="5.625" PointY="1" />
         <EntityTypeShape EntityType="TriboschAppModel.Customer" Width="1.5" PointX="3.375" PointY="1.375" />
         <AssociationConnector Association="TriboschAppModel.FK_Address_Customer" />
+        <EntityTypeShape EntityType="TriboschAppModel.Document" Width="1.5" PointX="5.625" PointY="5" />
+        <EntityTypeShape EntityType="TriboschAppModel.Line" Width="1.5" PointX="3" PointY="5" />
+        <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
+        <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
+        <AssociationConnector Association="TriboschAppModel.FK_Lines_Products1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -960,6 +960,7 @@
     </Content>
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Customer.cshtml" />
+    <Content Include="Views\Home\EditCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

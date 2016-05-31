@@ -143,6 +143,10 @@
     margin-top: 5px;
 }
 
+.max-width-table{
+    width: 100% !important;
+}
+
 @media(max-width:767px) {
     ul.timeline:before {
         left: 40px;

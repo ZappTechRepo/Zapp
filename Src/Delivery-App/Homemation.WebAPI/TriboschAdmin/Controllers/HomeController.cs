@@ -13,16 +13,42 @@ namespace TriboschAdmin.Controllers
 {
 	public class HomeController : Controller
 	{
-		public ActionResult Index()
+        TriboschAppEntities entity = new TriboschAppEntities();
+        public ActionResult Index()
 		{
 			return View();
 		}
 
         public ActionResult Customer(Customer cust)
         {
-            TriboschAppEntities entity = new TriboschAppEntities();
+           
 
             return View(entity.Customers.ToList());
+        }
+
+        public ActionResult EditCustomer(int id = 0)
+        {
+            Customer cust = entity.Customers.Find(id);
+            if (cust == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cust);
+        }
+
+        //
+        // POST: /Movies/Edit/5
+
+        [HttpPost]
+        public ActionResult EditCustomer(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+                entity.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(customer);
         }
 
 
