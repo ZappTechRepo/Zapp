@@ -134,15 +134,12 @@
       <DependentUpon>Tribosch.tt</DependentUpon>
     </Compile>
     <Compile Include="Domain\Data.cs" />
-    <Compile Include="Enum\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Line.cs">
       <DependentUpon>Tribosch.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserAddress.cs" />
-    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Navbar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Product.cs">
@@ -973,6 +970,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Enum\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

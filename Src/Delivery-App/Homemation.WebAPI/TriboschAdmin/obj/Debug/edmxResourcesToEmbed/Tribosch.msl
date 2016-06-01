@@ -40,5 +40,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="TriboschAppModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="SIgnature" ColumnName="SIgnature" />
+          <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+          <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lines">
+      <EntityTypeMapping TypeName="TriboschAppModel.Line">
+        <MappingFragment StoreEntitySet="Lines">
+          <ScalarProperty Name="docID" ColumnName="docID" />
+          <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+          <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

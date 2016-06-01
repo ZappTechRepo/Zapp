@@ -19,10 +19,36 @@
       <PropertyRef Name="CustomerID" />
     </Key>
     <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
     <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="MainContactName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="TotalExcl" Type="float" />
+    <Property Name="TotalIncl" Type="float" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="DeliveryDate" Type="date" />
+    <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
+    <Property Name="SIgnature" Type="image" />
+  </EntityType>
+  <EntityType Name="Lines">
+    <Key>
+      <PropertyRef Name="LineID" />
+    </Key>
+    <Property Name="LineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="TotalExcl" Type="float" />
+    <Property Name="TotalIncl" Type="float" />
+    <Property Name="docID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -48,13 +74,47 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Document_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Products">
+    <End Role="Document" Type="Self.Document" Multiplicity="1" />
+    <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lines">
+        <PropertyRef Name="docID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TriboschAppModelStoreContainer">
     <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lines" EntityType="Self.Lines" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Address_Customer" Association="Self.FK_Address_Customer">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Customer" Association="Self.FK_Document_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Products" Association="Self.FK_Lines_Products">
+      <End Role="Document" EntitySet="Document" />
+      <End Role="Lines" EntitySet="Lines" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -14,9 +14,7 @@
         <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products1" />
-        <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
-        <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
