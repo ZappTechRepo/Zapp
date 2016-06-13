@@ -86,7 +86,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Lines_Products">
+  <Association Name="FK_Lines_Document">
     <End Role="Document" Type="Self.Document" Multiplicity="1" />
     <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
     <ReferentialConstraint>
@@ -95,6 +95,18 @@
       </Principal>
       <Dependent Role="Lines">
         <PropertyRef Name="docID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lines">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -112,8 +124,12 @@
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Document" EntitySet="Document" />
     </AssociationSet>
-    <AssociationSet Name="FK_Lines_Products" Association="Self.FK_Lines_Products">
+    <AssociationSet Name="FK_Lines_Document" Association="Self.FK_Lines_Document">
       <End Role="Document" EntitySet="Document" />
+      <End Role="Lines" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Products" Association="Self.FK_Lines_Products">
+      <End Role="Products" EntitySet="Products" />
       <End Role="Lines" EntitySet="Lines" />
     </AssociationSet>
   </EntityContainer>

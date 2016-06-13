@@ -22,5 +22,6 @@ namespace TriboschAdmin
         public int docID { get; set; }
     
         public virtual Document Document { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

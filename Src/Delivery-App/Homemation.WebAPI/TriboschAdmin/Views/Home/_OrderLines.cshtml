@@ -1,0 +1,34 @@
+﻿@model TriboschAdmin.Line
+
+@using (Html.BeginForm("Create", "Line"))
+{
+    <table class="table">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <tr>
+            <td>
+                @Html.DropDownListFor(model => model.Product.ProductName,(SelectList)ViewBag.Product))
+                @Html.ValidationMessageFor(model => model.Product.ProductName, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Qty)
+                @Html.ValidationMessageFor(model => model.Qty)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.TotalExcl)
+                @Html.ValidationMessageFor(model => model.TotalExcl, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.TotalIncl)
+                @Html.ValidationMessageFor(model => model.TotalIncl, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+

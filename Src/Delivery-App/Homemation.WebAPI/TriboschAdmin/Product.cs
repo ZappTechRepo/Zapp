@@ -14,6 +14,12 @@ namespace TriboschAdmin
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Lines = new HashSet<Line>();
+        }
+    
         public int id { get; set; }
         public string ProductName { get; set; }
         public string PackSize { get; set; }
@@ -21,5 +27,8 @@ namespace TriboschAdmin
         public Nullable<double> RetailPriceExcl { get; set; }
         public Nullable<double> RetailPriceIncl { get; set; }
         public Nullable<int> Qty { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Line> Lines { get; set; }
     }
 }

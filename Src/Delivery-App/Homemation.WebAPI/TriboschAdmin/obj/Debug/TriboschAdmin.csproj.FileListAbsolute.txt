@@ -47,7 +47,6 @@ C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\System.Web.WebPages.Razor.xml
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Antlr3.Runtime.pdb
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Newtonsoft.Json.xml
-C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.dll
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\EntityFramework.dll
@@ -84,3 +83,5 @@ F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\Newtonsoft
 F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
 F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.dll
 F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
+C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\BeginCollectionItem.dll

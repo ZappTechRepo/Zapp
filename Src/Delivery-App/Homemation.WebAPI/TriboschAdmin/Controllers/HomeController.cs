@@ -19,11 +19,93 @@ namespace TriboschAdmin.Controllers
 			return View();
 		}
 
+        #region Documents
+        public ActionResult Documents(Document doc)
+        {
+            return View(entity.Documents.ToList());
+        }
+
+        public ActionResult EditDocuments(int id = 0)
+        {
+            Document doc = entity.Documents.Find(id);
+            if (doc == null)
+            {
+                return HttpNotFound();
+            }
+            return View(doc);
+        }
+
+        [HttpPost]
+        public ActionResult EditDocuments(Document doc)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Entry(doc).State = System.Data.Entity.EntityState.Modified;
+                foreach (Line adr in doc.Lines)
+                {
+                    entity.Entry(adr).State = System.Data.Entity.EntityState.Modified;
+                }
+                entity.SaveChanges();
+                return RedirectToAction("Documents");
+            }
+            return View(doc);
+        }
+
+
+        public ActionResult CreateDocument()
+        {
+            ViewBag.Customer = new SelectList(entity.Customers, "CustomerId", "CustomerName");
+            ViewBag.Product = new SelectList(entity.Products, "id", "Productname");
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create([Bind(Include = "LineID,ProductId,QTY,TotalExcl,TotalIncl,docID")] Line line)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Lines.Add(line);
+                entity.SaveChanges();
+                return RedirectToAction("Index", "CompanyEmployee");
+            }
+
+            return View(line);
+        }
+
+        public PartialViewResult AddOrderLines()
+        {
+            var model = new Line();
+            return PartialView("_OrderLines");
+        }
+
+        [HttpPost]
+        public ActionResult CreateDocument(Document doc)
+        {
+
+            if (ModelState.IsValid)
+            {
+                entity.Entry(doc).State = System.Data.Entity.EntityState.Modified;
+                foreach (Line line in doc.Lines)
+                {
+                    entity.Entry(line).State = System.Data.Entity.EntityState.Modified;
+                }
+                entity.Documents.Add(doc);
+                entity.SaveChanges();
+
+                return RedirectToAction("Documents");
+            }
+            else
+            {
+                return View(doc);
+            }
+        }
+        #endregion
+
+        #region Customer
         public ActionResult Customer(Customer cust)
         {
-           
-
-            return View(entity.Customers.ToList());
+           return View(entity.Customers.ToList());
         }
 
         public ActionResult EditCustomer(int id = 0)
@@ -35,31 +117,79 @@ namespace TriboschAdmin.Controllers
             }
             return View(cust);
         }
-
-        //
-        // POST: /Movies/Edit/5
-
         [HttpPost]
         public ActionResult EditCustomer(Customer customer)
         {
             if (ModelState.IsValid)
             {
                 entity.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+                foreach (Address adr in customer.Addresses)
+                {
+                    entity.Entry(adr).State = System.Data.Entity.EntityState.Modified;
+                }
                 entity.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(customer);
         }
 
+        // Create Customer
+        public ActionResult CreateCustomer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateCustomer(Customer customer)
+        {
+
+            if (ModelState.IsValid)
+            {
+                entity.Customers.Add(customer);
+                entity.SaveChanges();
+
+                return RedirectToAction("Customer");
+            }
+            else
+            {
+                return View(customer);
+            }
+        }
+        #endregion
+
+
+        #region Products
+        public ActionResult EditProducts(int id = 0)
+        {
+            Product prod = entity.Products.Find(id);
+            if (prod == null)
+            {
+                return HttpNotFound();
+            }
+            return View(prod);
+        }
+
+        //
+        // POST: /Movies/Edit/5
+
+        [HttpPost]
+        public ActionResult EditProducts(Product prod)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Entry(prod).State = System.Data.Entity.EntityState.Modified;
+                entity.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(prod);
+        }
 
         public ActionResult Product(Product products)
         {
-            TriboschAppEntities entity = new TriboschAppEntities();
-            
             return View(entity.Products.ToList());
         }
 
-    
+
         [HttpPost]
         public ActionResult Product(HttpPostedFileBase file)
         {
@@ -140,7 +270,7 @@ namespace TriboschAdmin.Controllers
                     SqlConnection con = new SqlConnection(conn);
                     string query = "Insert into Products(ProductName,PackSize,PriceExcl,RetailPriceExcl,RetailPriceIncl,Qty) Values('" +
                         ds.Tables[0].Rows[i][0].ToString() +
-                        "','" + ds.Tables[0].Rows[i][1].ToString() + 
+                        "','" + ds.Tables[0].Rows[i][1].ToString() +
                         "','" + ds.Tables[0].Rows[i][2].ToString() +
                         "','" + ds.Tables[0].Rows[i][3].ToString() +
                         "','" + ds.Tables[0].Rows[i][4].ToString() +
@@ -156,63 +286,68 @@ namespace TriboschAdmin.Controllers
 
             return View(entity.Products.ToList());
         }
+        #endregion
 
+
+        #region standard Constructors
         public ActionResult FlotCharts()
-		{
-			return View("FlotCharts");
-		}
+        {
+            return View("FlotCharts");
+        }
 
-		public ActionResult MorrisCharts()
-		{
-			return View("MorrisCharts");
-		}
+        public ActionResult MorrisCharts()
+        {
+            return View("MorrisCharts");
+        }
 
-		public ActionResult Tables()
-		{
-			return View("Tables");
-		}
+        public ActionResult Tables()
+        {
+            return View("Tables");
+        }
 
-		public ActionResult Forms()
-		{
-			return View("Forms");
-		}
+        public ActionResult Forms()
+        {
+            return View("Forms");
+        }
 
-		public ActionResult Panels()
-		{
-			return View("Panels");
-		}
+        public ActionResult Panels()
+        {
+            return View("Panels");
+        }
 
-		public ActionResult Buttons()
-		{
-			return View("Buttons");
-		}
+        public ActionResult Buttons()
+        {
+            return View("Buttons");
+        }
 
-		public ActionResult Notifications()
-		{
-			return View("Notifications");
-		}
+        public ActionResult Notifications()
+        {
+            return View("Notifications");
+        }
 
-		public ActionResult Typography()
-		{
-			return View("Typography");
-		}
+        public ActionResult Typography()
+        {
+            return View("Typography");
+        }
 
-		public ActionResult Icons()
-		{
-			return View("Icons");
-		}
+        public ActionResult Icons()
+        {
+            return View("Icons");
+        }
 
-		public ActionResult Grid()
-		{
-			return View("Grid");
-		}
+        public ActionResult Grid()
+        {
+            return View("Grid");
+        }
 
-		public ActionResult Blank()
-		{
-			return View("Blank");
-		}
+        public ActionResult Blank()
+        {
+            return View("Blank");
+        }
+        #endregion
 
-		public ActionResult Login()
+
+        public ActionResult Login()
 		{
 			return View("Login");
 		}
