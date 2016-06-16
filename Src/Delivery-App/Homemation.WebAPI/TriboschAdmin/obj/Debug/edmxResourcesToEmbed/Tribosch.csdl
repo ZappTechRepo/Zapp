@@ -22,6 +22,7 @@
       <End Role="Product" EntitySet="Products" />
       <End Role="Line" EntitySet="Lines" />
     </AssociationSet>
+    <EntitySet Name="Users" EntityType="TriboschAppModel.User" />
   </EntityContainer>
   <EntityType Name="Product">
     <Key>
@@ -141,4 +142,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -31,20 +32,18 @@ namespace TriboschAdmin.Models
 
         public bool IsValid(string _username, string _password)
         {
-            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename" +
-              @"='C:\Tutorials\1 - Creating a custom user login form\Creating " +
-              @"a custom user login form\App_Data\Database1.mdf';Integrated Security=True"))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Tribosch"].ToString()))
             {
-                string _sql = @"SELECT [Username] FROM [dbo].[System_Users] " +
+                string _sql = @"SELECT [Username] FROM [dbo].[Users] " +
                        @"WHERE [Username] = @u AND [Password] = @p";
                 var cmd = new SqlCommand(_sql, cn);
                 cmd.Parameters
                     .Add(new SqlParameter("@u", SqlDbType.NVarChar))
                     .Value = _username;
                 cmd.Parameters
-                    .Add(new SqlParameter("@p", SqlDbType.NVarChar));
-                //.Value = System.Web.Helpers.SHA1.Encode(_password);
-                cn.Open();
+                    .Add(new SqlParameter("@p", SqlDbType.NVarChar))
+                .Value =_password; //Helpers.SHA1.Encode(
+               cn.Open();
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {

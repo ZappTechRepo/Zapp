@@ -14,6 +14,7 @@
         <AssociationConnector Association="TriboschAppModel.FK_Document_Customer" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products" />
         <AssociationConnector Association="TriboschAppModel.FK_Lines_Products1" />
+        <EntityTypeShape EntityType="TriboschAppModel.User" Width="1.5" PointX="8.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
