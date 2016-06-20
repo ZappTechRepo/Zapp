@@ -6,18 +6,22 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Xml;
+using TriboschAdmin.Models;
 
 namespace TriboschAdmin.Controllers
 {
-	public class HomeController : Controller
-	{
+    public class HomeController : Controller
+    {
         TriboschAppEntities entity = new TriboschAppEntities();
         public ActionResult Index()
-		{
-			return View();
-		}
+        {
+            var dashBoard = new Dashboard { Customer = entity.Customers.ToList(), Documents = entity.Documents.ToList(), Product = entity.Products.ToList() };
+            return View(dashBoard);
+        }
 
         #region Documents
         public ActionResult Documents(Document doc)
@@ -102,10 +106,19 @@ namespace TriboschAdmin.Controllers
         }
         #endregion
 
+        public ActionResult DashReport()
+        {
+            var stats = new List<Customer> {
+                new Customer { CustomerName="Test User", Email="Test@co.za"},
+                new Customer { CustomerName="Test User", Email="Test@co.za"}
+            };
+            return Json(stats, JsonRequestBehavior.AllowGet);
+        }
+
         #region Customer
         public ActionResult Customer(Customer cust)
         {
-           return View(entity.Customers.ToList());
+            return View(entity.Customers.ToList());
         }
 
         public ActionResult EditCustomer(int id = 0)
@@ -347,10 +360,53 @@ namespace TriboschAdmin.Controllers
         #endregion
 
 
-        public ActionResult Login()
-		{
-			return View("Login");
-		}
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(User U)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Users.Add(U);
+                entity.SaveChanges();
+                ModelState.Clear();
+                U = null;
+                ViewBag.Message = "Successfully Registered";
+            }
+            return View(U);
+        }
 
-	}
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Models.User user)
+        {
+            if (ModelState.IsValid)
+            {
+                if (user.IsValid(user.UserName, user.Password))
+                {
+                    FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Login data is incorrect!");
+                }
+            }
+            return View(user);
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+    }
 }

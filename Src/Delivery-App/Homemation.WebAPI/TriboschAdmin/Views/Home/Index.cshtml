@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  TriboschAdmin.Models.Dashboard
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -18,12 +19,12 @@
                         <i class="fa fa-comments fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">26</div>
-                        <div>New Comments!</div>
+                        <div class="huge">@Model.TotalCustomers</div>
+                        <div>Total Customers!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="Home/Customer">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -40,12 +41,12 @@
                         <i class="fa fa-tasks fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">12</div>
-                        <div>New Tasks!</div>
+                        <div class="huge">@Model.TotalProducts</div>
+                        <div>New Products!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="Home/Product">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -62,12 +63,12 @@
                         <i class="fa fa-shopping-cart fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">124</div>
-                        <div>New Orders!</div>
+                        <div class="huge">@Model.TotalDocuments</div>
+                        <div>New Documents!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="Home/Documents">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -76,7 +77,7 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
+    @*<div class="col-lg-3 col-md-6">
         <div class="panel panel-red">
             <div class="panel-heading">
                 <div class="row">
@@ -97,7 +98,7 @@
                 </div>
             </a>
         </div>
-    </div>
+    </div>*@
 </div>
 <!-- /.row -->
 <div class="row">
@@ -131,7 +132,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <div id="morris-area-chart"></div>
+              @Html.Partial("DashReport")
             </div>
             <!-- /.panel-body -->
         </div>

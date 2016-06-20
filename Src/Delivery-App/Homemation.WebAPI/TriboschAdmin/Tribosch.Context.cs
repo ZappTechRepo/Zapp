@@ -30,5 +30,6 @@ namespace TriboschAdmin
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Line> Lines { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
