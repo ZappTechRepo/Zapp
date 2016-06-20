@@ -56,7 +56,7 @@ namespace TriboschAdmin.Controllers
         {
             ViewBag.Customer = new SelectList(entity.Customers, "CustomerId", "CustomerName");
             ViewBag.Product = new SelectList(entity.Products, "id", "Productname");
-
+            //var tuple = new Tuple<Customer, Document>();
             return View();
         }
 
