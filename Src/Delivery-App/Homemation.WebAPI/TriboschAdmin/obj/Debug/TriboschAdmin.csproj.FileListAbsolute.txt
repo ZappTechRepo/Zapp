@@ -85,3 +85,4 @@ F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-a
 F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
 C:\project new\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\BeginCollectionItem.dll
+F:\Projects\Zapp\Src\Delivery-App\Homemation.WebAPI\TriboschAdmin\bin\BeginCollectionItem.dll
