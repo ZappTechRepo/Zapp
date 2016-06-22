@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using System.Web.Security;
 using System.Xml;
 using TriboschAdmin.Models;
@@ -408,5 +409,31 @@ namespace TriboschAdmin.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+        #region AJAX Methods
+        public ActionResult GetProducts()
+        {
+
+            List<Product> products = entity.Products.ToList();
+
+            var serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
+            var result = new ContentResult
+            {
+                Content = serializer.Serialize(products.Select(x => new
+                {
+                    id = x.id,
+                    name = x.ProductName,
+                    price = x.RetailPriceExcl
+
+                }).ToArray()),
+                ContentType = "application/json"
+            };
+
+            return result;
+        }
+
+        #endregion
     }
 }
