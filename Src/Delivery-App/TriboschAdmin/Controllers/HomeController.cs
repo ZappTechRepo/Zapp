@@ -30,6 +30,23 @@ namespace TriboschAdmin.Controllers
             return View(entity.Documents.ToList());
         }
 
+        public ActionResult Delete(int id = 0)
+        {
+            Document doc = entity.Documents.Find(id);
+            if (doc == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                entity.Lines.RemoveRange(doc.Lines);
+                entity.Documents.Remove(doc);
+                entity.SaveChanges();
+            }
+
+            return RedirectToAction("Documents");
+        }
+
         public ActionResult EditDocuments(int id = 0)
         {
             Document doc = entity.Documents.Find(id);
@@ -118,8 +135,9 @@ namespace TriboschAdmin.Controllers
                 Document newDoc = new Document();
                 newDoc.Customer = cus;
                 newDoc.CustomerID = cus.CustomerID;
-                newDoc.TotalIncl = orderDocument.TotalIncl;
-                newDoc.TotalExcl = orderDocument.TotalExcl;
+                newDoc.TotalIncl = ((orderDocument.TotalExcl - orderDocument.Discount) * 1.14);
+                newDoc.TotalExcl = (orderDocument.TotalExcl - orderDocument.Discount);
+                newDoc.Discount = orderDocument.Discount;
                 newDoc.Lines = new List<Line>();
 
                 foreach (OrderLine oLine in orderDocument.OrderLines)
@@ -136,10 +154,10 @@ namespace TriboschAdmin.Controllers
                         TotalIncl = (oLine.lineTotal * 1.14)
                     });
                 }
+
                 newDoc.ReferenceNo = orderDocument.ReferenceNo;
                 newDoc.InvoiceNo = orderDocument.InvoiceNo;
                 newDoc.DeliveryDate = orderDocument.DeliveryDate;
-                newDoc.Discount = orderDocument.Discount;
                 newDoc.SIgnature = null;
                 newDoc.DateCreated = DateTime.Now;
 

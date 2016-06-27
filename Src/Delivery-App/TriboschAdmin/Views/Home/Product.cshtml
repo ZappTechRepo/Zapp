@@ -3,19 +3,19 @@
 @{
     ViewBag.Title = "Product";
 }
+<br />
+<h2>Products</h2>
 
-<h2>View</h2>
-
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 
 
 @using (Html.BeginForm("Product", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input  type="file" name="file" />
+    <input class="form-control" type="file" name="file" />
     <br />
-    <input type="submit" value="OK" />
+    <input type="submit" class="btn btn-primary" value="Import Products" />
 }
 <div class="panel-body">
     <div class="dataTable_wrapper">
