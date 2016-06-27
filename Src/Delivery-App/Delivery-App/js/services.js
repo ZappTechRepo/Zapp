@@ -20,9 +20,9 @@ app
 	        }
 
 
-	        self.DoLogin = function (LoginData) {
+	        self.DoLogin = function (LoginData) { 
 	            var promise = null;
-	            promise = $http.post(baseUrl + "/Auth/doLogin", LoginData).success(function (data) {
+	            promise = $http.post(baseUrl + "/api/authenticate/login", LoginData).success(function (data) {
 	                if (!data.Success) {
 	                    $cordovaDialogs.alert(data.AuthResponse, 'Login', 'OK');
 	                } else {

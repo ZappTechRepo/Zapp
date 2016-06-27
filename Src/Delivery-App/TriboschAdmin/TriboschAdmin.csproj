@@ -15,7 +15,7 @@
     <AssemblyName>sb-admin-2.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -171,6 +171,7 @@
     <Compile Include="Line.cs">
       <DependentUpon>Tribosch.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\Helper.cs" />
@@ -1056,7 +1057,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>29128</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:29128/</IISUrl>
+          <IISUrl>http://localhost/TriboschAdmin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
