@@ -101,7 +101,81 @@
     </div>*@
 </div>
 <!-- /.row -->
-<div class="row">
+<div class="panel-body">
+    <div class="dataTable_wrapper">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+                <tr>
+                    <th class="max-width-table">
+                        @Html.DisplayName("Customer Name")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Contact Number")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Email")
+                    </th>
+                    <th class="max-width-table">
+                        @Html.DisplayName("Address 1")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Address 2")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Address 3")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Postal Code")
+                    </th>
+                    <th>
+                        @Html.DisplayName("GPS Code")
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Customer)
+                {
+                    <tr>
+                        <td class="max-width-table">
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td class="max-width-table">
+                            @Html.DisplayFor(modelItem => item.Addresses.First().Address1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Addresses.First().Address2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Addresses.First().Address3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Addresses.First().PostalCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Addresses.First().GPSCode)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditCustomer", new { id = item.CustomerID }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |*@
+                            @Html.ActionLink("Delete", "CustomerDelete", new { id = item.CustomerID })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+
+</div>
+@*<div class="row">
     <div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -570,7 +644,7 @@
         <!-- /.panel .chat-panel -->
     </div>
     <!-- /.col-lg-4 -->
-</div>
+</div>*@
 <!-- /.row -->
 
 

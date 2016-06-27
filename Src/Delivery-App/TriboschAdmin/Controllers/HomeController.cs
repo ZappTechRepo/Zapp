@@ -272,6 +272,8 @@ namespace TriboschAdmin.Controllers
             return View(entity.Products.ToList());
         }
 
+        
+
 
         [HttpPost]
         public ActionResult Product(HttpPostedFileBase file)
@@ -452,7 +454,7 @@ namespace TriboschAdmin.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return PartialView("Login");
         }
 
         [HttpPost]
@@ -472,10 +474,12 @@ namespace TriboschAdmin.Controllers
             }
             return View(user);
         }
-        public ActionResult Logout()
+
+        public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            Session.Abandon(); // it will clear the session at the end of request
+            return RedirectToAction("Login", "Home");
         }
 
 
