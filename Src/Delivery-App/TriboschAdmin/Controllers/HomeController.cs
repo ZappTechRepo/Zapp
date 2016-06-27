@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using System.Web.Security;
 using System.Xml;
 using TriboschAdmin.Models;
@@ -104,6 +105,57 @@ namespace TriboschAdmin.Controllers
                 return View(doc);
             }
         }
+
+        [HttpPost]
+        public JsonResult CreateOrderDocument(OrderDocument orderDocument)
+        {
+            JsonScriptResponse jsReturn = new JsonScriptResponse();
+            jsReturn.success = false;
+            try
+            {
+                Customer cus = entity.Customers.FirstOrDefault(q => q.CustomerID.Equals(orderDocument.CustomerID));
+
+                Document newDoc = new Document();
+                newDoc.Customer = cus;
+                newDoc.CustomerID = cus.CustomerID;
+                newDoc.TotalIncl = orderDocument.TotalIncl;
+                newDoc.TotalExcl = orderDocument.TotalExcl;
+                newDoc.Lines = new List<Line>();
+
+                foreach (OrderLine oLine in orderDocument.OrderLines)
+                {
+                    newDoc.Lines.Add(new Line
+                    {
+                        docID = newDoc.ID,
+                        Document = newDoc,
+                        Qty = oLine.lineQTY,
+                        TotalExcl = oLine.lineTotal,
+                        ProductId = oLine.lineID,
+                        Product = entity.Products.FirstOrDefault(q => q.id.Equals(oLine.lineID)),
+                        LineID = oLine.lineID,
+                        TotalIncl = (oLine.lineTotal * 1.14)
+                    });
+                }
+                newDoc.ReferenceNo = orderDocument.ReferenceNo;
+                newDoc.InvoiceNo = orderDocument.InvoiceNo;
+                newDoc.DeliveryDate = orderDocument.DeliveryDate;
+                newDoc.Discount = orderDocument.Discount;
+                newDoc.SIgnature = null;
+                newDoc.DateCreated = DateTime.Now;
+
+                entity.Documents.Add(newDoc);
+                entity.SaveChanges();
+
+                jsReturn.success = true;
+            }
+            catch (Exception ex)
+            {
+                jsReturn.error = ex.Message;
+            }
+
+            return Json(jsReturn);
+        }
+
         #endregion
 
         public ActionResult DashReport()
@@ -412,5 +464,31 @@ namespace TriboschAdmin.Controllers
             return RedirectToAction("Login", "Home");
         }
 
+
+        #region AJAX Methods
+        public ActionResult GetProducts()
+        {
+
+            List<Product> products = entity.Products.ToList();
+
+            var serializer = new JavaScriptSerializer();
+            serializer.MaxJsonLength = Int32.MaxValue;
+
+            var result = new ContentResult
+            {
+                Content = serializer.Serialize(products.Select(x => new
+                {
+                    id = x.id,
+                    name = x.ProductName,
+                    price = x.RetailPriceExcl
+
+                }).ToArray()),
+                ContentType = "application/json"
+            };
+
+            return result;
+        }
+
+        #endregion
     }
 }
