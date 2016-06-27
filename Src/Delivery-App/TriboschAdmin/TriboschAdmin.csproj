@@ -149,7 +149,9 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\JsonScriptResponse.cs" />
     <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\OrderDocument.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAddress.cs" />
     <Compile Include="Product.cs">

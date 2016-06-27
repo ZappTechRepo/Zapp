@@ -16,8 +16,6 @@ function GetAllProducts() {
                 TabelHTML += "<tr><td>" + data[i].name + "</td>" +
                     "<td>R <input style='width:120px;' value='" + data[i].price + "' type='text' class='form-control' data-product-id='" + data[i].id + "' /></td>" +
                     "<td><input style='width:50px;' value='1' type='text' class='form-control' data-pqty-id='" + data[i].id + "' /></td>" +
-
-                    "<td>R <span data-ptotal-id='" + data[i].id + "'>" + data[i].price + "<span></td>" +
                     "<td><input type='checkbox' data-padd-id='" + data[i].id + "' /></td></tr>";
             }
 
@@ -29,10 +27,10 @@ function GetAllProducts() {
 
 function CreateDocument() {
     var lines = GetSelectedLines();
-    
-    var DocumentData = {
+
+    var orderDocument = {
         CustomerID: $('#Customer :selected').val(),
-        Lines: lines,
+        OrderLines: lines,
         TotalIncl: $('#TotalIncl').val(),
         TotalExcl: $('#TotalExcl').val(),
         Discount: $('#Discount').val(),
@@ -41,7 +39,20 @@ function CreateDocument() {
         ReferenceNo: $('#ReferenceNo').val()
     };
 
-    console.log(DocumentData);
+    var options = {
+        url: "/Home/CreateOrderDocument",
+        type: "POST",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(orderDocument)
+    }
+
+    $.ajax(options).done(function (data) {
+        console.log(data);
+        if (data.success) {
+            window.location = "/Home/Documents";
+        }
+    });
 }
 
 
@@ -56,8 +67,8 @@ function addSelectedLines() {
         total += (price * qty);
     });
 
-    $('#TotalExcl').val("R " + total);
-    $('#TotalIncl').val("R " + (total * 1.14).toFixed(2));
+    $('#TotalExcl').val(total);
+    $('#TotalIncl').val((total * 1.14).toFixed(2));
 
     $('.bs-example-modal-lg').modal('hide');
 }
@@ -71,14 +82,14 @@ function GetSelectedLines() {
         var qty = parseInt($('[data-pqty-id="' + lID + '"]').val());
         var price = parseFloat($('[data-product-id="' + lID + '"]').val());
 
-        var LineData = {
-            ID: lID,
-            Price: price,
-            QTY: qty,
-            Total: (price * qty)
+        var OrderLine = {
+            lineID: lID,
+            linePrice: price,
+            lineQTY: qty,
+            lineTotal: (price * qty)
         };
 
-        lArray.push(LineData);
+        lArray.push(OrderLine);
     });
 
     return lArray
