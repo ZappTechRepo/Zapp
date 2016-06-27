@@ -145,6 +145,13 @@ C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.WebPages.Deplo
 C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.WebPages.Razor.xml
 C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\Antlr3.Runtime.pdb
 C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\Newtonsoft.Json.xml
-C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
 C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\obj\Debug\sb-admin-2.Web.dll
 C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\obj\Debug\sb-admin-2.Web.pdb
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\Geocoding.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.Cors.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Net.Http.Formatting.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Cors.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.xml
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.Cors.xml
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Net.Http.Formatting.xml
