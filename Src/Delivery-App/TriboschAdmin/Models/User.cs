@@ -49,6 +49,7 @@ namespace TriboschAdmin.Models
                 {
                     reader.Dispose();
                     cmd.Dispose();
+                    //Session["UserID"] = _username;
                     return true;
                 }
                 else

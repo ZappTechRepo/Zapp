@@ -6,16 +6,16 @@
 
 <h2>View</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="btn btn-success pull-right">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn-success" })
 </p>
 
 
 @using (Html.BeginForm("Product", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input  type="file" name="file" />
+    <input class="btn btn-lg btn-success" type="file" name="file" />
     <br />
-    <input type="submit" value="OK" />
+    <input class="btn btn-primary" type="submit" value="OK" />
 }
 <div class="panel-body">
     <div class="dataTable_wrapper">
