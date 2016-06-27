@@ -947,6 +947,7 @@
     <Content Include="Content\less\mixins.less" />
     <Content Include="Content\less\sb-admin-2.less" />
     <Content Include="Content\less\variables.less" />
+    <Content Include="database.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\flot-data.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1020,6 +1021,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\Home\LogOut.cshtml" />
+    <Content Include="Views\Home\EditDocuments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
