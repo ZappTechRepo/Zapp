@@ -163,3 +163,6 @@ F:\Projects\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Cors.dll
 F:\Projects\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.xml
 F:\Projects\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.Cors.xml
 F:\Projects\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Net.Http.Formatting.xml
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\obj\Debug\TriboschAdmin.csprojResolveAssemblyReference.cache
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.WebHost.dll
+C:\project new\Zapp\Src\Delivery-App\TriboschAdmin\bin\System.Web.Http.WebHost.xml

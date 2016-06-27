@@ -7,20 +7,17 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Mvc;
-using TriboschAdmin;
 using TriboschAdmin.Models;
 
 namespace Homemation.WebAPI.Controllers
 {
     [APIAuthenticationFilter]
-    [System.Web.Http.RoutePrefix("api/authenticate")]
-    public class AuthenticateController : BaseController
+    [RoutePrefix("api/authenticate")]
+    public class AuthenticateController : System.Web.Http.ApiController
     {
         #region Private variable
 
-        private readonly ITokenServices _tokenServices;
 
 
         #endregion
@@ -30,9 +27,9 @@ namespace Homemation.WebAPI.Controllers
         /// <summary>  
         /// Public constructor to initialize product service instance  
         /// </summary>  
-        public AuthenticateController(ITokenServices tokenServices)
+        public AuthenticateController()
         {
-            _tokenServices = tokenServices;
+            
         }
 
         #endregion
@@ -44,15 +41,15 @@ namespace Homemation.WebAPI.Controllers
         //[POST("login")]  
         //[POST("authenticate")]  
         //[POST("get/token")] 
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("login")]
+        [HttpPost]
+        [Route("login")]
         public HttpResponseMessage Authenticate()
         {
 
             if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
             {
                 // var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
-                TriboschAdmin.Models.User user = new TriboschAdmin.Models.User();
+                TriboschAdmin.Models.User user = new User();
 
                 if (user.IsValid(user.UserName, user.Password))
                 {
@@ -81,71 +78,6 @@ namespace Homemation.WebAPI.Controllers
 
             return response;
         }
-
-
-        /// <summary>
-        /// Login
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="password"></param>
-        /// <returns>Amrod.App.Api.Code.Response.Auth</returns>
-        [System.Web.Http.AcceptVerbs("POST")]
-        public HttpResponseMessage doLogin([FromBody]Login input)
-        {
-            AuthResults response = new AuthResults() { Success = false };
-
-            if (input == null)
-                return Request.CreateErrorResponse(System.Net.HttpStatusCode.BadRequest, new ArgumentException("", "input"));
-            if (string.IsNullOrEmpty(input.userName))
-                return Request.CreateErrorResponse(System.Net.HttpStatusCode.BadRequest, new ArgumentException("", "userName"));
-            if (string.IsNullOrEmpty(input.password))
-                return Request.CreateErrorResponse(System.Net.HttpStatusCode.BadRequest, new ArgumentException("", "password"));
-
-            try
-            {
-                TriboschAppEntities db = new TriboschAppEntities();
-                TriboschAdmin.User _user = db.Users.FirstOrDefault(q => q.Username.Equals(input.userName));
-                if (_user != null)
-                {
-                    if (_user.Password == input.password)
-                    {
-                        //Auth _auth = db.Auth.FirstOrDefault(x => x.UserID == _user.ID);
-                        //if (_auth == null)
-                        //{
-                        //    _auth = new Auth();
-                        //    _auth.UserID = _user.ID;
-                        //    _auth.AuthKey = RandomString(64);
-                        //    _auth.Created = DateTime.Now;
-
-                        //    db.Entry(_auth).State = EntityState.Added;
-                        //    db.SaveChanges();
-                        //}
-
-                        //response.User = _user;
-                        response.Token = Guid.NewGuid().ToString();
-                        response.Success = true;
-                    }
-                    else
-                    {
-                        response.Success = false;
-                        response.AuthResponse = "Invalid username and password combination!";
-                    }
-                }
-                else
-                {
-                    response.Success = false;
-                    response.AuthResponse = "It seems you are not a member yet, please do the honors and register";
-                }
-
-                return Request.CreateResponse(System.Net.HttpStatusCode.OK, response);
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                //Logger.Log("Login Exception:" + ex.Message);
-                //do logging
-                return Request.CreateErrorResponse(System.Net.HttpStatusCode.InternalServerError, ex);
-            }
-        }
     }
+    
 }

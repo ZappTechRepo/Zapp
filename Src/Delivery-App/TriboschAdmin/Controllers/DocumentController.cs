@@ -32,9 +32,14 @@ namespace Homemation.WebAPI.Controllers
         // GET api/<controller>
          [HttpGet]
          [Route("",  Name="GetDocuments") ]
-        public IEnumerable<string> Get()
+        public HttpResponseMessage GetDocuments()
         {
-            return new string[] { "value1", "value2" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);
+            List<Document> doc = _repository.GetAllDocuments();
+            if (doc != null && doc.Count > 0)
+                response = Request.CreateResponse(HttpStatusCode.OK, doc);
+
+            return response;
         }
 
         // GET api/<controller>/5
