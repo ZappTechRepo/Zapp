@@ -14,11 +14,10 @@ namespace Homemation.WebAPI.Controllers
 {
     [APIAuthenticationFilter]
     [RoutePrefix("api/authenticate")]
-    public class AuthenticateController : BaseController
+    public class AuthenticateController : System.Web.Http.ApiController
     {
         #region Private variable
 
-        private readonly ITokenServices _tokenServices;
 
 
         #endregion
@@ -28,9 +27,9 @@ namespace Homemation.WebAPI.Controllers
         /// <summary>  
         /// Public constructor to initialize product service instance  
         /// </summary>  
-        public AuthenticateController(ITokenServices tokenServices)
+        public AuthenticateController()
         {
-            _tokenServices = tokenServices;
+            
         }
 
         #endregion
@@ -49,38 +48,36 @@ namespace Homemation.WebAPI.Controllers
 
             if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
             {
-               // var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
+                // var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
                 TriboschAdmin.Models.User user = new User();
 
                 if (user.IsValid(user.UserName, user.Password))
                 {
-                   return GetAuthToken();
+                    return GetAuthToken();
                 }
 
             }
 
-            return null;  
+            return null;
         }
 
-    /// <summary>  
-    /// Returns auth token for the validated user.  
-    /// </summary>  
-    /// <param name="userId"></param>  
-    /// <returns></returns>  
-    private HttpResponseMessage GetAuthToken()
-    {
-        //var token = _tokenServices.GenerateToken(userId);
-        var deliveryuser = "";
-        //var response = Request.CreateResponse(HttpStatusCode.OK, "Authorized");  
-        var response = Request.CreateResponse(HttpStatusCode.OK, new { UserId = "", Name = "", Surname = "", Phone = "" });
-        response.Headers.Add("Token", Guid.NewGuid().ToString());
-        response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
-        response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");
+        /// <summary>  
+        /// Returns auth token for the validated user.  
+        /// </summary>  
+        /// <param name="userId"></param>  
+        /// <returns></returns>  
+        private HttpResponseMessage GetAuthToken()
+        {
+            //var token = _tokenServices.GenerateToken(userId);
+            var deliveryuser = "";
+            //var response = Request.CreateResponse(HttpStatusCode.OK, "Authorized");  
+            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserId = "", Name = "", Surname = "", Phone = "" });
+            response.Headers.Add("Token", Guid.NewGuid().ToString());
+            response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
+            response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");
 
-        return response;
+            return response;
+        }
     }
-}  
-
-
     
 }
