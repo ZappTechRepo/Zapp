@@ -10,7 +10,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Net.Http;
 
-namespace Homemation.WebAPI.Filters
+namespace TriboschAdmin.WebAPI.Filters
 {
 
     /// <summary>

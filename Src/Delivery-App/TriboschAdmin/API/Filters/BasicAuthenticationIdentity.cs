@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 
-namespace Homemation.WebAPI.Filters
+namespace TriboschAdmin.WebAPI.Filters
 {
     /// <summary>  
     /// Basic Authentication identity  

@@ -47,7 +47,7 @@ namespace Homemation.WebAPI.Repository
         /// <param name="word"></param>
         /// <returns></returns>
         //SalesRep ProfileDetail(Guid UserId);
-        User ProfileDetail(int UserId);
+        TriboschAdmin.User ProfileDetail(int UserId);
 
         #endregion
     }

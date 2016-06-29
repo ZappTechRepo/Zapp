@@ -5,7 +5,7 @@ using System.Web;
 using TriboschAdmin;
 
 
-namespace Homemation.WebAPI.Repository
+namespace TriboschAdmin.WebAPI.Repository
 {
 
     public class UserServices : IUserService  
@@ -41,7 +41,17 @@ namespace Homemation.WebAPI.Repository
 
         int IUserService.Authenticate(string userName, string word)
         {
-            throw new NotImplementedException();
+            User user = dataContext.Users.FirstOrDefault(u => u.Username == userName && u.Password == word);
+            if (user != null)
+            {
+                Random r = new Random();
+                int gui = r.Next(0, 100);
+                return gui;
+            }
+
+
+
+            return 0;
         }
     }
 }

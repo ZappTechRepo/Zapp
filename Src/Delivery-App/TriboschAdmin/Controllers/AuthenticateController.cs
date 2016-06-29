@@ -1,6 +1,4 @@
-﻿
-using Homemation.WebAPI.Filters;
-using Homemation.WebAPI.Repository;
+﻿using Homemation.WebAPI.Repository;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,8 +7,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Mvc;
 using TriboschAdmin.Models;
+using TriboschAdmin.WebAPI.Filters;
 
-namespace Homemation.WebAPI.Controllers
+namespace TriboschAdmin.WebAPI.Controllers
 {
     [APIAuthenticationFilter]
     [RoutePrefix("api/authenticate")]
@@ -75,7 +74,7 @@ namespace Homemation.WebAPI.Controllers
             var token = _tokenServices.GenerateToken(userid);
             var deliveryuser = _tokenServices.ProfileDetail(userid);
             //var response = Request.CreateResponse(HttpStatusCode.OK, "Authorized");  
-            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserName = deliveryuser.UserName, Role = deliveryuser.Role, Email = deliveryuser.ContactDetail.Email, Number = deliveryuser.ContactDetail.Tel});
+            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserName = deliveryuser.UserID, Role = deliveryuser.FullName, Email = deliveryuser.FullName});
             response.Headers.Add("Token", token.AuthToken);
             response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
             response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");

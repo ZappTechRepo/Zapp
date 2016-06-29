@@ -2,7 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.Results;
 
-namespace Homemation.WebAPI.Controllers
+namespace TriboschAdmin.WebAPI.Controllers
 {
     public class BaseController : ApiController
     {
