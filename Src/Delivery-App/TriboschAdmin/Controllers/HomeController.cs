@@ -47,6 +47,8 @@ namespace TriboschAdmin.Controllers
             return RedirectToAction("Documents");
         }
 
+
+
         public ActionResult EditDocuments(int id = 0)
         {
             Document doc = entity.Documents.Find(id);
