@@ -1,7 +1,7 @@
 app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cordovaDialogs, profileService, $http, $state) {
     Utils.SetStatusBarColor('#00aba9');
 
-    $scope.Login = function () {
+    $scope.Login = function () { 
 
         $scope.data = {
             username: "jason@live.com",
@@ -13,5 +13,5 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
         });
 
         $state.go('app.deliveries');
-    } 
+    }  
 });

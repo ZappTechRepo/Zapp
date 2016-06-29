@@ -12,7 +12,7 @@ using TriboschAdmin.Models;
 
 namespace Homemation.WebAPI.Controllers
 {
-    [APIAuthenticationFilter]
+    //[APIAuthenticationFilter]
     [RoutePrefix("api/authenticate")]
     public class AuthenticateController : System.Web.Http.ApiController
     {
@@ -41,22 +41,23 @@ namespace Homemation.WebAPI.Controllers
         //[POST("login")]  
         //[POST("authenticate")]  
         //[POST("get/token")] 
-        [HttpPost]
-        [Route("login")]
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("login")]
         public HttpResponseMessage Authenticate()
         {
 
-            if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
-            {
+            //if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
+            //{
                 // var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
                 TriboschAdmin.Models.User user = new User();
 
-                if (user.IsValid(user.UserName, user.Password))
+                if (user.IsValid("jason@live.com", "test123"))
                 {
                     return GetAuthToken();
                 }
 
-            }
+            //}
 
             return null;
         }
