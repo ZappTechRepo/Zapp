@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homemation.WebAPI.Repository
+namespace TriboschAdmin.WebAPI.Repository
 {
     interface IUserService
     {
@@ -14,7 +14,7 @@ namespace Homemation.WebAPI.Repository
             /// <param name="userName"></param>
             /// <param name="word"></param>
             /// <returns></returns>
-            Guid Authenticate(string userName, string word);
+            int Authenticate(string userName, string word);
 
 
            

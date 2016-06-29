@@ -1,5 +1,4 @@
 ﻿using Homemation.WebAPI.ActionFilters;
-using Homemation.WebAPI.Filters;
 using Homemation.WebAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using TriboschAdmin;
+using TriboschAdmin.WebAPI.Controllers;
 
 namespace Homemation.WebAPI.Controllers
 {

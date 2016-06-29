@@ -23,6 +23,7 @@
       <End Role="Line" EntitySet="Lines" />
     </AssociationSet>
     <EntitySet Name="Users" EntityType="TriboschAppModel.User" />
+    <EntitySet Name="TokenSaleReps" EntityType="TriboschAppModel.TokenSaleRep" />
   </EntityContainer>
   <EntityType Name="Product">
     <Key>
@@ -151,5 +152,15 @@
     <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="EmailID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TokenSaleRep">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="AuthToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedOn" Type="DateTime" Precision="3" />
+    <Property Name="ExpiresOn" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

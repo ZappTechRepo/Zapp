@@ -1,6 +1,4 @@
-﻿
-using Homemation.WebAPI.Filters;
-using Homemation.WebAPI.Repository;
+﻿using Homemation.WebAPI.Repository;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,14 +7,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Mvc;
 using TriboschAdmin.Models;
+using TriboschAdmin.WebAPI.Filters;
 
-namespace Homemation.WebAPI.Controllers
+namespace TriboschAdmin.WebAPI.Controllers
 {
-    //[APIAuthenticationFilter]
+    [APIAuthenticationFilter]
     [RoutePrefix("api/authenticate")]
-    public class AuthenticateController : System.Web.Http.ApiController
+    public class AuthenticateController : BaseController
     {
         #region Private variable
+
+        private readonly ITokenServices _tokenServices;
 
 
 
@@ -27,9 +28,9 @@ namespace Homemation.WebAPI.Controllers
         /// <summary>  
         /// Public constructor to initialize product service instance  
         /// </summary>  
-        public AuthenticateController()
+        public AuthenticateController(ITokenServices tokenServices)
         {
-            
+            _tokenServices = tokenServices;
         }
 
         #endregion
@@ -42,22 +43,23 @@ namespace Homemation.WebAPI.Controllers
         //[POST("authenticate")]  
         //[POST("get/token")] 
         [System.Web.Http.AcceptVerbs("GET", "POST")]
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("login")]
+        [HttpPost]
+        [Route("login")]
         public HttpResponseMessage Authenticate()
         {
 
-            //if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
-            //{
-                // var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
-                TriboschAdmin.Models.User user = new User();
-
-                if (user.IsValid("jason@live.com", "test123"))
+            if (System.Threading.Thread.CurrentPrincipal != null && System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
+            {
+                var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
+                if (basicAuthenticationIdentity != null)
                 {
-                    return GetAuthToken();
-                }
+                    var userId = basicAuthenticationIdentity.UserId;
 
-            //}
+                    return GetAuthToken(userId);
+                }
+            }
+
+
 
             return null;
         }
@@ -67,18 +69,20 @@ namespace Homemation.WebAPI.Controllers
         /// </summary>  
         /// <param name="userId"></param>  
         /// <returns></returns>  
-        private HttpResponseMessage GetAuthToken()
-        {
-            //var token = _tokenServices.GenerateToken(userId);
-            var deliveryuser = "";
+        private HttpResponseMessage GetAuthToken( int userid)
+    {
+            var token = _tokenServices.GenerateToken(userid);
+            var deliveryuser = _tokenServices.ProfileDetail(userid);
             //var response = Request.CreateResponse(HttpStatusCode.OK, "Authorized");  
-            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserId = "", Name = "", Surname = "", Phone = "" });
-            response.Headers.Add("Token", Guid.NewGuid().ToString());
+            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserName = deliveryuser.UserID, Role = deliveryuser.FullName, Email = deliveryuser.FullName});
+            response.Headers.Add("Token", token.AuthToken);
             response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
             response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");
 
             return response;
         }
-    }
+}  
+
+
     
 }

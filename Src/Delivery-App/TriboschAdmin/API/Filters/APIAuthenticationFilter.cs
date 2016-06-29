@@ -1,12 +1,11 @@
-﻿using Homemation.WebAPI.Repository;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Http.Controllers;
 
-namespace Homemation.WebAPI.Filters
+namespace TriboschAdmin.WebAPI.Filters
 {
     
     /// <summary>  
@@ -38,14 +37,14 @@ namespace Homemation.WebAPI.Filters
         /// <returns></returns>
         protected override bool OnAuthorizeUser(string username, string word, HttpActionContext actionContext)
         {
-            var provider = actionContext.ControllerContext.Configuration.DependencyResolver.GetService(typeof(IUserService)) as IUserService;
+            var provider = actionContext.ControllerContext.Configuration.DependencyResolver.GetService(typeof(Repository.IUserService)) as Repository.IUserService;
             if (provider != null)
             {
                
                 var userId = provider.Authenticate(username, word);
                
                 //if (userId > 0)
-                if (userId != Guid.Empty)
+                if (userId != null)
                 {
 
                     var basicAuthenticationIdentity = Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
