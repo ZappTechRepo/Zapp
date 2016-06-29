@@ -45,7 +45,7 @@ namespace Homemation.WebAPI.Filters
                 var userId = provider.Authenticate(username, word);
                
                 //if (userId > 0)
-                if (userId != Guid.Empty)
+                if (userId != null)
                 {
 
                     var basicAuthenticationIdentity = Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;

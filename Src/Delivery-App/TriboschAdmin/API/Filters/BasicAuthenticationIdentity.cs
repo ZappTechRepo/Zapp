@@ -30,7 +30,7 @@ namespace Homemation.WebAPI.Filters
         /// <summary>  
         /// Get/Set for UserId  
         /// </summary>  
-        public Guid UserId
+        public int UserId
         {
             get;
             set;

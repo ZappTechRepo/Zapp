@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TriboschAdmin.Models;
 
 namespace Homemation.WebAPI.Repository
 {
@@ -16,7 +17,7 @@ namespace Homemation.WebAPI.Repository
         /// </summary>  
         /// <param name="userId"></param>  
         /// <returns></returns>  
-        //TokenEntity GenerateToken(Guid userId);  
+       TokenEntity GenerateToken(int userId);  
   
         /// <summary>  
         /// Function to validate token againt expiry and existance in database.  
@@ -46,8 +47,9 @@ namespace Homemation.WebAPI.Repository
         /// <param name="word"></param>
         /// <returns></returns>
         //SalesRep ProfileDetail(Guid UserId);
+        User ProfileDetail(int UserId);
 
-       #endregion  
-    }  
+        #endregion
+    }
 
 }

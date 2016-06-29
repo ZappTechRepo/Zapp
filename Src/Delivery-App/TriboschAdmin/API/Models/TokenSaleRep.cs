@@ -15,7 +15,7 @@ namespace Homemation.WebAPI.Models
     public partial class TokenSaleRep
     {
         public long TokenId { get; set; }
-        public System.Guid UserGuid { get; set; }
+        public int UserGuid { get; set; }
         public string AuthToken { get; set; }
         public System.DateTime IssuedOn { get; set; }
         public System.DateTime ExpiresOn { get; set; }

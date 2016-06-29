@@ -39,9 +39,9 @@ namespace Homemation.WebAPI.Repository
 
         }
 
-
-      
-
-
+        int IUserService.Authenticate(string userName, string word)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

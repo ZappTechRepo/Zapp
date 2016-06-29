@@ -31,5 +31,6 @@ namespace TriboschAdmin
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Line> Lines { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TokenSaleRep> TokenSaleReps { get; set; }
     }
 }

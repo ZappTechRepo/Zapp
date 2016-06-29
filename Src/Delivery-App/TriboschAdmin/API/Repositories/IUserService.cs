@@ -14,7 +14,7 @@ namespace Homemation.WebAPI.Repository
             /// <param name="userName"></param>
             /// <param name="word"></param>
             /// <returns></returns>
-            Guid Authenticate(string userName, string word);
+            int Authenticate(string userName, string word);
 
 
            
