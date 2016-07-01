@@ -17,7 +17,7 @@ namespace TriboschAdmin.App_Start
     {
         public static void Register(HttpConfiguration configuration)
         {
-            configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
+            configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{action}/{id}",
                 new { id = RouteParameter.Optional });
 
 
@@ -31,6 +31,9 @@ namespace TriboschAdmin.App_Start
 
             container.RegisterType<IDocumentRepository, DocumentRepository>(new HierarchicalLifetimeManager());
             configuration.DependencyResolver = new UnityResolver(container);
+
+            configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
+            = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

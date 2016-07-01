@@ -129,11 +129,11 @@ namespace Homemation.WebAPI.Models
             GC.SuppressFinalize( this );
         }
 
-        List<Document> IDocumentRepository.GetAllDocuments()
+        List<Document> IDocumentRepository.GetAllDocuments(int UserId)
         {
-            throw new NotImplementedException();
+            return dataContext.Documents.Where(doc => doc.UserId == UserId).ToList();
         }
-
+             
         List<Document> IDocumentRepository.SearchDocumentByName(string employeeName)
         {
             throw new NotImplementedException();

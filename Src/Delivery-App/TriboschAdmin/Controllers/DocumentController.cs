@@ -31,11 +31,11 @@ namespace Homemation.WebAPI.Controllers
 
         // GET api/<controller>
          [HttpGet]
-         [Route("",  Name="GetDocuments") ]
-        public HttpResponseMessage GetDocuments(int Userid)
+         [Route("{id:int}",  Name="GetDocuments") ]
+        public HttpResponseMessage GetDocuments(int id)
         {
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);
-            List<Document> doc = _repository.GetAllDocuments().Where(u => u.UserId == Userid).ToList();
+            List<Document> doc = _repository.GetAllDocuments(id);
             if (doc != null && doc.Count > 0)
                 response = Request.CreateResponse(HttpStatusCode.OK, doc);
 

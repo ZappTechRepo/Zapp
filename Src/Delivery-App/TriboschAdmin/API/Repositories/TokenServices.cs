@@ -74,10 +74,10 @@ public class TokenServices : ITokenServices
     /// <returns></returns>
     public bool ValidateToken(string tokenId)
     {
-        var token = dataContext.TokenSaleReps.FirstOrDefault(t => t.AuthToken == tokenId && t.ExpiresOn > DateTime.Now);
-        if (token != null && !(DateTime.Now > token.ExpiresOn))
+        var token = dataContext.TokenSaleReps.FirstOrDefault(t => t.AuthToken == tokenId);
+        if (token != null)
         {
-            token.ExpiresOn = Convert.ToDateTime(ConfigurationManager.AppSettings["AuthTokenExpiry"]);
+            token.ExpiresOn = DateTime.Now.AddYears(20);
             //dataContext.Tokens.Attach(token);
             dataContext.SaveChanges();
             return true;

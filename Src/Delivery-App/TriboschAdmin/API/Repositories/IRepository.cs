@@ -25,7 +25,7 @@ namespace Homemation.WebAPI.Models
     public interface IDocumentRepository
     {
 
-        List<Document> GetAllDocuments();
+        List<Document> GetAllDocuments(int UserId);
         List<Document> SearchDocumentByName(string employeeName);
         List<Document> GetDocumentByStatus(string pStatus);
         //List<DeliveryNote> GetDeliveryNoteDocuments(Guid UserId);

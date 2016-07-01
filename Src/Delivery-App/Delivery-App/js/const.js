@@ -3,6 +3,6 @@
 app.value('baseUrl', 'https://randomuser.me/api/');
 
 //Local 
-app.value('baseUrl', 'http://192.168.0.115/TriboschAdmin');
+app.value('baseUrl', 'http://localhost:29128/');
 
 app.value('http_defaults', { timeout: 15000 }); //15 seconds 

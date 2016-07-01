@@ -90,7 +90,7 @@ app
             var promise = null;
 
             $http.defaults.headers.common['token'] = $localStorage.token;
-            $http.get(baseUrl + 'api/document/serialized?status=all').then(function (response) {
+            $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.userid).then(function (response) {
                 if (response.data) {
                     var completed = [], process = [];
                     for (var i = 0; i < response.data.length; i++) {
