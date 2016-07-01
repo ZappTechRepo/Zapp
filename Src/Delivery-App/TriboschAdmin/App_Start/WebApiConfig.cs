@@ -1,4 +1,5 @@
-﻿using Homemation.WebAPI.Repository;
+﻿using Homemation.WebAPI.Models;
+using Homemation.WebAPI.Repository;
 using Microsoft.Practices.Unity;
 using ProductStore.Resolver;
 using System;
@@ -19,12 +20,16 @@ namespace TriboschAdmin.App_Start
             configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
                 new { id = RouteParameter.Optional });
 
+
             //configuration.MessageHandlers.Add(new BasicAuthenticationMessageHandler()); //Global handler - applicable to all the requests
             var container = new UnityContainer();
             container.RegisterType<ITokenServices, TokenServices>(new HierarchicalLifetimeManager());
             configuration.DependencyResolver = new UnityResolver(container);
 
             container.RegisterType<IUserService, UserServices>(new HierarchicalLifetimeManager());
+            configuration.DependencyResolver = new UnityResolver(container);
+
+            container.RegisterType<IDocumentRepository, DocumentRepository>(new HierarchicalLifetimeManager());
             configuration.DependencyResolver = new UnityResolver(container);
         }
     }

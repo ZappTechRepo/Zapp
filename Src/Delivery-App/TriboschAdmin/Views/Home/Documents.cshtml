@@ -38,6 +38,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Customer.CustomerName)
         </th>
+        <th>
+            Driver
+        </th>
         <th></th>
     </tr>
 
@@ -70,6 +73,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FullName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "EditDocuments", new { id = item.ID }) |

@@ -1,7 +1,7 @@
 app
 
-.factory('profileService', ['$localStorage', '$http', 'baseUrl', '$log', '$cordovaDialogs', '$state',
-	function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, $state) {
+.factory('profileService', ['$localStorage', '$http', 'baseUrl', '$log', '$cordovaDialogs', '$state', '$base64',
+	function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, $state, $base64) {
 
 	    var profileManager = function () {
 	        var self = this;
@@ -20,11 +20,16 @@ app
 	        }
 
 
-	        self.DoLogin = function (LoginData) { 
+	        self.DoLogin = function (LoginData) {
+
+	            var base64EncodedString = $base64.encode(LoginData.username + ':' + LoginData.password);
+
+	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
+
 	            var promise = null;
-	            promise = $http.post(baseUrl + "/api/authenticate/login", LoginData).success(function (data) {
+	            promise = $http.post(baseUrl + "/api/authenticate/login").success(function (data) {
 	                if (!data.Success) {
-	                    $cordovaDialogs.alert(data.AuthResponse, 'Login', 'OK');
+	                    $cordovaDialogs.alert("Invalid username and password combination", 'Login', 'OK');
 	                } else {
 	                    self.SetProfile(data);
 	                }
@@ -45,8 +50,8 @@ app
 	        }
 
 	        self.SetProfile = function (profileData) {
-	            if (profileData.User != undefined || profileData.User != null) {
-	                $storage.profile = profileData.User;
+	            if (profileData != undefined || profileData != null) {
+	                $storage.profile = profileData;
 	                $storage.profile.Token = profileData.Token;
 	            }
 
@@ -83,11 +88,30 @@ app
 
         self.getDeliveries = function (rows) {
             var promise = null;
-            promise = $http.post(baseUrl + "?results=" + rows).success(function (data) {
-                $storage.Deliveries = data.results;
-                currentDeliveries = $storage.results;
-            }).error(function (data) {
-                console.log(data);
+
+            $http.defaults.headers.common['token'] = $localStorage.token;
+            $http.get(baseUrl + 'api/document/serialized?status=all').then(function (response) {
+                if (response.data) {
+                    var completed = [], process = [];
+                    for (var i = 0; i < response.data.length; i++) {
+                        if (response.data[i].orderDelivered)
+                            completed[completed.length] = response.data[i];
+                        else
+                            process[process.length] = response.data[i];
+                    }
+
+                    $localStorage.Documents = process;
+                    $localStorage.CompletedDocuments = completed;
+                    if (callback) {
+                        callback(process, completed);
+                    }
+                }
+            }, function (response) {
+                if (response.status === 401) {
+                    LoginService.LogOutUser();
+                    $state.go('login');
+                }
+                alert('An error occurred while trying to retrieve the delivery list');
             });
 
             return promise;

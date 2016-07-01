@@ -30,9 +30,11 @@ namespace TriboschAdmin
         public string InvoiceNo { get; set; }
         public string ReferenceNo { get; set; }
         public byte[] SIgnature { get; set; }
+        public Nullable<int> UserId { get; set; }
     
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Line> Lines { get; set; }
+        public virtual User User { get; set; }
     }
 }

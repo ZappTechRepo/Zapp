@@ -30,6 +30,7 @@ function CreateDocument() {
 
     var orderDocument = {
         CustomerID: $('#Customer :selected').val(),
+        UserID: $('#Users :selected').val(),
         OrderLines: lines,
         TotalIncl: $('#TotalIncl').val(),
         TotalExcl: $('#TotalExcl').val(),

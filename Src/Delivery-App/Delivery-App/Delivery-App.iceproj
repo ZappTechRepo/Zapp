@@ -64,6 +64,7 @@
     <Content Include="js\Controllers\LandingCtrl.js" />
     <Content Include="js\Owt.Utils.js" />
     <Content Include="js\services.js" />
+    <Content Include="lib\Angular-Base64\angular-base64.js" />
     <Content Include="lib\angular-sanitize\.bower.json" />
     <Content Include="lib\angular-sanitize\angular-sanitize.js" />
     <Content Include="lib\angular-sanitize\angular-sanitize.min.js" />
@@ -400,6 +401,7 @@
     <Folder Include="js\" />
     <Folder Include="js\Controllers\" />
     <Folder Include="lib\" />
+    <Folder Include="lib\Angular-Base64\" />
     <Folder Include="lib\angular-sanitize\" />
     <Folder Include="lib\angular\" />
     <Folder Include="lib\ionic-material\" />

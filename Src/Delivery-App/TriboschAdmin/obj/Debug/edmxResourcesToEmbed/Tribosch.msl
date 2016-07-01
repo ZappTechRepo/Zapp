@@ -43,6 +43,7 @@
     <EntitySetMapping Name="Documents">
       <EntityTypeMapping TypeName="TriboschAppModel.Document">
         <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="SIgnature" ColumnName="SIgnature" />
           <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
           <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />

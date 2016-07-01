@@ -19,6 +19,7 @@ namespace TriboschAdmin.WebAPI.Controllers
 
         private readonly ITokenServices _tokenServices;
 
+        public string usn;
 
 
         #endregion
@@ -54,7 +55,7 @@ namespace TriboschAdmin.WebAPI.Controllers
                 if (basicAuthenticationIdentity != null)
                 {
                     var userId = basicAuthenticationIdentity.UserId;
-
+                    usn = basicAuthenticationIdentity.UserName;
                     return GetAuthToken(userId);
                 }
             }
@@ -69,20 +70,18 @@ namespace TriboschAdmin.WebAPI.Controllers
         /// </summary>  
         /// <param name="userId"></param>  
         /// <returns></returns>  
-        private HttpResponseMessage GetAuthToken( int userid)
-    {
+        private HttpResponseMessage GetAuthToken(int userid)
+        {
             var token = _tokenServices.GenerateToken(userid);
-            var deliveryuser = _tokenServices.ProfileDetail(userid);
+            var deliveryuser = _tokenServices.ProfileDetail(usn);
+            bool _success = deliveryuser != null;
             //var response = Request.CreateResponse(HttpStatusCode.OK, "Authorized");  
-            var response = Request.CreateResponse(HttpStatusCode.OK, new { UserName = deliveryuser.UserID, Role = deliveryuser.FullName, Email = deliveryuser.FullName});
+            var response = Request.CreateResponse(HttpStatusCode.OK, new {Success = _success, Token = token.AuthToken, Fullname = deliveryuser.FullName, UserName = deliveryuser.Username, Email = deliveryuser.EmailID, UserID = deliveryuser.UserID });
             response.Headers.Add("Token", token.AuthToken);
             response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
             response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");
 
             return response;
         }
-}  
-
-
-    
+    }
 }

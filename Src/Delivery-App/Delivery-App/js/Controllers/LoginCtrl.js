@@ -4,9 +4,10 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
     $scope.Login = function () { 
 
         $scope.data = {
-            username: "jason@live.com",
-            password: "test123"
+            username: "jason",
+            password: "Jasket123"
         };
+
 
         profileService.DoLogin($scope.data).success(function (data) {
             console.log(data);

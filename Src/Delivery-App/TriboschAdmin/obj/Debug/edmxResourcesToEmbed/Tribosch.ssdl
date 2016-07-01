@@ -38,6 +38,7 @@
     <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
     <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
     <Property Name="SIgnature" Type="image" />
+    <Property Name="UserId" Type="int" />
   </EntityType>
   <EntityType Name="Lines">
     <Key>
@@ -106,6 +107,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Document_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Lines_Document">
     <End Role="Document" Type="Self.Document" Multiplicity="1" />
     <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
@@ -144,6 +157,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Document_Customer" Association="Self.FK_Document_Customer">
       <End Role="Customer" EntitySet="Customer" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Users" Association="Self.FK_Document_Users">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Document" EntitySet="Document" />
     </AssociationSet>
     <AssociationSet Name="FK_Lines_Document" Association="Self.FK_Lines_Document">

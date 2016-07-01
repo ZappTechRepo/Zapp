@@ -80,6 +80,8 @@ namespace TriboschAdmin.Controllers
         {
             ViewBag.Customer = new SelectList(entity.Customers, "CustomerId", "CustomerName");
             ViewBag.Product = new SelectList(entity.Products, "id", "Productname");
+            ViewBag.Users = new SelectList(entity.Users, "UserID", "FullName");
+
             //var tuple = new Tuple<Customer, Document>();
             return View();
         }
@@ -137,6 +139,7 @@ namespace TriboschAdmin.Controllers
                 Document newDoc = new Document();
                 newDoc.Customer = cus;
                 newDoc.CustomerID = cus.CustomerID;
+                newDoc.UserId = orderDocument.UserID;
                 newDoc.TotalIncl = ((orderDocument.TotalExcl - orderDocument.Discount) * 1.14);
                 newDoc.TotalExcl = (orderDocument.TotalExcl - orderDocument.Discount);
                 newDoc.Discount = orderDocument.Discount;

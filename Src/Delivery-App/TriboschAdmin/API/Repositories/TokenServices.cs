@@ -113,9 +113,9 @@ public class TokenServices : ITokenServices
         throw new NotImplementedException();
     }
 
-    TriboschAdmin.User ITokenServices.ProfileDetail(int UserId)
+    TriboschAdmin.User ITokenServices.ProfileDetail(string UserId)
     {
-        TriboschAdmin.User user = dataContext.Users.FirstOrDefault(u => u.UserID == UserId);
+        TriboschAdmin.User user = dataContext.Users.FirstOrDefault(u => u.Username == UserId);
         //var user = _unitOfWork.UserRepository.Get(u = > u.UserName == userName && u.word == word);  
         if (user != null)
         {

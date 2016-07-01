@@ -8,6 +8,7 @@ namespace TriboschAdmin.Models
     public class OrderDocument
     {
         public int CustomerID { get; set; }
+        public int UserID { get; set; }
         public List<OrderLine> OrderLines { get; set; }
         public double TotalIncl { get; set; }
         public double TotalExcl { get; set; }

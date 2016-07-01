@@ -43,6 +43,7 @@
           <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
           <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
           <Property Name="SIgnature" Type="image" />
+          <Property Name="UserId" Type="int" />
         </EntityType>
         <EntityType Name="Lines">
           <Key>
@@ -111,6 +112,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Document_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Lines_Document">
           <End Role="Document" Type="Self.Document" Multiplicity="1" />
           <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
@@ -151,6 +164,10 @@
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Document" EntitySet="Document" />
           </AssociationSet>
+          <AssociationSet Name="FK_Document_Users" Association="Self.FK_Document_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
           <AssociationSet Name="FK_Lines_Document" Association="Self.FK_Lines_Document">
             <End Role="Document" EntitySet="Document" />
             <End Role="Lines" EntitySet="Lines" />
@@ -188,6 +205,10 @@
           </AssociationSet>
           <EntitySet Name="Users" EntityType="TriboschAppModel.User" />
           <EntitySet Name="TokenSaleReps" EntityType="TriboschAppModel.TokenSaleRep" />
+          <AssociationSet Name="FK_Document_Users" Association="TriboschAppModel.FK_Document_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -257,6 +278,8 @@
           <Property Name="SIgnature" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Customer" Relationship="TriboschAppModel.FK_Document_Customer" FromRole="Document" ToRole="Customer" />
           <NavigationProperty Name="Lines" Relationship="TriboschAppModel.FK_Lines_Products" FromRole="Document" ToRole="Line" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="TriboschAppModel.FK_Document_Users" FromRole="Document" ToRole="User" />
         </EntityType>
         <EntityType Name="Line">
           <Key>
@@ -316,6 +339,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EmailID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documents" Relationship="TriboschAppModel.FK_Document_Users" FromRole="User" ToRole="Document" />
         </EntityType>
         <EntityType Name="TokenSaleRep">
           <Key>
@@ -327,6 +351,18 @@
           <Property Name="IssuedOn" Type="DateTime" Precision="3" />
           <Property Name="ExpiresOn" Type="DateTime" Precision="3" />
         </EntityType>
+        <Association Name="FK_Document_Users">
+          <End Type="TriboschAppModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -375,6 +411,7 @@
           <EntitySetMapping Name="Documents">
             <EntityTypeMapping TypeName="TriboschAppModel.Document">
               <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="SIgnature" ColumnName="SIgnature" />
                 <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
