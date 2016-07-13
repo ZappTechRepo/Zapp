@@ -27,7 +27,7 @@ app
 	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
 
 	            var promise = null;
-	            promise = $http.post(baseUrl + "/api/authenticate/login").success(function (data) {
+	            promise = $http.post(baseUrl + "api/authenticate/login/0").success(function (data) {
 	                if (!data.Success) {
 	                    $cordovaDialogs.alert("Invalid username and password combination", 'Login', 'OK');
 	                } else {
@@ -90,7 +90,7 @@ app
             var promise = null;
 
             $http.defaults.headers.common['token'] = $localStorage.token;
-            $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.userid).then(function (response) {
+            $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.userId).then(function (response) {
                 if (response.data) {
                     var completed = [], process = [];
                     for (var i = 0; i < response.data.length; i++) {

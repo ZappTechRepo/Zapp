@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cordovaDialogs, profileService, $http, $state) {
+app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cordovaDialogs, $localStorage, profileService, $http, $state) {
     Utils.SetStatusBarColor('#00aba9');
 
     $scope.Login = function () { 
@@ -11,6 +11,7 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
 
         profileService.DoLogin($scope.data).success(function (data) {
             console.log(data);
+            $localStorage.Profile = data;
         });
 
         $state.go('app.deliveries');

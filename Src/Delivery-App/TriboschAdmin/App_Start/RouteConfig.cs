@@ -18,6 +18,6 @@ namespace TriboschAdmin
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
 			);
-		}
+        }
 	}
 }

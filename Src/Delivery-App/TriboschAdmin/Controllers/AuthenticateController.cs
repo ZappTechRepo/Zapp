@@ -45,7 +45,8 @@ namespace TriboschAdmin.WebAPI.Controllers
         //[POST("get/token")] 
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [HttpPost]
-        [Route("login")]
+     
+        [Route(Name = "login")]
         public HttpResponseMessage Authenticate()
         {
 
