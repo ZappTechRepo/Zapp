@@ -31,6 +31,7 @@ namespace TriboschAdmin.WebAPI.Controllers
         /// </summary>  
         public AuthenticateController(ITokenServices tokenServices)
         {
+
             _tokenServices = tokenServices;
         }
 
@@ -46,7 +47,7 @@ namespace TriboschAdmin.WebAPI.Controllers
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [HttpPost]
      
-        [Route(Name = "login")]
+        [Route("login")]
         public HttpResponseMessage Authenticate()
         {
 
