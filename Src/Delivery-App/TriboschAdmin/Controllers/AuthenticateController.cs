@@ -31,7 +31,6 @@ namespace TriboschAdmin.WebAPI.Controllers
         /// </summary>  
         public AuthenticateController(ITokenServices tokenServices)
         {
-
             _tokenServices = tokenServices;
         }
 
