@@ -27,17 +27,18 @@ namespace Homemation.WebAPI.Models
         //    //return doc; //doc != null ? doc : new List<Document>();
         //}
 
-        //public Guid GetSalesRepGuidByCode(string repcode)
-        //{
-        //   // Guid sRepGuid = Guid.Empty;
-        //   // SalesRep rep =  dataContext.SalesReps.FirstOrDefault(rp => rp.SalesRepCode.Equals(repcode));
-        //   //if (rep != null)
-        //   // {
-        //   //     sRepGuid = rep.rowguid;
-        //   // }
+        public Guid GetSalesRepGuidByCode(string repcode)
+        {
+            throw new NotImplementedException();
+            // Guid sRepGuid = Guid.Empty;
+            // SalesRep rep =  dataContext.SalesReps.FirstOrDefault(rp => rp.SalesRepCode.Equals(repcode));
+            //if (rep != null)
+            // {
+            //     sRepGuid = rep.rowguid;
+            // }
 
-        //   // return sRepGuid;
-        //}
+            // return sRepGuid;
+        }
 
 
 
@@ -149,14 +150,17 @@ namespace Homemation.WebAPI.Models
         //    throw new NotImplementedException();
         //}
 
-        public Guid GetSalesRepGuidByCode(string repcode)
+        int IDocumentRepository.GetSalesRepGuidByToken(string token)
         {
-            throw new NotImplementedException();
-        }
+            TriboschAdmin.TokenSaleRep tonkenrep = dataContext.TokenSaleReps.FirstOrDefault(ts => ts.AuthToken.Equals(token));
 
-        public Guid GetSalesRepGuidByToken(string token)
-        {
-            throw new NotImplementedException();
+            int gRepGuid = 0;
+            if (tonkenrep != null)
+            {
+                gRepGuid = Convert.ToInt32(tonkenrep.UserId);
+            }
+
+            return gRepGuid;
         }
     }
 }

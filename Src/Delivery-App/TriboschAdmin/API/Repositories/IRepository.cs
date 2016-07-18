@@ -30,7 +30,7 @@ namespace Homemation.WebAPI.Models
         List<Document> GetDocumentByStatus(string pStatus);
         //List<DeliveryNote> GetDeliveryNoteDocuments(Guid UserId);
         Guid GetSalesRepGuidByCode(string repcode);
-        Guid GetSalesRepGuidByToken(string token);
+        int GetSalesRepGuidByToken(string token);
 
 
 
