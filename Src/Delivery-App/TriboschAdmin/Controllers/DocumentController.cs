@@ -31,7 +31,6 @@ namespace Homemation.WebAPI.Controllers
 
         // GET api/<controller>
          [HttpGet]
-         [Route("{id:int}",  Name="GetDocuments") ]
         public HttpResponseMessage GetDocuments(int id)
         {
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);
@@ -67,24 +66,30 @@ namespace Homemation.WebAPI.Controllers
         [Route("serialized", Name = "GetSerializedDocuments")]
         public HttpResponseMessage SerializedDocuments()
         {
-            var re = Request;
-            var headers = re.Headers;
-            string token = "";
-            if (headers.Contains("Token"))
-            {
-                token = headers.GetValues("Token").First();
-            }
-
-
-            //test with http://localhost:8097/api/document/serialized
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);
-
-            Guid repguid = _repository.GetSalesRepGuidByToken(token);
-            //// List<DeliveryNote> del = _repository.GetDeliveryNoteDocuments(repguid);
-            // if (del != null && del.Count > 0)
-            //     response = Request.CreateResponse(HttpStatusCode.OK, del);
+            List<Document> doc = _repository.GetAllDocuments(1);
+            if (doc != null && doc.Count > 0)
+                response = Request.CreateResponse(HttpStatusCode.OK, doc);
 
             return response;
+            //var re = Request;
+            //var headers = re.Headers;
+            //string token = "";
+            //if (headers.Contains("Token"))
+            //{
+            //    token = headers.GetValues("Token").First();
+            //}
+
+
+            ////test with http://localhost:8097/api/document/serialized
+            //HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);
+
+            //int repguid = _repository.GetSalesRepGuidByToken(token);
+            ////// List<DeliveryNote> del = _repository.GetDeliveryNoteDocuments(repguid);
+            //// if (del != null && del.Count > 0)
+            ////     response = Request.CreateResponse(HttpStatusCode.OK, del);
+
+            //return response;
         }
        
 
