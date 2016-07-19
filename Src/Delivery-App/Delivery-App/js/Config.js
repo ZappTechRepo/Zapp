@@ -10,8 +10,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $
             response: function (response) {
                 $rootScope.$broadcast('loading:hide')
                 return response
-            }
-        }
+            }  
+        } 
     }); 
 
 

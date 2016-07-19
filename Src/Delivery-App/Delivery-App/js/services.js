@@ -53,6 +53,8 @@ app
 	            if (profileData != undefined || profileData != null) {
 	                $storage.profile = profileData;
 	                $storage.profile.Token = profileData.Token;
+	            } else {
+	                $storage.profile = null;
 	            }
 
 	            currentProfile = $storage.profile;
@@ -89,22 +91,22 @@ app
         self.getDeliveries = function (rows) {
             var promise = null;
 
-            $http.defaults.headers.common['token'] = $localStorage.token;
-            promise = $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.userId).success(function (response) {
-                if (response.data) {
-                    var completed = [], process = [];
-                    for (var i = 0; i < response.data.length; i++) {
-                        if (response.data[i].orderDelivered)
-                            completed[completed.length] = response.data[i];
-                        else
-                            process[process.length] = response.data[i];
-                    }
+            $http.defaults.headers.common['token'] = $localStorage.Profile.Token;
+            promise = $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.Profile.UserID).success(function (response) {
+                if (response != null) {
+                    //var completed = [], process = [];
+                    //for (var i = 0; i < response.data.length; i++) {
+                    //    if (response.data[i].orderDelivered)
+                    //        completed[completed.length] = response.data[i];
+                    //    else
+                    //        process[process.length] = response.data[i];
+                    //}
 
-                    $localStorage.Documents = process;
-                    $localStorage.CompletedDocuments = completed;
-                    if (callback) {
-                        callback(process, completed);
-                    }
+                    $localStorage.Documents = response;
+                    //$localStorage.CompletedDocuments = completed;  
+                    //if (callback) {
+                    //    callback(process, completed);
+                    //}
                 }
             }, function (response) {
                 if (response.status === 401) {

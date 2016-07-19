@@ -12,7 +12,7 @@ app.run(function ($ionicPlatform, $rootScope, $ionicLoading) {
 
         if (window.StatusBar) {
             //StatusBar.styleDefault();
-            StatusBar.backgroundColorByHexString('#323232');
+            StatusBar.backgroundColorByHexString('#008987');
         }
          
         if (window.cordova && window.cordova.plugins.Keyboard) {

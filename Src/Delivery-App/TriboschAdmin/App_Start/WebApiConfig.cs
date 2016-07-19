@@ -21,7 +21,7 @@ namespace TriboschAdmin.App_Start
         {
             configuration.Routes.MapHttpRoute(
                  name: "DefaultApi",
-                 routeTemplate: "api/{controller}/{category}/{id}",
+                 routeTemplate: "api/{controller}/{action}/{id}",
                  defaults: new { category = "all", id = RouteParameter.Optional });
 
             configuration.Routes.MapHttpRoute("DefaultApiWithId", "api/{controller}/{id}", new { id = RouteParameter.Optional }, new { id = @"\d+" });

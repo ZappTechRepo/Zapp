@@ -1,32 +1,30 @@
 ﻿<ion-view view-title="Delivery Detail">
-  <ion-content class="has-header">
-      <p ng-bind-html="event.Description"></p>
+    <ion-content class="has-header">
+        <p ng-bind-html="event.Description"></p>
 
-
-      <div class="card">
-          <button class="button button-full button-assertive ink get-dir-button">Get Directions</button>
-          <div class="item delivery-item">
-            <i class="icon ion-ios-location-outline"></i>
-            <h2>{{Delivery.user.name.first}} {{Delivery.user.name.last}}</h2>
-            <p>{{Delivery.user.phone}}</p>
-          </div>
-          <img class="full-image map-img" src="img/GoogleMap.JPG">
-          <div class="item item-body delivery-body">
-            <h2>Order Number</h2>
-              <p>WEB02313193</p>
-              <h2>Invoice Number</h2>
-              <p>INV0123949</p>
-              <h2>Address</h2>
-              <p>9 Hibisus street<br />
-                  Lynnwood Ridge<br />
-                  Pretoria<br />
-                  0081
-              </p>
-              <h2>Special Instructions</h2>
-              <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet elit. Fusce sed est nec orci consequat mattis sed non augue. Fusce lacinia lacus a suscipit tristique.
-            </p>
-          </div>
+        <div class="card">
+            <button class="button button-full button-assertive ink get-dir-button" ng-click="GetDirections()">Get Directions</button>
+            <div class="item delivery-item">
+                <i class="icon ion-ios-location-outline"></i>
+                <h2>{{Delivery.Customer.CustomerName}}</h2>
+                <p>{{Delivery.Customer.ContactNumber}}</p>
+            </div>
+            <img class="full-image map-img" src="img/GoogleMap.JPG">
+            <div class="item item-body delivery-body">
+                <h2>Order Number</h2>
+                <p>{{Delivery.ReferenceNo}}</p>
+                <h2>Invoice Number</h2>
+                <p>{{Delivery.InvoiceNo}}</p>
+                <h2>Address</h2>
+                <p>
+                    {{Delivery.Customer.Addresses[0].Address1}}<br />
+                    {{Delivery.Customer.Addresses[0].Address2}}<br />
+                    {{Delivery.Customer.Addresses[0].Address3}}<br />
+                    {{Delivery.Customer.Addresses[0].Country}}<br />
+                    {{Delivery.Customer.Addresses[0].PostalCode}}
+                </p>
+            </div>
         </div>
-  </ion-content>
+    </ion-content>
 </ion-view>
+                    

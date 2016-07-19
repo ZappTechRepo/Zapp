@@ -4,19 +4,19 @@ app.controller('DeliveriesCtrl', function ($scope, $stateParams, Utils, baseUrl,
 
 
     deliveryService.getDeliveries(15).success(function (data) {
-        $scope.Deliveries = data.results;
+        $scope.Deliveries = data;
     });
 
     $scope.doRefresh = function () {
         deliveryService.getDeliveries(15).success(function (data) {
-            $scope.Deliveries = data.results;
+            $scope.Deliveries = data;
         }).finally(function () {
             // Stop the ion-refresher from spinning
             $scope.$broadcast('scroll.refreshComplete');
         });
     }
 
-    $scope.GotoDelivery = function () {
-        $state.go('app.deliveryDetail');
+    $scope.GotoDelivery = function (id) {
+        $state.go('app.deliveryDetail', { ID: id });
     }
 });
