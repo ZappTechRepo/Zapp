@@ -3,13 +3,13 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
 
     $scope.Login = function () { 
 
-        $scope.data = {
+        $scope.loginData = {
             username: "jason",
             password: "Jasket123"
         };
 
 
-        profileService.DoLogin($scope.data).success(function (data) {
+        profileService.DoLogin($scope.loginData).success(function (data) {
             console.log(data);
             $localStorage.Profile = data;
         });

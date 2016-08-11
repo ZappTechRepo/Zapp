@@ -20,9 +20,21 @@ namespace TriboschAdmin.App_Start
         public static void Register(HttpConfiguration configuration)
         {
             configuration.Routes.MapHttpRoute(
-                 name: "DefaultApi",
-                 routeTemplate: "api/{controller}/{action}/{id}",
-                 defaults: new { category = "all", id = RouteParameter.Optional });
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { category = "all", id = RouteParameter.Optional }
+            );
+
+            //configuration.Routes.MapHttpRoute(
+            //     name: "DefaultApi",
+            //     routeTemplate: "api/{controller}/{action}/{id}",
+            //     defaults: new { category = "all", id = RouteParameter.Optional });
+
+            //configuration.Routes.MapHttpRoute(
+            //      name: "DefaultApiDocs",
+            //      routeTemplate: "api/{controller}/{category}",
+            //      defaults: new { category = "all" }
+            //    );
 
             configuration.Routes.MapHttpRoute("DefaultApiWithId", "api/{controller}/{id}", new { id = RouteParameter.Optional }, new { id = @"\d+" });
             configuration.Routes.MapHttpRoute("DefaultApiWithAction", "api/{controller}/{action}");

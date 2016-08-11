@@ -1,0 +1,24 @@
+﻿
+<div id="myfirstchart" style="height: 250px;"></div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get('@Url.Action("DashReport")', function (result) {
+
+            new Morris.Grid({
+                // ID of the element in which to draw the chart.
+                element: 'myfirstchart',
+                // Chart data records -- each entry in this array corresponds to a point on
+                // the chart.
+                data: result,
+                // The name of the data record attribute that contains x-values.
+                xkey: 'CustomerName',
+                // A list of names of data record attributes that contain y-values.
+                ykeys: 'Email',
+                // Labels for the ykeys -- will be displayed when you hover over the
+                // chart.
+                labels: ['Value']
+            });
+        });
+    });
+  </script>

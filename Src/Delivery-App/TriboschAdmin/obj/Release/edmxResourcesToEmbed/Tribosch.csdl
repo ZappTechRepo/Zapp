@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TriboschAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TriboschAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="TriboschAppModel.Product" />
+    <EntitySet Name="Addresses" EntityType="TriboschAppModel.Address" />
+    <EntitySet Name="Customers" EntityType="TriboschAppModel.Customer" />
+    <AssociationSet Name="FK_Address_Customer" Association="TriboschAppModel.FK_Address_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="TriboschAppModel.Document" />
+    <EntitySet Name="Lines" EntityType="TriboschAppModel.Line" />
+    <AssociationSet Name="FK_Document_Customer" Association="TriboschAppModel.FK_Document_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Products" Association="TriboschAppModel.FK_Lines_Products">
+      <End Role="Document" EntitySet="Documents" />
+      <End Role="Line" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Products1" Association="TriboschAppModel.FK_Lines_Products1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Line" EntitySet="Lines" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="TriboschAppModel.User" />
+    <EntitySet Name="TokenSaleReps" EntityType="TriboschAppModel.TokenSaleRep" />
+    <AssociationSet Name="FK_Document_Users" Association="TriboschAppModel.FK_Document_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PackSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PriceExcl" Type="Double" />
+    <Property Name="RetailPriceExcl" Type="Double" />
+    <Property Name="RetailPriceIncl" Type="Double" />
+    <Property Name="Qty" Type="Int32" />
+    <NavigationProperty Name="Lines" Relationship="TriboschAppModel.FK_Lines_Products1" FromRole="Product" ToRole="Line" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GPSCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customer" Relationship="TriboschAppModel.FK_Address_Customer" FromRole="Address" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MainContactName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Addresses" Relationship="TriboschAppModel.FK_Address_Customer" FromRole="Customer" ToRole="Address" />
+    <NavigationProperty Name="Documents" Relationship="TriboschAppModel.FK_Document_Customer" FromRole="Customer" ToRole="Document" />
+  </EntityType>
+  <Association Name="FK_Address_Customer">
+    <End Type="TriboschAppModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="TriboschAppModel.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+    <Property Name="TotalExcl" Type="Double" />
+    <Property Name="TotalIncl" Type="Double" />
+    <Property Name="Discount" Type="Double" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SIgnature" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Customer" Relationship="TriboschAppModel.FK_Document_Customer" FromRole="Document" ToRole="Customer" />
+    <NavigationProperty Name="Lines" Relationship="TriboschAppModel.FK_Lines_Products" FromRole="Document" ToRole="Line" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="TriboschAppModel.FK_Document_Users" FromRole="Document" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Line">
+    <Key>
+      <PropertyRef Name="LineID" />
+    </Key>
+    <Property Name="LineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="TotalExcl" Type="Double" />
+    <Property Name="TotalIncl" Type="Double" />
+    <Property Name="docID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Document" Relationship="TriboschAppModel.FK_Lines_Products" FromRole="Line" ToRole="Document" />
+    <NavigationProperty Name="Product" Relationship="TriboschAppModel.FK_Lines_Products1" FromRole="Line" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Document_Customer">
+    <End Type="TriboschAppModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Products">
+    <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="1" />
+    <End Type="TriboschAppModel.Line" Role="Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="docID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Products1">
+    <End Type="TriboschAppModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="TriboschAppModel.Line" Role="Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="TriboschAppModel.FK_Document_Users" FromRole="User" ToRole="Document" />
+  </EntityType>
+  <EntityType Name="TokenSaleRep">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="AuthToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IssuedOn" Type="DateTime" Precision="3" />
+    <Property Name="ExpiresOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Document_Users">
+    <End Type="TriboschAppModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="TriboschAppModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

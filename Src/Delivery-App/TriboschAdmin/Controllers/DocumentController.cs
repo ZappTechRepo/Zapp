@@ -14,7 +14,6 @@ namespace Homemation.WebAPI.Controllers
 {
     //[APIAuthenticationFilter] 
     [AuthorizationRequired]
-    [EnableCors(origins: "http://localhost:55058", headers: "*", methods: "*")]
     [RoutePrefix("api/document")]
     public class DocumentController : BaseController
     {
@@ -26,11 +25,11 @@ namespace Homemation.WebAPI.Controllers
             _repository = repository;
         }
 
-       
+
 
 
         // GET api/<controller>
-         [HttpGet]
+        [HttpGet]
         public HttpResponseMessage GetDocuments(int id)
         {
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent);

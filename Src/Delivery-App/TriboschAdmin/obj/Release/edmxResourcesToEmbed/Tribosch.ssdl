@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TriboschAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="Address3" Type="varchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="100" />
+    <Property Name="GPSCode" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="MainContactName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="TotalExcl" Type="float" />
+    <Property Name="TotalIncl" Type="float" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="DeliveryDate" Type="date" />
+    <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
+    <Property Name="SIgnature" Type="image" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Lines">
+    <Key>
+      <PropertyRef Name="LineID" />
+    </Key>
+    <Property Name="LineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="TotalExcl" Type="float" />
+    <Property Name="TotalIncl" Type="float" />
+    <Property Name="docID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="500" />
+    <Property Name="PackSize" Type="varchar" MaxLength="50" />
+    <Property Name="PriceExcl" Type="float" />
+    <Property Name="RetailPriceExcl" Type="float" />
+    <Property Name="RetailPriceIncl" Type="float" />
+    <Property Name="Qty" Type="int" />
+  </EntityType>
+  <EntityType Name="TokenSaleRep">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="AuthToken" Type="varchar" MaxLength="50" />
+    <Property Name="IssuedOn" Type="datetime" />
+    <Property Name="ExpiresOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="100" />
+    <Property Name="EmailID" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_Address_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Document">
+    <End Role="Document" Type="Self.Document" Multiplicity="1" />
+    <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lines">
+        <PropertyRef Name="docID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lines_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Lines" Type="Self.Lines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lines">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TriboschAppModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lines" EntityType="Self.Lines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TokenSaleRep" EntityType="Self.TokenSaleRep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_Customer" Association="Self.FK_Address_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Customer" Association="Self.FK_Document_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Users" Association="Self.FK_Document_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Document" Association="Self.FK_Lines_Document">
+      <End Role="Document" EntitySet="Document" />
+      <End Role="Lines" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lines_Products" Association="Self.FK_Lines_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Lines" EntitySet="Lines" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -27,7 +27,7 @@ app
 	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
 
 	            var promise = null;
-	            promise = $http.post(baseUrl + "api/authenticate/login").success(function (data) {
+	            promise = $http.post(baseUrl + "api/authenticate/authenticate").success(function (data) {
 	                if (!data.Success) {
 	                    $cordovaDialogs.alert("Invalid username and password combination", 'Login', 'OK');
 	                } else {

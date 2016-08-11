@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TriboschAdmin.Document>
+
+@{
+    ViewBag.Title = "Documents";
+}
+
+<h2>Documents</h2>
+
+<p>
+    <a href="/Home/CreateDocument" class="btn btn-primary">Create New Document</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalExcl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalIncl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SIgnature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </th>
+        <th>
+            Driver
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.TotalExcl)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.TotalIncl)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferenceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SIgnature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FullName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditDocuments", new { id = item.ID }) |
+                @* @Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TriboschAppModelStoreContainer" CdmEntityContainer="TriboschAppEntities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="TriboschAppModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="RetailPriceIncl" ColumnName="RetailPriceIncl" />
+          <ScalarProperty Name="RetailPriceExcl" ColumnName="RetailPriceExcl" />
+          <ScalarProperty Name="PriceExcl" ColumnName="PriceExcl" />
+          <ScalarProperty Name="PackSize" ColumnName="PackSize" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="TriboschAppModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="GPSCode" ColumnName="GPSCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TriboschAppModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="MainContactName" ColumnName="MainContactName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="TriboschAppModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SIgnature" ColumnName="SIgnature" />
+          <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+          <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lines">
+      <EntityTypeMapping TypeName="TriboschAppModel.Line">
+        <MappingFragment StoreEntitySet="Lines">
+          <ScalarProperty Name="docID" ColumnName="docID" />
+          <ScalarProperty Name="TotalIncl" ColumnName="TotalIncl" />
+          <ScalarProperty Name="TotalExcl" ColumnName="TotalExcl" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TriboschAppModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TokenSaleReps">
+      <EntityTypeMapping TypeName="TriboschAppModel.TokenSaleRep">
+        <MappingFragment StoreEntitySet="TokenSaleRep">
+          <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+          <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
