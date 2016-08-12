@@ -1,4 +1,4 @@
-﻿<ion-view view-title="Delivery Detail">
+﻿<ion-view view-title="Delivery Detail" ng-controller="DeliveryDetailCtrl">
     <ion-content class="has-header">
         <p ng-bind-html="event.Description"></p>
 
@@ -24,6 +24,7 @@
                     {{Delivery.Customer.Addresses[0].PostalCode}}
                 </p>
             </div>
+            <button class="button button-full button-assertive ink get-dir-button" ng-click="SignForDelivery()">Delivery Signature</button>
         </div>
     </ion-content>
 </ion-view>

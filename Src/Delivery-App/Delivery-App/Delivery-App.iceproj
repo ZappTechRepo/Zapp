@@ -188,6 +188,9 @@
     <Content Include="lib\ionic\scss\_variables.scss" />
     <Content Include="lib\ngCordova\ng-cordova.min.js" />
     <Content Include="lib\ngStorage\ngStorage.min.js" />
+    <Content Include="lib\signaturePad\signature_pad.min.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="lib\underscore\underscore-min.js" />
     <Content Include="lib\waves\.bower.json" />
     <Content Include="lib\waves\bower.json" />
@@ -423,6 +426,7 @@
     <Folder Include="lib\ionic\scss\ionicons\" />
     <Folder Include="lib\ngCordova\" />
     <Folder Include="lib\ngStorage\" />
+    <Folder Include="lib\signaturePad\" />
     <Folder Include="lib\underscore\" />
     <Folder Include="lib\waves\" />
     <Folder Include="lib\waves\dist\" />

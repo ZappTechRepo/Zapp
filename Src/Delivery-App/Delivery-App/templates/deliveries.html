@@ -4,7 +4,7 @@
                        on-refresh="doRefresh()">
         </ion-refresher>
         <ion-list class="list" ng-repeat="delivery in Deliveries">
-             <a class="item delivery-item" href="#" ng-click="GotoDelivery()">
+             <a class="item delivery-item" href="#" ng-click="GotoDelivery(delivery.ID)">
                   <i class="icon ion-ios-location-outline"></i>
                  <span class="date">{{delivery.DateCreated}}</span>
                   <h2>{{delivery.Customer.CustomerName}}</h2>

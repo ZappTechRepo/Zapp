@@ -102,7 +102,7 @@ app
                     //        process[process.length] = response.data[i];
                     //}
 
-                    $localStorage.Documents = response;
+                    $storage.Documents = response;
                     //$localStorage.CompletedDocuments = completed;  
                     //if (callback) {
                     //    callback(process, completed);

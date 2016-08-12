@@ -17,6 +17,6 @@ app.controller('DeliveriesCtrl', function ($scope, $stateParams, Utils, baseUrl,
     }
 
     $scope.GotoDelivery = function (id) {
-        $state.go('app.deliveryDetail', { ID: id });
+        $state.go('app.deliveryDetail', { Id: id });
     }
 });
