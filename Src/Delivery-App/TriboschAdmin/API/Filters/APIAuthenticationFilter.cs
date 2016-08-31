@@ -41,7 +41,7 @@ namespace TriboschAdmin.WebAPI.Filters
             if (provider != null)
             {
                
-                var userId = provider.Authenticate(username, word);
+                var userId = provider.Authenticate(username, word, "");
                
                 //if (userId > 0)
                 if (userId != null)

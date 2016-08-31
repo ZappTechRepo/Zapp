@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using TriboschAdmin;
 
@@ -149,6 +151,63 @@ namespace Homemation.WebAPI.Models
         //{
         //    throw new NotImplementedException();
         //}
+
+        public string SaveSignature(string base64Img, string documentNumber)
+        {
+
+            string svgFileName = "";//svgFileName + ".PNG";
+            int docid = Int32.Parse(documentNumber);
+
+            try
+            {
+
+                Document doc = dataContext.Documents.FirstOrDefault(p => p.ID.Equals(docid));
+                if (doc != null)
+                {
+                    byte[] sigbytes = Convert.FromBase64String(base64Img);
+
+
+                    string SignatureUploadPath = System.Configuration.ConfigurationManager.AppSettings["SignatureUploadPath"];
+
+                    if (!Directory.Exists(SignatureUploadPath + "/" + doc.ID.ToString().ToUpper() + "/Delivery Signature"))
+                        Directory.CreateDirectory(SignatureUploadPath + "/" + doc.ID.ToString().ToUpper() + "/Delivery Signature");
+
+                    svgFileName = SignatureUploadPath + "/" + doc.ID.ToString().ToUpper() + "/Delivery Signature/DS" + documentNumber + ".PNG";
+
+                    Image img = LoadImage(sigbytes);
+
+                    img.Save(svgFileName);
+
+
+                    doc.SIgnature = sigbytes;
+
+                    dataContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                svgFileName = "ERROR:" + ex.Message.ToString();
+            }
+
+            return svgFileName;
+        }
+
+
+
+        public Image LoadImage(byte[] img64)
+        {
+            //data:image/gif;base64,
+            //this image is a single pixel (black)
+            byte[] bytes = img64; //"R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==");
+
+            Image image;
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                image = Image.FromStream(ms);
+            }
+
+            return image;
+        }
 
         int IDocumentRepository.GetSalesRepGuidByToken(string token)
         {

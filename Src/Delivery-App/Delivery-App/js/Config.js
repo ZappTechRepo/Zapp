@@ -25,18 +25,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $
         controller: 'AppCtrl'
     })
 
-    .state('app.landing', {
-        url: '/landing',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/landing.html',
-                controller: 'LandingCtrl'
-            }
-        }
-    })
-
     .state('app.deliveries', {
-        url: '/deliveries',
+        url: '/deliveries/:userId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/deliveries.html',

@@ -1,6 +1,8 @@
 app.controller('DeliveriesCtrl', function ($scope, $stateParams, Utils, baseUrl, $cordovaDialogs, profileService, $http, $state, deliveryService) {
     Utils.SetStatusBarColor('#00aba9');
     $scope.Deliveries = [];
+    $scope.userId = $stateParams.userId;
+
 
 
     deliveryService.getDeliveries(15).success(function (data) {

@@ -24,7 +24,7 @@ namespace Homemation.WebAPI.Repository
         /// </summary>  
         /// <param name="tokenId"></param>  
         /// <returns></returns>  
-        bool ValidateToken(string tokenId);  
+        int ValidateToken(string tokenId);  
   
         /// <summary>  
         /// Method to kill the provided token id.  
@@ -47,7 +47,16 @@ namespace Homemation.WebAPI.Repository
         /// <param name="word"></param>
         /// <returns></returns>
         //SalesRep ProfileDetail(Guid UserId);
-        TriboschAdmin.User ProfileDetail(string UserId);
+        TriboschAdmin.User ProfileDetail(string username);
+
+        /// <summary>
+        /// returns the specific userId if the user is authenticated successfully.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        //SalesRep ProfileDetail(Guid UserId);
+        TriboschAdmin.User ProfileDetail(int UserId);
 
         #endregion
     }

@@ -31,7 +31,7 @@ namespace Homemation.WebAPI.Models
         //List<DeliveryNote> GetDeliveryNoteDocuments(Guid UserId);
         Guid GetSalesRepGuidByCode(string repcode);
         int GetSalesRepGuidByToken(string token);
-
+        string SaveSignature(string base64Img, string documentNumber);
 
 
 

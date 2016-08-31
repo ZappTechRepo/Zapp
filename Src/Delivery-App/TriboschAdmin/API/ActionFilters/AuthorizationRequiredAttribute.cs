@@ -37,7 +37,7 @@ namespace Homemation.WebAPI.ActionFilters
                 var tokenValue = filterContext.Request.Headers.GetValues(Token).First();
 
                 // Validate Token  
-                if (provider != null && !provider.ValidateToken(tokenValue))
+                if (provider != null && provider.ValidateToken(tokenValue) != -1)
                 {
                     var responseMessage = new HttpResponseMessage(HttpStatusCode.Unauthorized)
                     {

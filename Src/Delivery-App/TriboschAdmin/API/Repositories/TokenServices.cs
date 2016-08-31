@@ -72,7 +72,7 @@ public class TokenServices : ITokenServices
     /// </summary>
     /// <param name="tokenId"></param>
     /// <returns></returns>
-    public bool ValidateToken(string tokenId)
+    public int ValidateToken(string tokenId)
     {
         var token = dataContext.TokenSaleReps.FirstOrDefault(t => t.AuthToken == tokenId);
         if (token != null)
@@ -80,9 +80,11 @@ public class TokenServices : ITokenServices
             token.ExpiresOn = DateTime.Now.AddYears(20);
             //dataContext.Tokens.Attach(token);
             dataContext.SaveChanges();
-            return true;
+
+            return Int32.Parse(token.UserId.ToString());
         }
-        return false;
+
+        return -1;
     }
 
     /// <summary>
@@ -113,9 +115,9 @@ public class TokenServices : ITokenServices
         throw new NotImplementedException();
     }
 
-    TriboschAdmin.User ITokenServices.ProfileDetail(string UserId)
+    TriboschAdmin.User ITokenServices.ProfileDetail(string username)
     {
-        TriboschAdmin.User user = dataContext.Users.FirstOrDefault(u => u.Username == UserId);
+        TriboschAdmin.User user = dataContext.Users.FirstOrDefault(u => u.Username == username);
         //var user = _unitOfWork.UserRepository.Get(u = > u.UserName == userName && u.word == word);  
         if (user != null)
         {

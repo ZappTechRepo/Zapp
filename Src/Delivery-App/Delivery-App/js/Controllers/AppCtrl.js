@@ -60,7 +60,7 @@
             case 'right':
                 hasHeaderFabRight = true;
                 break;
-        }
+        } 
 
         $scope.hasHeaderFabLeft = hasHeaderFabLeft;
         $scope.hasHeaderFabRight = hasHeaderFabRight;

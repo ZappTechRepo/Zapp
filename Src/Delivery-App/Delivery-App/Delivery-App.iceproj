@@ -64,6 +64,7 @@
     <Content Include="js\Controllers\LandingCtrl.js" />
     <Content Include="js\Owt.Utils.js" />
     <Content Include="js\services.js" />
+    <Content Include="js\SignatureCanvas.js" />
     <Content Include="lib\Angular-Base64\angular-base64.js" />
     <Content Include="lib\angular-sanitize\.bower.json" />
     <Content Include="lib\angular-sanitize\angular-sanitize.js" />
@@ -187,6 +188,10 @@
     <Content Include="lib\ionic\scss\_util.scss" />
     <Content Include="lib\ionic\scss\_variables.scss" />
     <Content Include="lib\ngCordova\ng-cordova.min.js" />
+    <Content Include="lib\ngDialog\css\ngDialog-theme-default.css" />
+    <Content Include="lib\ngDialog\css\ngDialog-theme-flat.css" />
+    <Content Include="lib\ngDialog\css\ngDialog.css" />
+    <Content Include="lib\ngDialog\ngDialog.min.js" />
     <Content Include="lib\ngStorage\ngStorage.min.js" />
     <Content Include="lib\signaturePad\signature_pad.min.js">
       <SubType>Content</SubType>
@@ -425,6 +430,8 @@
     <Folder Include="lib\ionic\scss\" />
     <Folder Include="lib\ionic\scss\ionicons\" />
     <Folder Include="lib\ngCordova\" />
+    <Folder Include="lib\ngDialog\" />
+    <Folder Include="lib\ngDialog\css\" />
     <Folder Include="lib\ngStorage\" />
     <Folder Include="lib\signaturePad\" />
     <Folder Include="lib\underscore\" />

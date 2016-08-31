@@ -3,22 +3,4 @@ app.controller('LandingCtrl', function ($scope, $stateParams, Utils, baseUrl, $c
 
     
 
-    $scope.doLoginFromToken = function (token) {
-
-        $http.post(baseUrl + "/Auth/doLoginFromToken", { token: token }).success(function (data) {
-             
-            profileService.SetProfile(data);
-            $state.go('app.profile'); 
-
-        }).error(function (data) {
-            console.dir(data);
-            $cordovaDialogs.alert('Unable to log you in. ' + data, 'Login', 'OK');
-        });
-    };
-
-    //initialization
-    var profile = profileService.getProfile();
-    if (profile != null) {
-        $scope.doLoginFromToken(profileService.getToken());
-    }
 });

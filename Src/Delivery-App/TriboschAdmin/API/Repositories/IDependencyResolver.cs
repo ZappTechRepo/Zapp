@@ -14,5 +14,6 @@ namespace TriboschAdmin.API.Repositories
     {
         object GetService(Type serviceType);
         IEnumerable<object> GetServices(Type serviceType);
+
     }
 }

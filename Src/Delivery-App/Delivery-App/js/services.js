@@ -1,7 +1,7 @@
 app
 
-.factory('profileService', ['$localStorage', '$http', 'baseUrl', '$log', '$cordovaDialogs', '$state', '$base64',
-	function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, $state, $base64) {
+.factory('profileService', ['$localStorage', '$http', 'baseUrl', '$log', '$cordovaDialogs', '$state', '$base64','$ionicLoading',
+	function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, $state, $base64, $ionicLoading) {
 
 	    var profileManager = function () {
 	        var self = this;
@@ -15,14 +15,34 @@ app
 	            var promise = $http.post(baseUrl + "?results=" + null);
 
 	            promise.error(function (data) { $log.debug(data); });
-
+                 
 	            return promise;
 	        }
 
 
+	        self.LoginFromToken = function (token) {
+
+	            var base64EncodedString = $base64.encode("Null:Null:" + token);
+
+	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
+
+	            var promise = null;
+
+	            promise = $http.post(baseUrl + "api/authenticate/LoginFromToken").success(function (data) {
+
+	                profileService.SetProfile(data);
+	                $state.go('app.deliveries');
+
+	            }).error(function (data) {
+	                console.dir(data);
+	            });
+
+	            return promise;
+	        };
+
 	        self.DoLogin = function (LoginData) {
 
-	            var base64EncodedString = $base64.encode(LoginData.username + ':' + LoginData.password);
+	            var base64EncodedString = $base64.encode(LoginData.username + ':' + LoginData.password + ":Null");
 
 	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
 
@@ -34,6 +54,7 @@ app
 	                    self.SetProfile(data);
 	                }
 	            }).error(function (data) {
+	                $ionicLoading.hide();
 	                console.log(data);
 	            });
 
@@ -46,7 +67,7 @@ app
 
 	            currentProfile = null;
 
-	            $state.go('app.landing');
+	            $state.go('app.login');
 	        }
 
 	        self.SetProfile = function (profileData) {
@@ -55,6 +76,7 @@ app
 	                $storage.profile.Token = profileData.Token;
 	            } else {
 	                $storage.profile = null;
+	                $localStorage.Profile = null;
 	            }
 
 	            currentProfile = $storage.profile;
@@ -80,7 +102,7 @@ app
 	    return new profileManager();
 	}])
 
-.factory('deliveryService', function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, profileService) {
+.factory('deliveryService', function ($localStorage, $http, baseUrl, $log, $cordovaDialogs, profileService, $ionicLoading) {
 
     var eventManager = function () {
         var self = this;
@@ -91,22 +113,10 @@ app
         self.getDeliveries = function (rows) {
             var promise = null;
 
-            $http.defaults.headers.common['token'] = $localStorage.Profile.Token;
-            promise = $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.Profile.UserID).success(function (response) {
+            $http.defaults.headers.common['token'] = $localStorage.profile.Token;
+            promise = $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.profile.UserID).success(function (response) {
                 if (response != null) {
-                    //var completed = [], process = [];
-                    //for (var i = 0; i < response.data.length; i++) {
-                    //    if (response.data[i].orderDelivered)
-                    //        completed[completed.length] = response.data[i];
-                    //    else
-                    //        process[process.length] = response.data[i];
-                    //}
-
                     $storage.Documents = response;
-                    //$localStorage.CompletedDocuments = completed;  
-                    //if (callback) {
-                    //    callback(process, completed);
-                    //}
                 }
             }, function (response) {
                 if (response.status === 401) {
@@ -122,6 +132,30 @@ app
         self.getDeliveryById = function (id) {
             DeliveryDetail = _.where(currentDeliveries, { ID: parseInt(id) });
             return DeliveryDetail;
+        }
+
+        self.SubmitSuccessfulDelivery = function (DocID, Sig, Personname) {
+            var promise = null;
+
+            var completedDelivery = {
+                DocumentID: DocID,
+                Signature: Sig,
+                PersonName: Personname
+            };
+
+            $http.defaults.headers.common['token'] = $localStorage.profile.Token;
+
+            promise = $http.post(baseUrl + 'api/document/CompleteMyDelivery/', { DocumentID: completedDelivery.DocumentID, PersonName: completedDelivery.PersonName, Signature: completedDelivery.Signature }).success(function (response) {
+                if (response != null) {
+                    $cordovaDialogs.alert("Delivery Completed Successfully", 'Status', 'OK');
+                }
+            }).error(function (response) {
+                console.log(response);
+                $cordovaDialogs.alert(response, 'Status', 'OK');
+                $ionicLoading.hide();
+            });
+
+            return promise;
         }
     }
 

@@ -16,6 +16,7 @@ namespace TriboschAdmin.Models
         public DateTime DeliveryDate { get; set; }
         public string ReferenceNo { get; set; }
         public string InvoiceNo { get; set; }
+        public bool Delivered { get; set; }
     }
 
     public class OrderLine
@@ -24,5 +25,12 @@ namespace TriboschAdmin.Models
         public int lineQTY { get; set; }
         public double linePrice { get; set; }
         public double lineTotal { get; set; }
+    }
+
+    public class CompletedDelivery
+    {
+        public String Signature { get; set; }
+        public String DocumentID { get; set; }
+        public String PersonName { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-<ion-view hide-nav-bar="true">
+<ion-view hide-nav-bar="true" ng-controller="LoginCtrl">
     <ion-content class="login-screen padding" >
        <div class="login-logo">
            <img width="40" src="img/logo.png" />
@@ -10,7 +10,7 @@
         <div class="list">
             <label class="item item-input item-floating-label">
                 <span class="input-label">Username</span>
-                <input type="text" placeholder="Username"  ng-model="loginData.userName">
+                <input type="text" placeholder="Username"  ng-model="loginData.username">
             </label>
             <label class="item item-input item-floating-label">
                 <span class="input-label">Password</span>

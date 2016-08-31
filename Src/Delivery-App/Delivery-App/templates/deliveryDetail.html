@@ -1,7 +1,7 @@
 ﻿<ion-view view-title="Delivery Detail" ng-controller="DeliveryDetailCtrl">
     <ion-content class="has-header">
         <p ng-bind-html="event.Description"></p>
-
+        <h2 class="text-center" ng-if="Delivery.SIgnature != null" style="color:green;">Order Delivered! <i class="icon ion-ios-checkmark"></i></h2>
         <div class="card">
             <button class="button button-full button-assertive ink get-dir-button" ng-click="GetDirections()">Get Directions</button>
             <div class="item delivery-item">
@@ -24,8 +24,44 @@
                     {{Delivery.Customer.Addresses[0].PostalCode}}
                 </p>
             </div>
-            <button class="button button-full button-assertive ink get-dir-button" ng-click="SignForDelivery()">Delivery Signature</button>
+            <button ng-if="Delivery.SIgnature == null" class="button button-full button-assertive ink get-dir-button" ng-click="showSignPanel()">Delivery Signature</button>
+            
         </div>
+
+        <script type="text/javascript">
+            function decodeHtml(html) {
+                var header = document.getElementById("Header");
+                header.innerHTML = html;
+                alert(html);
+            }
+            window.onload = function () {
+                var canvas = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                context.fillStyle = "green";
+                context.fillRect(50, 50, 100, 100);
+                // no argument defaults to image/png; image/jpeg, etc also work on some
+                // implementations -- image/png is the only one that must be supported per spec.
+                window.location = canvas.toDataURL("image/png");
+            }
+        </script>
+
+        <script type="text/ng-template" id="sigTemplate">
+            <div class="dialog-contents">
+
+                <div id="pnlSign" style="width:100%;min-height:300px;background:#fff;">
+                    Sign below
+                    <div style="height:180px;width:100%;margin-bottom:10px"><canvas style="height:100%;width:100%;border:1px solid #808080;" id="cvsSignature"></canvas></div>
+                    <label class="item item-input">
+                        <span class="input-label">
+                            <b>Full Name :</b> 
+                        </span>
+                        <input type="text" ng-model="Person.FullName" />
+                    </label>
+                    <div style="height:15px;"></div>
+                    <button class="button button-dark" ng-click="hideSignPanel()">Cancel</button>&nbsp;
+                    <button class="button button-balanced ink" ng-click="SubmitSignature()">Submit</button>
+                </div>
+            </div>
+        </script>
     </ion-content>
 </ion-view>
-                    

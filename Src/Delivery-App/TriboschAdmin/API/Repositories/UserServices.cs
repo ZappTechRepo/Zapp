@@ -13,7 +13,7 @@ namespace TriboschAdmin.WebAPI.Repository
 
         private TriboschAppEntities dataContext = new TriboschAppEntities();
 
-        public Guid Authenticate(string userName, string word) {
+         Guid Authenticate(string userName, string word, string token) {
 
             //*Original code*
             //DeliveryUser user =  dataContext.DeliveryUsers.FirstOrDefault(u => u.UserName == userName && u.Password == word);
@@ -39,7 +39,7 @@ namespace TriboschAdmin.WebAPI.Repository
 
         }
 
-        int IUserService.Authenticate(string userName, string word)
+        int IUserService.Authenticate(string userName, string word, string token)
         {
             User user = dataContext.Users.FirstOrDefault(u => u.Username == userName && u.Password == word);
             if (user != null)
@@ -48,8 +48,6 @@ namespace TriboschAdmin.WebAPI.Repository
                 int gui = r.Next(0, 100);
                 return gui;
             }
-
-
 
             return 0;
         }

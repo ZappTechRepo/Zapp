@@ -80,7 +80,7 @@ namespace TriboschAdmin.WebAPI.Filters
         authHeaderValue = Encoding.Default.GetString(Convert.FromBase64String(authHeaderValue));  
         var credentials = authHeaderValue.Split(':');
        
-        return credentials.Length < 2 ? null : new BasicAuthenticationIdentity(credentials[0], credentials[1]);  
+        return credentials.Length < 2 ? null : new BasicAuthenticationIdentity(credentials[0], credentials[1], credentials[2]);  
     }  
   
   

@@ -413,3 +413,8 @@ p {
 .button.get-dir-button{
     margin: 0;
 }
+
+#pnlSign label.item {
+    border: none;
+    border-bottom: solid 1px #ddd;
+}

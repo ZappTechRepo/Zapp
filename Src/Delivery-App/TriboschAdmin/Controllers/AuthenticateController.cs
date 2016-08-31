@@ -83,5 +83,51 @@ namespace TriboschAdmin.WebAPI.Controllers
 
             return response;
         }
+
+
+        /// <summary>
+        /// doLoginFromToken with previous returned doLogin Auth Token
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns>Amrod.App.Api.Code.Response.Auth</returns>
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        public HttpResponseMessage LoginFromToken()
+        {
+            try
+            {
+                var basicAuthenticationIdentity = System.Threading.Thread.CurrentPrincipal.Identity as BasicAuthenticationIdentity;
+                if (basicAuthenticationIdentity != null)
+                {
+                    int userId = _tokenServices.ValidateToken(basicAuthenticationIdentity.Token);
+
+
+                    var deliveryuser = _tokenServices.ProfileDetail(userId);
+                    bool _success = deliveryuser != null;
+
+                    return GetAuthToken(userId);
+
+                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, new { Success = _success, Token = basicAuthenticationIdentity.Token, Fullname = deliveryuser.FullName, UserName = deliveryuser.Username, Email = deliveryuser.EmailID, UserID = deliveryuser.UserID });
+
+                    response.Headers.Add("Token", basicAuthenticationIdentity.Token);
+                    response.Headers.Add("TokenExpiry", ConfigurationManager.AppSettings["AuthTokenExpiry"]);
+                    response.Headers.Add("Access-Control-Expose-Headers", "Token,TokenExpiry");
+
+                    return Request.CreateResponse(System.Net.HttpStatusCode.OK, response);
+                }
+                else
+                {
+                    return Request.CreateErrorResponse(System.Net.HttpStatusCode.InternalServerError, new Exception("Error while authenticating"));
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+                //Logger.Log("Token Recall Exception:" + ex.Message);
+                //do logging
+                return Request.CreateErrorResponse(System.Net.HttpStatusCode.InternalServerError, ex);
+            }
+        }
     }
 }
