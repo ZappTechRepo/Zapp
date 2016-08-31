@@ -47,12 +47,11 @@ namespace TriboschAdmin.WebAPI.Filters
         /// </summary>  
         /// <param name="userName"></param>  
         /// <param name="word"></param>  
-        public BasicAuthenticationIdentity(string userName, string pword, string token)
+        public BasicAuthenticationIdentity(string userName, string pword)
             : base(userName, "Basic")
         {
             word = pword;
             UserName = userName;
-            Token = token;
         }
     }  
 }

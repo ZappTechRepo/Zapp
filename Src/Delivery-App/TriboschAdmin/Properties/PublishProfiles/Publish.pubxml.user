@@ -43,7 +43,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2016 23:06:14</publishTime>
     </File>
     <File Include="bin/sb-admin-2.Web.dll">
-      <publishTime>08/30/2016 20:21:24</publishTime>
+      <publishTime>08/31/2016 12:57:34</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>06/27/2016 21:36:46</publishTime>
@@ -2340,6 +2340,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax">
       <publishTime>04/05/2016 16:18:02</publishTime>
     </File>
+    <File Include="Mail/deliveryNote.html">
+      <publishTime>08/31/2016 12:52:04</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>07/28/2016 12:15:08</publishTime>
     </File>
@@ -2439,6 +2442,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/CreateDocument.cshtml">
       <publishTime>07/01/2016 10:49:52</publishTime>
     </File>
+    <File Include="Views/Home/CreateUser.cshtml">
+      <publishTime>08/31/2016 11:39:27</publishTime>
+    </File>
     <File Include="Views/Home/Customer.cshtml">
       <publishTime>05/31/2016 17:40:18</publishTime>
     </File>
@@ -2456,6 +2462,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Home/EditProducts.cshtml">
       <publishTime>06/14/2016 15:27:19</publishTime>
+    </File>
+    <File Include="Views/Home/EditUser.cshtml">
+      <publishTime>08/31/2016 11:27:11</publishTime>
     </File>
     <File Include="Views/Home/FlotCharts.cshtml">
       <publishTime>04/05/2016 16:18:02</publishTime>
@@ -2499,6 +2508,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/Typography.cshtml">
       <publishTime>04/05/2016 16:18:02</publishTime>
     </File>
+    <File Include="Views/Home/Users.cshtml">
+      <publishTime>08/31/2016 11:38:57</publishTime>
+    </File>
     <File Include="Views/Home/_OrderLines.cshtml">
       <publishTime>06/14/2016 15:27:19</publishTime>
     </File>
@@ -2524,7 +2536,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2016 16:18:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/30/2016 20:21:29</publishTime>
+      <publishTime>08/31/2016 12:57:35</publishTime>
     </File>
   </ItemGroup>
 </Project>

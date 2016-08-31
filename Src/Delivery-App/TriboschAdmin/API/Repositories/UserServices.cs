@@ -39,7 +39,7 @@ namespace TriboschAdmin.WebAPI.Repository
 
         }
 
-        int IUserService.Authenticate(string userName, string word, string token)
+        int IUserService.Authenticate(string userName, string word)
         {
             User user = dataContext.Users.FirstOrDefault(u => u.Username == userName && u.Password == word);
             if (user != null)

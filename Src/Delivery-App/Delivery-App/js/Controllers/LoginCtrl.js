@@ -5,7 +5,7 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
         password: ""
     };
 
-    $scope.Login = function () { 
+    $scope.Login = function () {
 
         if ($scope.loginData.username != "" && $scope.loginData.password != "") {
 
@@ -26,7 +26,9 @@ app.controller('LoginCtrl', function ($scope, $stateParams, Utils, baseUrl, $cor
     //initialization
     var profile = profileService.getProfile();
     if (profile != null) {
-        $state.go('app.deliveries', { userId: profile.UserID, reload: true });
+        $state.go('app.deliveries', { userId: $localStorage.profile.UserID });
         //profileService.LoginFromToken(profileService.getToken());
+    } else {
+        $state.go('app.login');
     }
 });

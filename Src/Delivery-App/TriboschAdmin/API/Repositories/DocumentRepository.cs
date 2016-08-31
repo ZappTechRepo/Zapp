@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Web;
 using TriboschAdmin;
 
 namespace Homemation.WebAPI.Models
@@ -10,6 +13,11 @@ namespace Homemation.WebAPI.Models
     public class DocumentRepository : IDisposable, IDocumentRepository
     {
         private TriboschAppEntities  dataContext = new TriboschAppEntities();
+
+        private static String SMTPHost = ConfigurationManager.AppSettings["SMTPHost"];
+        private static Int32 SMTPPort = Int32.Parse(ConfigurationManager.AppSettings["SMTPPort"]);
+        private static String SMTPUsername = ConfigurationManager.AppSettings["SMTPUsername"];
+        private static String SMTPPassword = ConfigurationManager.AppSettings["SMTPPassword"];
 
         public List<Document> GetAllDocuments()
         {
@@ -182,6 +190,8 @@ namespace Homemation.WebAPI.Models
                     doc.SIgnature = sigbytes;
 
                     dataContext.SaveChanges();
+
+                    SendDeliveryMail(doc);
                 }
             }
             catch (Exception ex)
@@ -192,7 +202,40 @@ namespace Homemation.WebAPI.Models
             return svgFileName;
         }
 
+        public void SendDeliveryMail(Document doc)
+        {
+            try
+            {
+                String body = string.Empty;
+                string html = File.ReadAllText(ConfigurationManager.AppSettings["MailTemplate"] + "/DeliveryNote.html");
+                string Lines = string.Empty;
+                Address addr = doc.Customer.Addresses.First();
 
+                html = html.Replace("#DATE#", DateTime.Now.ToString(" dd MMM yyyy"));
+                html = html.Replace("#ADDRESS#", addr.Address1 + "<br/>" + addr.Address2 + "<br/>" + addr.Address3 + "<br/>" + addr.PostalCode);
+                html = html.Replace("#NO#", doc.InvoiceNo);
+
+                foreach (Line ln in doc.Lines)
+                {
+                    Lines += @"<tr><td><p>" + ln.Qty + "</p></td>" +
+                                "<td><p>" + ln.Product.ProductName + "</p></td>" +
+                                "<td><p>" + ln.Product.RetailPriceIncl + "</p></td></tr>";
+                }
+
+                html = html.Replace("#LINES#", Lines);
+                html = html.Replace("#SUBTOTAL#", "R " + doc.TotalExcl.ToString());
+                html = html.Replace("#TAX#", "R " + (doc.TotalExcl * 1.14).ToString());
+                html = html.Replace("#TOTAL#", "R " + doc.TotalIncl.ToString());
+
+                body = html;
+
+                SendMail("Tribosch Delivery Completed", body, doc.Customer.CustomerName, doc.Customer.Email, "kb.kwena@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
 
         public Image LoadImage(byte[] img64)
         {
@@ -207,6 +250,28 @@ namespace Homemation.WebAPI.Models
             }
 
             return image;
+        }
+
+        public static void SendMail(String subject, String body, String fromName, String replyAddress, String recipientAddress)
+        {
+            //Send the email
+            using (SmtpClient smtp = new SmtpClient())
+            {
+                smtp.Host = SMTPHost;
+                smtp.Port = SMTPPort;
+                smtp.EnableSsl = false;
+                smtp.Credentials = new System.Net.NetworkCredential(SMTPUsername, SMTPPassword);
+                using (MailMessage msg = new MailMessage())
+                {
+                    msg.Subject = subject;
+                    msg.From = new MailAddress(replyAddress, fromName);
+                    msg.IsBodyHtml = true;
+                    msg.Body = body;
+                    msg.To.Add(new MailAddress(recipientAddress));
+
+                    smtp.Send(msg);
+                }
+            }
         }
 
         int IDocumentRepository.GetSalesRepGuidByToken(string token)

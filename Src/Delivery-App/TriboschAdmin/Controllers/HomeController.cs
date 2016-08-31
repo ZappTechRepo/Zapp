@@ -221,6 +221,55 @@ namespace TriboschAdmin.Controllers
             return View(customer);
         }
 
+
+        public ActionResult Users()
+        {
+            return View(entity.Users.ToList());
+        }
+
+        public ActionResult EditUser(int id = 0)
+        {
+            User usr = entity.Users.Find(id);
+            if (usr == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usr);
+        }
+        [HttpPost]
+        public ActionResult EditUser(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                entity.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
+        public ActionResult CreateUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateUser(User users)
+        {
+
+            if (ModelState.IsValid)
+            {
+                entity.Users.Add(users);
+                entity.SaveChanges();
+
+                return RedirectToAction("Users");
+            }
+            else
+            {
+                return View(users);
+            }
+        }
+
         // Create Customer
         public ActionResult CreateCustomer()
         {

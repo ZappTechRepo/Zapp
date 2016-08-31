@@ -1,0 +1,44 @@
+﻿@model  IEnumerable<TriboschAdmin.User>
+<br />
+<h4>Users</h4>
+<hr />
+<p>
+    <a href="CreateUser" class="btn btn-primary">Create User</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="dl-horizontal">
+                <td>
+                    @Html.DisplayFor(model => item.Username)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.FullName)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(model => item.EmailID)
+                </td>
+                <td>
+                    <p>
+                        @Html.ActionLink("Edit", "EditUser", new { id = item.UserID }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -51,6 +51,9 @@
     <Content Include="img\material-graphite.jpg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="img\newmaterial.jpg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="img\truck.png">
       <SubType>Content</SubType>
     </Content>

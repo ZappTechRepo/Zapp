@@ -14,7 +14,7 @@ namespace TriboschAdmin.WebAPI.Repository
         /// <param name="userName"></param>
         /// <param name="word"></param>
         /// <returns></returns>
-        int Authenticate(string userName, string word, string token);
+        int Authenticate(string userName, string word);
 
 
     }

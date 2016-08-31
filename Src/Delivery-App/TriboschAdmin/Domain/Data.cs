@@ -15,6 +15,7 @@ namespace TriboschAdmin.Domain
             menu.Add(new Navbar { Id = 1, nameOption = "Product", controller = "Home", action = "Product", imageClass = "fa fa-file-powerpoint-o fa-fw", status = true, isParent = false, parentId = 0 });
             menu.Add(new Navbar { Id = 2, nameOption = "Customers", controller = "Home", action = "Customer", imageClass = "fa fa-users fa-fw", status = true, isParent = false, parentId = 0 });
             menu.Add(new Navbar { Id = 4, nameOption = "Documents", controller = "Home", action = "Documents", imageClass = "fa fa-file-text-o fa-fw", status = true, isParent = false, parentId = 0 });
+            menu.Add(new Navbar { Id = 4, nameOption = "Users", controller = "Home", action = "Users", imageClass = "fa fa-users fa-fw", status = true, isParent = false, parentId = 0 });
             //menu.Add(new Navbar { Id = 6, nameOption = "Forms", controller = "Home", action = "Forms", imageClass = "fa fa-edit fa-fw", status = true, isParent = false, parentId = 0 });
             //menu.Add(new Navbar { Id = 7, nameOption = "UI Elements", imageClass = "fa fa-wrench fa-fw", status = true, isParent = true, parentId = 0 });
             //menu.Add(new Navbar { Id = 8, nameOption = "Panels and Wells", controller = "Home", action = "Panels", status = true, isParent = false, parentId = 7 });

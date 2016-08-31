@@ -22,7 +22,7 @@ app
 
 	        self.LoginFromToken = function (token) {
 
-	            var base64EncodedString = $base64.encode("Null:Null:" + token);
+	            ;var base64EncodedString = $base64.encode("Null:Null");
 
 	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
 
@@ -42,7 +42,7 @@ app
 
 	        self.DoLogin = function (LoginData) {
 
-	            var base64EncodedString = $base64.encode(LoginData.username + ':' + LoginData.password + ":Null");
+	            var base64EncodedString = $base64.encode(LoginData.username + ':' + LoginData.password);
 
 	            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64EncodedString;
 
@@ -76,7 +76,6 @@ app
 	                $storage.profile.Token = profileData.Token;
 	            } else {
 	                $storage.profile = null;
-	                $localStorage.Profile = null;
 	            }
 
 	            currentProfile = $storage.profile;
@@ -108,22 +107,31 @@ app
         var self = this;
         var $storage = $localStorage;
         var DeliveryDetail;
+        var profile = profileService.getProfile();
         var currentDeliveries;
+
+
+        self.getCacheDeliveries = function () {
+            return $storage.Documents;
+        }
 
         self.getDeliveries = function (rows) {
             var promise = null;
 
-            $http.defaults.headers.common['token'] = $localStorage.profile.Token;
-            promise = $http.get(baseUrl + 'api/document/GetDocuments/' + $localStorage.profile.UserID).success(function (response) {
+            $http.defaults.headers.common['token'] = profile.Token;
+            promise = $http.post(baseUrl + 'api/document/GetDocuments/', { UserID: profile.UserID } ).success(function (response) {
                 if (response != null) {
                     $storage.Documents = response;
                 }
             }, function (response) {
                 if (response.status === 401) {
-                    LoginService.LogOutUser();
+                    profileService.logout();
                     $state.go('login');
                 }
                 alert('An error occurred while trying to retrieve the delivery list');
+            }).error(function (data) {
+                //$cordovaDialogs.alert(data, 'Status', 'OK');
+                //profileService.logout();
             });
 
             return promise;
@@ -143,7 +151,7 @@ app
                 PersonName: Personname
             };
 
-            $http.defaults.headers.common['token'] = $localStorage.profile.Token;
+            $http.defaults.headers.common['token'] = profile.Token;
 
             promise = $http.post(baseUrl + 'api/document/CompleteMyDelivery/', { DocumentID: completedDelivery.DocumentID, PersonName: completedDelivery.PersonName, Signature: completedDelivery.Signature }).success(function (response) {
                 if (response != null) {

@@ -33,4 +33,9 @@ namespace TriboschAdmin.Models
         public String DocumentID { get; set; }
         public String PersonName { get; set; }
     }
+
+    public class GetDocument
+    {
+        public string UserID { get; set; }
+    }
 }
